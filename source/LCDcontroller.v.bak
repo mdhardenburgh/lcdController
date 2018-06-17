@@ -1,0 +1,71 @@
+/**
+ * @file: LCDController.v
+ * @brief: controller for an LCD to interface into any project
+ * @Engineer: Matthew Hardenburgh
+ * @date: 6/15/18
+ */
+module lcdController
+(
+    input clk,
+    input LCDonIn,
+    input wire[7:0] dataIn.
+    inout reg[7:0] LCDbus,
+    output reg LCDreadWriteSel, // LCD read/write select 0 = write, 1 = read
+    output reg LCDrsSelect, //  LCD Command/Data Select, 0 = Command, 1 = Data
+    output wire LCDenableOut
+);
+    //states
+    localparam  powerOn = 4'd0;
+    localparam  functionSet = 4'd1;
+    localparam  displayOnOff = 4'd2;
+    localparam  displayClear = 4'd3;
+    localparam  entryModeSet = 4'd4;
+    localparam  readBusyFlag = 4'd5;
+    localparam  setDDRAMaddr = 4'd6;
+    localparam  writeData = 4'd7;
+    localparam  writeAddr = 4'd8;
+    localparam  clearDisplay = 4'd9;
+
+    //clock waiting times in for miliseconds for a 50MHz clock.
+    localparam  wait20 = 20'd1000000;
+    localparam  wait5 = 20'd250000;
+    localparam  wait1 = 20'd50000;
+
+    //counter declarations and state
+    reg[19:0] counter = 20'b0;
+    reg[3:0] state;
+    reg dataValid;
+
+    //continous assingment statements
+    //assign (dataValid)?(LCDbus = dataIn):(LCDbus = 8'bzz);
+    always@(posedge clk, posedge LCDonIn)
+    begin
+        //reset and clear LCD completely.
+        if(LCDonIn == 1'b0)
+        begin
+            //reset counters and then go to the powerOnState
+            state <= powerOn;
+            counter <= 20'b0;
+        end
+
+        else
+        begin
+            case(state)
+                powerOn:
+                begin
+                    if(counter == wait20)
+                    begin
+                        counter <= 20'b0;
+                        state <= functionSet;
+                    end
+
+                    else
+                    begin
+                        counter <= counter + 1'b1;
+                    end
+                end
+
+            endcase
+        end
+    end
+endmodule
