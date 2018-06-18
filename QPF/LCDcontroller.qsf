@@ -44,7 +44,6 @@ set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:57:06  JUNE 16, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.0
 set_global_assignment -name VERILOG_FILE ../sevenSegmentControler.v
 set_global_assignment -name VERILOG_FILE ../LCDcontrollerTop.v
-set_global_assignment -name VERILOG_FILE ../LCDcontroller.v
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
