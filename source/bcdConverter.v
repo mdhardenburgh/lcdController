@@ -1,6 +1,10 @@
+//Original Author: Dustin Criger. Email: dustger89@gmail.com
+//Modifications by Matthew Hardenburgh.
+
 module bcdConterter
 (
     input [15:0]in,
+    output reg[3:0] tenThou,
     output reg[3:0] thou,
     output reg[3:0] hund,
     output reg[3:0] tens,
@@ -8,7 +12,7 @@ module bcdConterter
 );
 	//reg [15:0]n;
 	integer i;
-	reg [31:0]n;
+	reg [35:0]n;
 
 	always@(in)
 	begin
@@ -37,6 +41,11 @@ module bcdConterter
 					n[31:28] = n[31:28] + 4'd3;
 				end
 
+                if(n[35:32] > 4)
+                begin
+                    n[35:32] = n[35:32] + 4'd3;
+                end
+
 				n = n<<1;
 
 		end
@@ -44,5 +53,6 @@ module bcdConterter
 		tens = n[23:20];
 		hund = n[27:24];
 		thou = n[31:28];
+        tenThou = n[35:32];
 	end
 endmodule
