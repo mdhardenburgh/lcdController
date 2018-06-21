@@ -45,25 +45,48 @@ module lcdInterface
     localparam  unlocked = 1'b0;
 
     localparam  addr = 1'b0;
+    localparam  data = 1'b1;
 
     reg[4:0] state;
     reg addrData;
 
-    always @ (posedge clk, negedge rst) begin
+    always @ (posedge clk, negedge rst)
+    begin
         if(rst == 1'b0)
         begin
             state <= tenThousand;
-            addrOrData <= 1'b0;
-            lcdBus <= 8'h00;
+            addrData <= addr;
+            assign addrOrData = addr;
+            assign lcdBus = 8'hzz;
         end
 
         else
         begin
-            case()
+            case(state)
             begin
                 tenThousand:
                 begin
                     if(busLock == unlocked)
+                    begin
+                        if(addrData == addr)
+                        begin
+                            state <= tenThousand;
+                            assign lcdBus = 8'h00;
+                            assign addrOrData = addr;
+                        end
+
+                        if(addrData == data)
+                        begin
+                            state <= thousand;
+                            assign lcdBus = tenThou;
+                            assign addrOrData = data;
+                        end
+                    end
+
+                    else
+                    begin
+                        state <= tenThousand;
+                    end
                 end
             end
             endcase
