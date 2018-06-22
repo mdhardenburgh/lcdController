@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LCDcontroller
-Sat Jun 16 22:36:27 2018
+Thu Jun 21 22:26:28 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -10,8 +10,19 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
-  6. Analysis & Synthesis Suppressed Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |lcdControllerTop|lcdController:myController|functionSetCounter
+  9. State Machine - |lcdControllerTop|lcdController:myController|state
+ 10. State Machine - |lcdControllerTop|lcdInterface:myInterface|state
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -37,20 +48,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sat Jun 16 22:36:27 2018          ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 21 22:26:28 2018      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; LCDcontroller                              ;
-; Top-level Entity Name              ; LCDcontrollerTop                           ;
+; Top-level Entity Name              ; lcdControllerTop                           ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; N/A until Partition Merge                  ;
-;     Total combinational functions  ; N/A until Partition Merge                  ;
-;     Dedicated logic registers      ; N/A until Partition Merge                  ;
-; Total registers                    ; N/A until Partition Merge                  ;
-; Total pins                         ; N/A until Partition Merge                  ;
-; Total virtual pins                 ; N/A until Partition Merge                  ;
-; Total memory bits                  ; N/A until Partition Merge                  ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                  ;
-; Total PLLs                         ; N/A until Partition Merge                  ;
+; Total logic elements               ; 277                                        ;
+;     Total combinational functions  ; 264                                        ;
+;     Dedicated logic registers      ; 61                                         ;
+; Total registers                    ; 61                                         ;
+; Total pins                         ; 30                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -60,7 +71,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; LCDcontrollerTop   ; LCDcontroller      ;
+; Top-level entity name                                                      ; lcdControllerTop   ; LCDcontroller      ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -150,30 +161,239 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
+; ../source/lcdControllerTop.v     ; yes             ; User Verilog HDL File  ; H:/Google Drive/Logic Design Practice/LCDcontroller/source/lcdControllerTop.v ;         ;
+; ../source/patternConverter.v     ; yes             ; User Verilog HDL File  ; H:/Google Drive/Logic Design Practice/LCDcontroller/source/patternConverter.v ;         ;
+; ../source/lcdController.v        ; yes             ; User Verilog HDL File  ; H:/Google Drive/Logic Design Practice/LCDcontroller/source/lcdController.v    ;         ;
+; ../source/bcdConverter.v         ; yes             ; User Verilog HDL File  ; H:/Google Drive/Logic Design Practice/LCDcontroller/source/bcdConverter.v     ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 277   ;
+;                                             ;       ;
+; Total combinational functions               ; 264   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 204   ;
+;     -- 3 input functions                    ; 19    ;
+;     -- <=2 input functions                  ; 41    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 245   ;
+;     -- arithmetic mode                      ; 19    ;
+;                                             ;       ;
+; Total registers                             ; 61    ;
+;     -- Dedicated logic registers            ; 61    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 30    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 61    ;
+; Total fan-out                               ; 1204  ;
+; Average fan-out                             ; 3.39  ;
++---------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
+; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                            ; Library Name ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
+; |lcdControllerTop                 ; 264 (0)           ; 61 (0)       ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |lcdControllerTop                              ;              ;
+;    |bcdConterter:myBcdConverter|  ; 139 (139)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcdControllerTop|bcdConterter:myBcdConverter  ;              ;
+;    |lcdController:myController|   ; 62 (62)           ; 47 (47)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcdControllerTop|lcdController:myController   ;              ;
+;    |lcdInterface:myInterface|     ; 38 (38)           ; 14 (14)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcdControllerTop|lcdInterface:myInterface     ;              ;
+;    |patternConverter:hundred|     ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcdControllerTop|patternConverter:hundred     ;              ;
+;    |patternConverter:one|         ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcdControllerTop|patternConverter:one         ;              ;
+;    |patternConverter:tenThousand| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcdControllerTop|patternConverter:tenThousand ;              ;
+;    |patternConverter:ten|         ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcdControllerTop|patternConverter:ten         ;              ;
+;    |patternConverter:thousand|    ; 6 (6)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |lcdControllerTop|patternConverter:thousand    ;              ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------+
+; State Machine - |lcdControllerTop|lcdController:myController|functionSetCounter                                       ;
++-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+; Name                  ; functionSetCounter.11 ; functionSetCounter.10 ; functionSetCounter.01 ; functionSetCounter.00 ;
++-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+; functionSetCounter.00 ; 0                     ; 0                     ; 0                     ; 0                     ;
+; functionSetCounter.01 ; 0                     ; 0                     ; 1                     ; 1                     ;
+; functionSetCounter.10 ; 0                     ; 1                     ; 0                     ; 1                     ;
+; functionSetCounter.11 ; 1                     ; 0                     ; 0                     ; 1                     ;
++-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |lcdControllerTop|lcdController:myController|state                                                                                     ;
++--------------------+-------------+--------------------+--------------------+------------------+--------------------+---------------+-------------------+
+; Name               ; state.write ; state.entryModeSet ; state.displayClear ; state.displaySet ; state.functionSet1 ; state.powerOn ; state.functionSet ;
++--------------------+-------------+--------------------+--------------------+------------------+--------------------+---------------+-------------------+
+; state.powerOn      ; 0           ; 0                  ; 0                  ; 0                ; 0                  ; 0             ; 0                 ;
+; state.functionSet1 ; 0           ; 0                  ; 0                  ; 0                ; 1                  ; 1             ; 0                 ;
+; state.displaySet   ; 0           ; 0                  ; 0                  ; 1                ; 0                  ; 1             ; 0                 ;
+; state.displayClear ; 0           ; 0                  ; 1                  ; 0                ; 0                  ; 1             ; 0                 ;
+; state.entryModeSet ; 0           ; 1                  ; 0                  ; 0                ; 0                  ; 1             ; 0                 ;
+; state.write        ; 1           ; 0                  ; 0                  ; 0                ; 0                  ; 1             ; 0                 ;
+; state.functionSet  ; 0           ; 0                  ; 0                  ; 0                ; 0                  ; 1             ; 1                 ;
++--------------------+-------------+--------------------+--------------------+------------------+--------------------+---------------+-------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------+
+; State Machine - |lcdControllerTop|lcdInterface:myInterface|state                               ;
++-------------------+-----------+---------------+----------------+-------------------+-----------+
+; Name              ; state.ten ; state.hundred ; state.thousand ; state.tenThousand ; state.one ;
++-------------------+-----------+---------------+----------------+-------------------+-----------+
+; state.tenThousand ; 0         ; 0             ; 0              ; 0                 ; 0         ;
+; state.thousand    ; 0         ; 0             ; 1              ; 1                 ; 0         ;
+; state.hundred     ; 0         ; 1             ; 0              ; 1                 ; 0         ;
+; state.ten         ; 1         ; 0             ; 0              ; 1                 ; 0         ;
+; state.one         ; 0         ; 0             ; 0              ; 1                 ; 1         ;
++-------------------+-----------+---------------+----------------+-------------------+-----------+
+
+
++-------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                        ;
++--------------------------------------------------+----------------------------------------+
+; Register name                                    ; Reason for Removal                     ;
++--------------------------------------------------+----------------------------------------+
+; lcdInterface:myInterface|inBus[7]~reg0           ; Stuck at GND due to stuck port data_in ;
+; lcdInterface:myInterface|inBus[0]~en             ; Lost fanout                            ;
+; lcdInterface:myInterface|inBus[1]~en             ; Lost fanout                            ;
+; lcdInterface:myInterface|inBus[2]~en             ; Lost fanout                            ;
+; lcdInterface:myInterface|inBus[3]~en             ; Lost fanout                            ;
+; lcdInterface:myInterface|inBus[4]~en             ; Lost fanout                            ;
+; lcdInterface:myInterface|inBus[5]~en             ; Lost fanout                            ;
+; lcdInterface:myInterface|inBus[6]~en             ; Lost fanout                            ;
+; lcdInterface:myInterface|inBus[7]~en             ; Lost fanout                            ;
+; lcdInterface:myInterface|addrOrData~en           ; Lost fanout                            ;
+; lcdController:myController|errorLed              ; Stuck at VCC due to stuck port data_in ;
+; lcdController:myController|functionSetCounter~4  ; Lost fanout                            ;
+; lcdController:myController|functionSetCounter~5  ; Lost fanout                            ;
+; lcdController:myController|state~11              ; Lost fanout                            ;
+; lcdController:myController|state~12              ; Lost fanout                            ;
+; lcdController:myController|state~13              ; Lost fanout                            ;
+; lcdInterface:myInterface|state~4                 ; Lost fanout                            ;
+; lcdInterface:myInterface|state~5                 ; Lost fanout                            ;
+; lcdInterface:myInterface|state~7                 ; Lost fanout                            ;
+; lcdInterface:myInterface|state~8                 ; Lost fanout                            ;
+; lcdController:myController|state.functionSet     ; Stuck at GND due to stuck port data_in ;
+; lcdController:myController|functionSetCounter.11 ; Stuck at GND due to stuck port data_in ;
+; lcdController:myController|functionSetCounter.10 ; Stuck at GND due to stuck port data_in ;
+; lcdController:myController|functionSetCounter.00 ; Stuck at GND due to stuck port data_in ;
+; lcdController:myController|functionSetCounter.01 ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 25           ;                                        ;
++--------------------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                       ;
++----------------------------------------+---------------------------+------------------------------------------------------------------------------+
+; Register name                          ; Reason for Removal        ; Registers Removed due to This Register                                       ;
++----------------------------------------+---------------------------+------------------------------------------------------------------------------+
+; lcdInterface:myInterface|inBus[7]~reg0 ; Stuck at GND              ; lcdInterface:myInterface|inBus[7]~en, lcdInterface:myInterface|addrOrData~en ;
+;                                        ; due to stuck port data_in ;                                                                              ;
++----------------------------------------+---------------------------+------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 61    ;
+; Number of registers using Synchronous Clear  ; 20    ;
+; Number of registers using Synchronous Load   ; 3     ;
+; Number of registers using Asynchronous Clear ; 34    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 52    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 10:1               ; 7 bits    ; 42 LEs        ; 42 LEs               ; 0 LEs                  ; Yes        ; |lcdControllerTop|lcdInterface:myInterface|inBus[6]~reg0    ;
+; 10:1               ; 20 bits   ; 120 LEs       ; 20 LEs               ; 100 LEs                ; Yes        ; |lcdControllerTop|lcdController:myController|counter[5]     ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; Yes        ; |lcdControllerTop|lcdController:myController|lcdBus[0]~reg0 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |lcdControllerTop|lcdController:myController|Selector21     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sat Jun 16 22:36:26 2018
+    Info: Processing started: Thu Jun 21 22:26:23 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LCDcontroller -c LCDcontroller
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 1 entities, in source file /google drive/logic design practice/lcdcontroller/sevensegmentcontroler.v
-    Info (12023): Found entity 1: sevenSegmentController
-Info (12021): Found 1 design units, including 1 entities, in source file /google drive/logic design practice/lcdcontroller/lcdcontrollertop.v
-    Info (12023): Found entity 1: LCDcontrollerTop
-Info (12021): Found 1 design units, including 1 entities, in source file /google drive/logic design practice/lcdcontroller/lcdcontroller.v
+Info (12021): Found 2 design units, including 2 entities, in source file /google drive/logic design practice/lcdcontroller/source/lcdcontrollertop.v
+    Info (12023): Found entity 1: lcdControllerTop
+    Info (12023): Found entity 2: lcdInterface
+Info (12021): Found 1 design units, including 1 entities, in source file /google drive/logic design practice/lcdcontroller/source/patternconverter.v
+    Info (12023): Found entity 1: patternConverter
+Info (12021): Found 1 design units, including 1 entities, in source file /google drive/logic design practice/lcdcontroller/source/lcdcontroller.v
     Info (12023): Found entity 1: lcdController
-Info (12127): Elaborating entity "LCDcontrollerTop" for the top level hierarchy
-Warning (12158): Entity "LCDcontrollerTop" contains only dangling pins
-Error (12061): Can't synthesize current design -- Top partition does not contain any logic
+Info (12021): Found 1 design units, including 1 entities, in source file /google drive/logic design practice/lcdcontroller/source/bcdconverter.v
+    Info (12023): Found entity 1: bcdConterter
+Info (12127): Elaborating entity "lcdControllerTop" for the top level hierarchy
+Info (12128): Elaborating entity "bcdConterter" for hierarchy "bcdConterter:myBcdConverter"
+Info (12128): Elaborating entity "patternConverter" for hierarchy "patternConverter:tenThousand"
+Info (12128): Elaborating entity "lcdInterface" for hierarchy "lcdInterface:myInterface"
+Info (12128): Elaborating entity "lcdController" for hierarchy "lcdController:myController"
+Info (10264): Verilog HDL Case Statement information at lcdController.v(63): all case item expressions in this case statement are onehot
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "lcdInterface:myInterface|inBus[0]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "lcdInterface:myInterface|inBus[1]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "lcdInterface:myInterface|inBus[2]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "lcdInterface:myInterface|inBus[3]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "lcdInterface:myInterface|inBus[4]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "lcdInterface:myInterface|inBus[5]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "lcdInterface:myInterface|inBus[6]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "lcdInterface:myInterface|inBus[7]" feeding internal logic into a wire
+    Warning (13049): Converted tri-state buffer "lcdInterface:myInterface|addrOrData" feeding internal logic into a wire
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "errorLed" is stuck at VCC
+Info (17049): 18 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file H:/Google Drive/Logic Design Practice/LCDcontroller/QPF/output_files/LCDcontroller.map.smsg
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 2 warnings
-    Error: Peak virtual memory: 465 megabytes
-    Error: Processing ended: Sat Jun 16 22:36:27 2018
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 309 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 4 output pins
+    Info (21060): Implemented 8 bidirectional pins
+    Info (21061): Implemented 279 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 487 megabytes
+    Info: Processing ended: Thu Jun 21 22:26:28 2018
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +------------------------------------------+

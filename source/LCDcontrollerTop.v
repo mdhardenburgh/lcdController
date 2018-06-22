@@ -3,8 +3,11 @@ module lcdControllerTop
     input clk,
     input[15:0] switches,
     input lcdOn,
-    output
-
+    inout[7:0] lcdBus,
+    output lcdReadWriteSel, // LCD read/write select 0 = write, 1 = read
+    output lcdRsSelect, //  LCD Command/Data Select, 0 = Command, 1 = Data
+    output lcdEnableOut,
+    output errorLed
 );
 
 wire[3:0] tenThou;
@@ -13,12 +16,25 @@ wire[3:0] hund;
 wire[3:0] tens;
 wire[3:0] ones;
 
+wire[7:0] tenThouPattern;
+wire[7:0] thouPattern;
+wire[7:0] hundPattern;
+wire[7:0] tensPattern;
+wire[7:0] onesPattern;
+
+wire[7:0] inBus;
+wire addrOrData;
+wire busLock;
+
 bcdConterter myBcdConverter(switches, tenThou, thou, hund, tens, ones);
-patternConverter tenThousand(tenThou);
-patternConverter thousand(thou);
-patternConverter hundred(hund);
-patternConverter ten(tens);
-patternConverter one(ones);
+patternConverter tenThousand(tenThou, tenThouPattern);
+patternConverter thousand(thou, thouPattern);
+patternConverter hundred(hund, hundPattern);
+patternConverter ten(tens, tensPattern);
+patternConverter one(ones, onesPattern);
+lcdInterface myInterface(clk, lcdOn, busLock, tenThouPattern, thouPattern, hundPattern, tensPattern, onesPattern, addrOrData, inBus);
+lcdController myController(clk, addrOrData, lcdOn, inBus, lcdBus, lcdReadWriteSel, lcdRsSelect, lcdEnableOut, errorLed, busLock);
+
 
 endmodule
 
@@ -33,7 +49,7 @@ module lcdInterface
     input[7:0] tens,
     input[7:0] ones,
     output reg addrOrData,
-    output reg[7:0] lcdBus
+    output reg[7:0] inBus
 );
     localparam  tenThousand = 3'd0;
     localparam  thousand = 3'd1;
@@ -56,32 +72,33 @@ module lcdInterface
         begin
             state <= tenThousand;
             addrData <= addr;
-            assign addrOrData = 1'bz;
-            assign lcdBus = 8'hzz;
+            addrOrData <= 1'bz;
+            inBus <= 8'hzz;
         end
 
         else
         begin
             case(state)
-            begin
                 tenThousand:
                 begin
                     if(busLock == unlocked)
                     begin
-                        addrData(addr)
-                        begin
-                            state <= tenThousand;
-                            addrData <= data
-                            assign lcdBus = 8'h00;
-                            assign addrOrData = addr;
-                        end
+                        case(addrData)
+                            addr:
+                            begin
+                                state <= tenThousand;
+                                addrData <= data;
+                                inBus <= 8'h00;
+                                addrOrData <= addr;
+                            end
 
-                        addrData(data)
-                        begin
-                            state <= thousand;
-                            assign lcdBus = tenThou;
-                            assign addrOrData = data;
-                        end
+                            data:
+                            begin
+                                state <= thousand;
+                                inBus <= tenThou;
+                                addrOrData <= data;
+                            end
+                        endcase
                     end
 
                     else
@@ -94,20 +111,22 @@ module lcdInterface
                 begin
                     if(busLock == unlocked)
                     begin
-                        addrData(addr)
-                        begin
-                            state <= thousand;
-                            addrData <= data
-                            assign lcdBus = 8'h01;
-                            assign addrOrData = addr;
-                        end
+                        case(addrData)
+                            addr:
+                            begin
+                                state <= thousand;
+                                addrData <= data;
+                                inBus <= 8'h01;
+                                addrOrData <= addr;
+                            end
 
-                        addrData(data)
-                        begin
-                            state <= hundred;
-                            assign lcdBus = thou;
-                            assign addrOrData = data;
-                        end
+                            data:
+                            begin
+                                state <= hundred;
+                                inBus <= thou;
+                                addrOrData <= data;
+                            end
+                        endcase
                     end
 
                     else
@@ -120,20 +139,23 @@ module lcdInterface
                 begin
                     if(busLock == unlocked)
                     begin
-                        addrData(addr)
-                        begin
-                            state <= hundred;
-                            addrData <= data
-                            assign lcdBus = 8'h02;
-                            assign addrOrData = addr;
-                        end
+                        case(addrData)
+                            addr:
+                            begin
+                                state <= hundred;
+                                addrData <= data;
+                                inBus <= 8'h02;
+                                addrOrData <= addr;
+                            end
 
-                        addrData(data)
-                        begin
-                            state <= ten;
-                            assign lcdBus = hund;
-                            assign addrOrData = data;
-                        end
+                            data:
+                            begin
+                                state <= ten;
+                                inBus <= hund;
+                                addrOrData <= data;
+                            end
+                        endcase
+
                     end
 
                     else
@@ -146,20 +168,22 @@ module lcdInterface
                 begin
                     if(busLock == unlocked)
                     begin
-                        addrData(addr)
-                        begin
-                            state <= ten;
-                            addrData <= data
-                            assign lcdBus = 8'h03;
-                            assign addrOrData = addr;
-                        end
+                        case(addrData)
+                            addr:
+                            begin
+                                state <= ten;
+                                addrData <= data;
+                                inBus <= 8'h03;
+                                addrOrData <= addr;
+                            end
 
-                        addrData(data)
-                        begin
-                            state <= one;
-                            assign lcdBus = tens;
-                            assign addrOrData = data;
-                        end
+                            data:
+                            begin
+                                state <= one;
+                                inBus <= tens;
+                                addrOrData <= data;
+                            end
+                        endcase
                     end
 
                     else
@@ -172,20 +196,23 @@ module lcdInterface
                 begin
                     if(busLock == unlocked)
                     begin
-                        addrData(addr)
-                        begin
-                            state <= one;
-                            addrData <= data
-                            assign lcdBus = 8'h02;
-                            assign addrOrData = addr;
-                        end
+                        case(addrData)
+                            addr:
+                            begin
+                                state <= one;
+                                addrData <= data;
+                                inBus <= 8'h02;
+                                addrOrData <= addr;
+                            end
 
-                        addrData(data)
-                        begin
-                            state <= tenThousand;
-                            assign lcdBus = ones;
-                            assign addrOrData = data;
-                        end
+                            data:
+                            begin
+                                state <= tenThousand;
+                                inBus <= ones;
+                                addrOrData <= data;
+                            end
+                        endcase
+
                     end
 
                     else
@@ -193,8 +220,6 @@ module lcdInterface
                         state <= one;
                     end
                 end
-
-            end
             endcase
         end
     end
