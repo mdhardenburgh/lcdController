@@ -1,0 +1,1 @@
+This project contains an LCD controller. I used a Terasic DE2 board for this project. The LCD on the board is a Crystalfotnz America CFAH1602B-TMC-JP LCD pannel. The top level modual provides a simple demostration for the functionality of this LCD controller.
