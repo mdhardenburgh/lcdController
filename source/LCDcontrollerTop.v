@@ -56,7 +56,7 @@ module lcdInterface
         begin
             state <= tenThousand;
             addrData <= addr;
-            assign addrOrData = addr;
+            assign addrOrData = 1'bz;
             assign lcdBus = 8'hzz;
         end
 
@@ -68,14 +68,15 @@ module lcdInterface
                 begin
                     if(busLock == unlocked)
                     begin
-                        if(addrData == addr)
+                        addrData(addr)
                         begin
                             state <= tenThousand;
+                            addrData <= data
                             assign lcdBus = 8'h00;
                             assign addrOrData = addr;
                         end
 
-                        if(addrData == data)
+                        addrData(data)
                         begin
                             state <= thousand;
                             assign lcdBus = tenThou;
@@ -88,6 +89,111 @@ module lcdInterface
                         state <= tenThousand;
                     end
                 end
+
+                thousand:
+                begin
+                    if(busLock == unlocked)
+                    begin
+                        addrData(addr)
+                        begin
+                            state <= thousand;
+                            addrData <= data
+                            assign lcdBus = 8'h01;
+                            assign addrOrData = addr;
+                        end
+
+                        addrData(data)
+                        begin
+                            state <= hundred;
+                            assign lcdBus = thou;
+                            assign addrOrData = data;
+                        end
+                    end
+
+                    else
+                    begin
+                        state <= thousand;
+                    end
+                end
+
+                hundred:
+                begin
+                    if(busLock == unlocked)
+                    begin
+                        addrData(addr)
+                        begin
+                            state <= hundred;
+                            addrData <= data
+                            assign lcdBus = 8'h02;
+                            assign addrOrData = addr;
+                        end
+
+                        addrData(data)
+                        begin
+                            state <= ten;
+                            assign lcdBus = hund;
+                            assign addrOrData = data;
+                        end
+                    end
+
+                    else
+                    begin
+                        state <= hundred;
+                    end
+                end
+
+                ten:
+                begin
+                    if(busLock == unlocked)
+                    begin
+                        addrData(addr)
+                        begin
+                            state <= ten;
+                            addrData <= data
+                            assign lcdBus = 8'h03;
+                            assign addrOrData = addr;
+                        end
+
+                        addrData(data)
+                        begin
+                            state <= one;
+                            assign lcdBus = tens;
+                            assign addrOrData = data;
+                        end
+                    end
+
+                    else
+                    begin
+                        state <= ten;
+                    end
+                end
+
+                one:
+                begin
+                    if(busLock == unlocked)
+                    begin
+                        addrData(addr)
+                        begin
+                            state <= one;
+                            addrData <= data
+                            assign lcdBus = 8'h02;
+                            assign addrOrData = addr;
+                        end
+
+                        addrData(data)
+                        begin
+                            state <= tenThousand;
+                            assign lcdBus = ones;
+                            assign addrOrData = data;
+                        end
+                    end
+
+                    else
+                    begin
+                        state <= one;
+                    end
+                end
+
             end
             endcase
         end
