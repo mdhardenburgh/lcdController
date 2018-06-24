@@ -1,13 +1,17 @@
 module lcdControllerTop
 (
     input clk,
+	 input lcdBackLightIn,
     input[15:0] switches,
     input lcdOn,
     inout[7:0] lcdBus,
     output lcdReadWriteSel, // LCD read/write select 0 = write, 1 = read
     output lcdRsSelect, //  LCD Command/Data Select, 0 = Command, 1 = Data
     output lcdEnableOut,
-    output errorLed
+    output errorLed1,
+	 output errorLed2,
+    output lcdPwr,
+	 output lcdBacklightOut
 );
 
 wire[3:0] tenThou;
@@ -26,14 +30,17 @@ wire[7:0] inBus;
 wire addrOrData;
 wire busLock;
 
+assign lcdPwr = lcdOn;
+assign lcdBacklightOut = lcdBackLightIn;
+
 bcdConterter myBcdConverter(switches, tenThou, thou, hund, tens, ones);
 patternConverter tenThousand(tenThou, tenThouPattern);
 patternConverter thousand(thou, thouPattern);
 patternConverter hundred(hund, hundPattern);
 patternConverter ten(tens, tensPattern);
 patternConverter one(ones, onesPattern);
-lcdInterface myInterface(clk, lcdOn, busLock, tenThouPattern, thouPattern, hundPattern, tensPattern, onesPattern, addrOrData, inBus);
-lcdController myController(clk, addrOrData, lcdOn, inBus, lcdBus, lcdReadWriteSel, lcdRsSelect, lcdEnableOut, errorLed, busLock);
+lcdInterface myInterface(clk, lcdOn, busLock, tenThouPattern, thouPattern, hundPattern, tensPattern, onesPattern, addrOrData, inBus, errorLed2);
+lcdController myController(clk, addrOrData, lcdOn, inBus, lcdBus, lcdReadWriteSel, lcdRsSelect, lcdEnableOut, errorLed1, busLock);
 
 
 endmodule
@@ -49,7 +56,8 @@ module lcdInterface
     input[7:0] tens,
     input[7:0] ones,
     output reg addrOrData,
-    output reg[7:0] inBus
+    output reg[7:0] inBus,
+	 output reg errorLed
 );
     localparam  tenThousand = 3'd0;
     localparam  thousand = 3'd1;
@@ -65,15 +73,16 @@ module lcdInterface
 
     reg[4:0] state;
     reg addrData;
-
+	 
     always @ (posedge clk, negedge rst)
     begin
         if(rst == 1'b0)
         begin
             state <= tenThousand;
             addrData <= addr;
-            addrOrData <= 1'bz;
-            inBus <= 8'hzz;
+            addrOrData <= 1'b0;
+            inBus <= 8'h00;
+				errorLed <= 1'b0;
         end
 
         else
@@ -99,6 +108,7 @@ module lcdInterface
                                 addrOrData <= data;
                             end
                         endcase
+								errorLed <= 1'b0;
                     end
 
                     else
@@ -127,6 +137,7 @@ module lcdInterface
                                 addrOrData <= data;
                             end
                         endcase
+								errorLed <= 1'b0;
                     end
 
                     else
@@ -155,7 +166,7 @@ module lcdInterface
                                 addrOrData <= data;
                             end
                         endcase
-
+								errorLed <= 1'b0;
                     end
 
                     else
@@ -184,6 +195,7 @@ module lcdInterface
                                 addrOrData <= data;
                             end
                         endcase
+								errorLed <= 1'b0;
                     end
 
                     else
@@ -212,7 +224,7 @@ module lcdInterface
                                 addrOrData <= data;
                             end
                         endcase
-
+								errorLed <= 1'b0;
                     end
 
                     else
@@ -220,6 +232,11 @@ module lcdInterface
                         state <= one;
                     end
                 end
+					 
+					 default:
+					 begin
+					     errorLed <= 1'b0;
+					 end
             endcase
         end
     end

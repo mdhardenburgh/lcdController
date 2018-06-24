@@ -7,7 +7,7 @@
 module lcdController
 (
     input clk,
-    input addrOrData, //0 for addr and 1 for data.
+	 input addrOrData, //0 for addr and 1 for data.
     input lcdOnIn, //connected to switch on board to turn the LCD on or off, acts as reset.
     input wire[7:0] dataInBus,
     inout reg[7:0] lcdBus,
@@ -18,15 +18,14 @@ module lcdController
     output reg busLock //is the lcd bus ready? 0 bus is unlocked, 1 locked.
 );
     //write and init operation states
-    localparam  powerOn = 4'd0;
-    localparam  functionSet1 = 4'd1; //This is hard coded and not changed by user
-    localparam  displaySet = 4'd2;
-    localparam  displayClear = 4'd3;
-    localparam  entryModeSet = 4'd4;
-    localparam  readBusyFlag = 4'd5;
-    localparam  write = 4'd7;
-    localparam  functionSet = 4'd8;
-    localparam  initCompleted = 4'd9;
+    localparam  powerOn = 4'd0;//This is hard coded and not changed by user
+    localparam  displaySet = 4'd1;
+    localparam  displayClear = 4'd2;
+    localparam  entryModeSet = 4'd3;
+    localparam  readBusyFlag = 4'd4;
+    localparam  write = 4'd5;
+    localparam  functionSet = 4'd6;
+    localparam  initCompleted = 4'd7;
 
 
     //clock waiting times in for  a 50MHz clock.
@@ -38,13 +37,13 @@ module lcdController
     //counter declarations and state
     reg[19:0] counter;
     reg[3:0] state;
+	 reg displayOnOff;
+	 //reg addrOrData, //0 for addr and 1 for data.
 
     reg[1:0] functionSetCounter;
-    reg displayOnOff;
 
     //continous assingment statements
     //assign (dataValid)?(lcdBus = dataInBus):(lcdBus = 8'bzz);
-	 //errorLed <= 1'b0;
     always@(posedge clk, negedge lcdOnIn)
     begin
         //reset and clear LCD completely.
@@ -56,6 +55,11 @@ module lcdController
             functionSetCounter <= 2'b00;
             displayOnOff <= 1'b0;
             lcdEnableOut <= 1'b0;
+				errorLed <= 1'b0;
+				lcdBus <= 8'bZZ;
+				functionSetCounter <= 2'b00;
+				//addrOrData <= 1'b0;
+				busLock <= 1'b1; 
         end
 
         else
@@ -66,7 +70,7 @@ module lcdController
                     if(counter == wait20ms)
                     begin
                         counter <= 20'b0;
-                        state <= functionSet1;
+                        state <= functionSet;
                     end
 
                     else
@@ -74,14 +78,15 @@ module lcdController
                         counter <= counter + 1'b1;
                         state <= powerOn;
                     end
+						  errorLed <= 1'b0;
                 end
 
                 functionSet:
                 begin
-                    functionSetCounter <= 2'b00;
                     lcdBus <= 8'b00111000;
                     lcdRsSelect <= 1'b0;
                     lcdReadWriteSel <= 1'b0;
+						  errorLed <= 1'b0;
 
                     if(functionSetCounter == 2'b00)
                     begin
@@ -132,7 +137,8 @@ module lcdController
 
                     else if(functionSetCounter == 2'b11)
                     begin
-                        lcdBus <= 8'hZZ;
+                        errorLed <= 1'b0;
+								lcdBus <= 8'hZZ;
                         lcdRsSelect <= 1'b0;
                         lcdReadWriteSel <= 1'b1;
 
@@ -154,13 +160,15 @@ module lcdController
                 displaySet:
                 begin
                     //display off for init
+						  
                     lcdBus <= 8'hZZ;
                     lcdRsSelect <= 1'b0;
                     lcdReadWriteSel <= 1'b1;
 
                     if(displayOnOff == 1'b0)
                     begin
-                        if(lcdBus[7] == 1'b1)
+                        errorLed <= 1'b0;
+								if(lcdBus[7] == 1'b1)
                         begin
                             state <= displaySet;
                         end
@@ -172,12 +180,13 @@ module lcdController
                             lcdReadWriteSel <= 1'b0;
                             state <= displayClear;
                         end
-
+		
                     end
 
                     //Turn on display.
                     else
                     begin
+								errorLed <= 1'b0;
                         if(lcdBus[7] == 1'b1)
                         begin
                             state <= write;
@@ -185,10 +194,9 @@ module lcdController
 
                         else
                         begin
-                            lcdBus <= 8'b00000000;
+                            lcdBus <= 8'b00001100;
                             lcdRsSelect <= 1'b0;
                             lcdReadWriteSel <= 1'b0;
-                            //
                             state <= write;
                         end
                     end
@@ -197,6 +205,7 @@ module lcdController
 
                 displayClear:
                 begin
+						  errorLed <= 1'b0;
                     lcdBus <= 8'hZZ;
                     lcdRsSelect <= 1'b0;
                     lcdReadWriteSel <= 1'b1;
@@ -217,6 +226,7 @@ module lcdController
 
                 entryModeSet:
                 begin
+						  errorLed <= 1'b1;
                     lcdBus <= 8'hZZ;
                     lcdRsSelect <= 1'b0;
                     lcdReadWriteSel <= 1'b1;
@@ -228,30 +238,31 @@ module lcdController
 
                     else
                     begin
-                        lcdBus <= 8'b00000001;
+                        lcdBus <= 8'b00000100;
                         lcdRsSelect <= 1'b0;
                         lcdReadWriteSel <= 1'b0;
-                        displayOnOff <= 1'b1;
+                        displayOnOff <= 1'b0;
                         state <= displaySet;
                     end
                 end
-
+					 
                 write:
                 begin
+					     errorLed <= 1'b1;
                     state = write;//loop here for ever
                     if(addrOrData == 1'b0) //1'b0 is addr, 1'b1 is data
                     begin
-                        busLock <= 1'b1;//DO NOT CHANGE dataInBus.
+                        busLock <= 1'b0;//DO NOT CHANGE dataInBus.
                         lcdEnableOut <= 1'b1; //lcd chip enable
                         lcdRsSelect <= 1'b0;//write to DDRAM addr
                         lcdReadWriteSel <= 1'b0;//write to DDRAM addr
-                        lcdBus <= {1'b1, dataInBus[6:0]};//DDRAM addr
-
+                        //lcdBus <= {1'b1, dataInBus[6:0]};//DDRAM addr
+								lcdBus <={1'b1, 7'b0000000};
                         if(counter == wait50us)
                         begin
                             busLock <= 1'b0;//Change dataInBus
                             counter <= 20'b0;
-                            lcdEnableOut <= 1'b0; //lcd chip enable
+                            lcdEnableOut <= 1'b1; //lcd chip enable
                         end
 
                         else
@@ -262,17 +273,17 @@ module lcdController
 
                     else
                     begin
-                        busLock <= 1'b1;//DO NOT CHANGE dataInBus.
+                        busLock <= 1'b0;//DO NOT CHANGE dataInBus.
                         lcdEnableOut <= 1'b1; //lcd chip enable
                         lcdRsSelect <= 1'b1;//write to DDRAM addr
                         lcdReadWriteSel <= 1'b1;//write to DDRAM addr
-                        lcdBus <= dataInBus;
-
+                        //lcdBus <= dataInBus;
+								lcdBus <= 8'b00100000;
                         if(counter == wait50us)
                         begin
                             busLock <= 1'b0;//Change dataInBus
                             counter <= 20'b0;
-                            lcdEnableOut <= 1'b0; //lcd chip enable
+                            lcdEnableOut <= 1'b1; //lcd chip enable
                         end
 
                         else
@@ -281,10 +292,10 @@ module lcdController
                         end
                     end
                 end
-
+					 
                 default:
                 begin
-                    errorLed <= 1'b1;
+                    errorLed <= 1'b0;
                 end
             endcase
         end

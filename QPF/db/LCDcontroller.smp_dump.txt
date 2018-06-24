@@ -7,14 +7,13 @@ functionSetCounter.10 0 1 0 1
 functionSetCounter.11 1 0 0 1 
 
 State Machine - |lcdControllerTop|lcdController:myController|state
-Name state.write state.entryModeSet state.displayClear state.displaySet state.functionSet1 state.powerOn state.functionSet 
-state.powerOn 0 0 0 0 0 0 0 
-state.functionSet1 0 0 0 0 1 1 0 
-state.displaySet 0 0 0 1 0 1 0 
-state.displayClear 0 0 1 0 0 1 0 
-state.entryModeSet 0 1 0 0 0 1 0 
-state.write 1 0 0 0 0 1 0 
-state.functionSet 0 0 0 0 0 1 1 
+Name state.functionSet state.write state.entryModeSet state.displayClear state.displaySet state.powerOn 
+state.powerOn 0 0 0 0 0 0 
+state.displaySet 0 0 0 0 1 1 
+state.displayClear 0 0 0 1 0 1 
+state.entryModeSet 0 0 1 0 0 1 
+state.write 0 1 0 0 0 1 
+state.functionSet 1 0 0 0 0 1 
 
 State Machine - |lcdControllerTop|lcdInterface:myInterface|state
 Name state.ten state.hundred state.thousand state.tenThousand state.one 
