@@ -7,44 +7,59 @@
 module lcdController
 (
     input clk,
-    input addrOrData, //0 for addr and 1 for data.
     input lcdOnIn, //connected to switch on board to turn the LCD on or off, acts as reset.
-    input wire[7:0] dataInBus,
     inout reg[7:0] lcdBus,
+    output lcdOnOut,
     output reg lcdReadWriteSel, // LCD read/write select 0 = write, 1 = read
     output reg lcdRsSelect, //  LCD Command/Data Select, 0 = Command, 1 = Data
     output reg lcdEnableOut,
-    output reg errorLed,
-    output reg busLock //is the lcd bus ready? 0 bus is unlocked, 1 locked.
+    output reg errorLed
 );
-    //write and init operation states
+    //write and init main states.
     localparam  powerOn = 4'd0;
-    localparam  functionSet1 = 4'd1; //This is hard coded and not changed by user
+    localparam  functionSet = 4'd1; //This is hard coded and not changed by user
     localparam  displaySet = 4'd2;
     localparam  displayClear = 4'd3;
     localparam  entryModeSet = 4'd4;
     localparam  readBusyFlag = 4'd5;
-    localparam  write = 4'd7;
-    localparam  functionSet = 4'd8;
-    localparam  initCompleted = 4'd9;
+    localparam  write = 4'd6;
 
+    //substates
+    localparam  functionSet1 = 2'd0;
+    localparam  functionSet2 = 2'd1;
+    localparam  functionSet3 = 2'd2;
+    localparam  functionSet4 = 2'd3;
+    localparam  subState1 = 2'd0;
+    localparam  subState2 = 2'd1;
+    localparam  subState3 = 2'd2;
 
-    //clock waiting times in for  a 50MHz clock.
+    //LCD Commands
+    localparam  FUNCTION_SET =  8'b00111000;
+    localparam  DISPLAY_OFF = 8'b00001000;
+    localparam  DISPLAY_ON = 8'b00001100;
+    localparam  DISPLAY_CLEAR = 8'b00000001;
+    localparam  ENTRY_MODE_SET = 8'b00000110;
+
+    //clock waiting times in for a 50MHz clock.
     localparam  wait20ms = 20'd1000000;
     localparam  wait5ms = 20'd250000;
     localparam  wait1ms = 20'd50000;
     localparam  wait50us = 20'd2500;
+    localparam  wait100us = 20'd5000;
+    localparam  wait150us = 20'd7500;
+    localparam  wait260ns = 20'd26;
+    localparam  wait40ns = 20'd2;
 
     //counter declarations and state
     reg[19:0] counter;
     reg[3:0] state;
-
-    reg[1:0] functionSetCounter;
+    reg[1:0] subStates;
+    reg addrOrData;
+    reg[1:0] functionSetCase;
     reg displayOnOff;
 
     //continous assingment statements
-    //assign (dataValid)?(lcdBus = dataInBus):(lcdBus = 8'bzz);
-	 //errorLed <= 1'b0;
+    assign lcdOnOut = lcdOnIn;
     always@(posedge clk, negedge lcdOnIn)
     begin
         //reset and clear LCD completely.
@@ -53,20 +68,30 @@ module lcdController
             //reset counters and then go to the powerOnState
             state <= powerOn;
             counter <= 20'b0;
-            functionSetCounter <= 2'b00;
             displayOnOff <= 1'b0;
             lcdEnableOut <= 1'b0;
+            functionSetCase <= 2'b00;
+            errorLed <= 1'b0;
+            addrOrData <= 1'b0;
+            lcdBus <= 8'hZZ;
+            subStates <= 2'b00;
         end
 
         else
         begin
             case(state)
+                //Power on state. Waits more than the required 15ms here.
                 powerOn:
                 begin
+                    errorLed <= 1'b0;
+                    lcdEnableOut <= 1'b0;
+                    lcdRsSelect <= 1'b0;
+                    lcdReadWriteSel <= 1'b0;
+                    lcdBus <= 8'hZZ;
                     if(counter == wait20ms)
                     begin
                         counter <= 20'b0;
-                        state <= functionSet1;
+                        state <= functionSet;
                     end
 
                     else
@@ -76,216 +101,572 @@ module lcdController
                     end
                 end
 
+
+
+                /*
+                 * function set state. divided into 4 function set states
+                 * that are further divided into 3 substates. Each substate
+                 * deals with the function set transaction command.
+                 */
                 functionSet:
                 begin
-                    functionSetCounter <= 2'b00;
-                    lcdBus <= 8'b00111000;
-                    lcdRsSelect <= 1'b0;
-                    lcdReadWriteSel <= 1'b0;
-
-                    if(functionSetCounter == 2'b00)
-                    begin
-                        if(counter == wait5ms)
+                    errorLed <= 1'b0;
+                    case(functionSetCase)
+                        functionSet1:
                         begin
-                            counter <= 20'b0;
-                            state <= functionSet;
-                            functionSetCounter <= 2'b01;
-                        end
-
-                        else
-                        begin
-                            counter <= counter + 1'b1;
-                            state <= functionSet;
-                        end
-                    end
-
-                    else if(functionSetCounter == 2'b01)
-                    begin
-                        if(counter == wait5ms)
-                        begin
-                            counter <= 20'b0;
-                            state <= functionSet;
-                            functionSetCounter <= 2'b10;
-                        end
-                        else
-                        begin
-                            counter <= counter + 1'b1;
-                            state <= functionSet;
-                        end
-                    end
-
-                    else if(functionSetCounter == 2'b10)
-                    begin
-                        if(counter == wait1ms)
-                        begin
-                            counter <= 20'b0;
-                            state <= functionSet;
-                            functionSetCounter <= 2'b11;
-                        end
-
-                        else
-                        begin
-                            counter <= counter + 1'b1;
-                            state <= functionSet;
-                        end
-                    end
-
-                    else if(functionSetCounter == 2'b11)
-                    begin
-                        lcdBus <= 8'hZZ;
-                        lcdRsSelect <= 1'b0;
-                        lcdReadWriteSel <= 1'b1;
-
-                        if(lcdBus[7] == 1'b1)
-                        begin
-                            state <= functionSet;
-                        end
-
-                        else
-                        begin
-                            lcdBus <= 8'b00111000;
                             lcdRsSelect <= 1'b0;
                             lcdReadWriteSel <= 1'b0;
-                            state <= displaySet;
+                            case(subStates)
+                                subState1:
+                                begin
+                                    lcdEnableOut <= 1'b0;
+                                    lcdBus <= 8'hZZ;
+
+                                    subStates <= subState2;
+                                    functionSetCase <= functionSet1;
+                                    state <= functionSet;
+                                end
+
+                                subState2:
+                                begin
+                                    lcdEnableOut <= 1'b1;
+                                    lcdBus <= FUNCTION_SET;
+                                    if(counter == wait260ns)
+                                    begin
+                                        counter <= 20'b0;
+
+                                        subStates <= subState3;
+                                        functionSetCase <= functionSet1;
+                                        state <= functionSet;
+                                    end
+
+                                    else
+                                    begin
+                                        counter <= counter + 1'b1;
+
+                                        subStates <= subState2;
+                                        functionSetCase <= functionSet1;
+                                        state <= functionSet;
+                                    end
+                                end
+
+                                subState3:
+                                begin
+                                    lcdEnableOut <= 1'b0;
+                                    lcdBus <= 8'hZZ;
+                                    if(counter == wait5ms)
+                                    begin
+                                        counter <= 20'b0;
+
+                                        subStates <= subState1;
+                                        functionSetCase <= functionSet2;
+                                        state <= functionSet;
+                                    end
+
+                                    else
+                                    begin
+                                        counter <= counter + 1'b1;
+
+                                        subStates <= subState3;
+                                        functionSetCase <= functionSet1;
+                                        state <= functionSet;
+                                    end
+                                end
+                            endcase
                         end
-                    end
+
+                        functionSet2:
+                        begin
+                            lcdRsSelect <= 1'b0;
+                            lcdReadWriteSel <= 1'b0;
+                            case(subStates)
+                                subState1:
+                                begin
+                                    lcdEnableOut <= 1'b0;
+                                    lcdBus <= 8'hZZ;
+
+                                    subStates <= subState2;
+                                    functionSetCase <= functionSet2;
+                                    state <= functionSet;
+                                end
+
+                                subState2:
+                                begin
+                                    lcdEnableOut <= 1'b1;
+                                    lcdBus <= FUNCTION_SET;
+                                    if(counter == wait260ns)
+                                    begin
+                                        counter <= 20'b0;
+
+                                        subStates <= subState3;
+                                        functionSetCase <= functionSet2;
+                                        state <= functionSet;
+                                    end
+
+                                    else
+                                    begin
+                                        counter <= counter + 1'b1;
+
+                                        subStates <= subState2;
+                                        functionSetCase <= functionSet2;
+                                        state <= functionSet;
+                                    end
+                                end
+
+                                subState3:
+                                begin
+                                    lcdEnableOut <= 1'b0;
+                                    lcdBus <= 8'hZZ;
+                                    if(counter == wait150us)
+                                    begin
+                                        counter <= 20'b0;
+
+                                        subStates <= subState1;
+                                        functionSetCase <= functionSet3;
+                                        state <= functionSet;
+                                    end
+
+                                    else
+                                    begin
+                                        counter <= counter + 1'b1;
+
+                                        subStates <= subState3;
+                                        functionSetCase <= functionSet2;
+                                        state <= functionSet;
+                                    end
+                                end
+                            endcase
+                        end
+
+                        functionSet3:
+                        begin
+                            lcdRsSelect <= 1'b0;
+                            lcdReadWriteSel <= 1'b0;
+                            case(subStates)
+                                subState1:
+                                begin
+                                    lcdEnableOut <= 1'b0;
+                                    lcdBus <= 8'hZZ;
+
+                                    subStates <= subState2;
+                                    functionSetCase <= functionSet3;
+                                    state <= functionSet;
+                                end
+
+                                subState2:
+                                begin
+                                    lcdEnableOut <= 1'b1;
+                                    lcdBus <= FUNCTION_SET;
+                                    if(counter == wait260ns)
+                                    begin
+                                        counter <= 20'b0;
+
+                                        subStates <= subState3;
+                                        functionSetCase <= functionSet3;
+                                        state <= functionSet;
+                                    end
+
+                                    else
+                                    begin
+                                        counter <= counter + 1'b1;
+
+                                        subStates <= subState2;
+                                        functionSetCase <= functionSet3;
+                                        state <= functionSet;
+                                    end
+                                end
+
+                                subState3:
+                                begin
+                                    lcdEnableOut <= 1'b0;
+                                    lcdBus <= 8'hZZ;
+                                    if(counter == wait150us)
+                                    begin
+                                        counter <= 20'b0;
+
+                                        subStates <= subState1;
+                                        functionSetCase <= functionSet4;
+                                        state <= functionSet;
+                                    end
+
+                                    else
+                                    begin
+                                        counter <= counter + 1'b1;
+
+                                        subStates <= subState3;
+                                        functionSetCase <= functionSet3;
+                                        state <= functionSet;
+                                    end
+                                end
+                            endcase
+                        end
+
+                        functionSet4:
+                        begin
+                            lcdRsSelect <= 1'b0;
+                            lcdReadWriteSel <= 1'b0;
+                            case(subStates)
+                                subState1:
+                                begin
+                                    lcdEnableOut <= 1'b0;
+                                    lcdBus <= 8'hZZ;
+
+                                    subStates <= subState2;
+                                    functionSetCase <= functionSet4;
+                                    state <= functionSet;
+                                end
+
+                                subState2:
+                                begin
+                                    lcdEnableOut <= 1'b1;
+                                    lcdBus <= FUNCTION_SET;
+                                    if(counter == wait260ns)
+                                    begin
+                                        counter <= 20'b0;
+
+                                        subStates <= subState3;
+                                        functionSetCase <= functionSet4;
+                                        state <= functionSet;
+                                    end
+
+                                    else
+                                    begin
+                                        counter <= counter + 1'b1;
+
+                                        subStates <= subState2;
+                                        functionSetCase <= functionSet4;
+                                        state <= functionSet;
+                                    end
+                                end
+
+                                subState3:
+                                begin
+                                    lcdEnableOut <= 1'b0;
+                                    lcdBus <= 8'hZZ;
+                                    if(counter == wait150us)
+                                    begin
+                                        counter <= 20'b0;
+
+                                        state <= displaySet;
+                                        subStates <= subState1;
+                                    end
+
+                                    else
+                                    begin
+                                        counter <= counter + 1'b1;
+
+                                        subStates <= subState3;
+                                        functionSetCase <= functionSet4;
+                                        state <= functionSet;
+                                    end
+                                end
+                            endcase
+                        end
+                    endcase
                 end
 
                 displaySet:
                 begin
                     //display off for init
-                    lcdBus <= 8'hZZ;
+                    errorLed <= 1'b0;
                     lcdRsSelect <= 1'b0;
-                    lcdReadWriteSel <= 1'b1;
+                    lcdReadWriteSel <= 1'b0;
 
                     if(displayOnOff == 1'b0)
                     begin
-                        if(lcdBus[7] == 1'b1)
-                        begin
-                            state <= displaySet;
-                        end
+                        case(subStates)
+                            subState1:
+                            begin
+                                lcdEnableOut <= 1'b0;
+                                lcdBus <= 8'hZZ;
 
-                        else
-                        begin
-                            lcdBus <= 8'b00001000;
-                            lcdRsSelect <= 1'b0;
-                            lcdReadWriteSel <= 1'b0;
-                            state <= displayClear;
-                        end
+                                subStates <= subState2;
+                                state <= displaySet;
+                            end
 
-                    end
+                            subState2:
+                            begin
+                                lcdEnableOut <= 1'b1;
+                                lcdBus <= DISPLAY_OFF;
+                                if(counter == wait260ns)
+                                begin
+                                    counter <= 20'b0;
+
+                                    subStates <= subState3;
+                                    state <= displaySet;
+                                end
+
+                                else
+                                begin
+                                    counter <= counter + 1'b1;
+
+                                    subStates <= subState2;
+                                    state <= displaySet;
+                                end
+                            end
+
+                            subState3:
+                            begin
+                                lcdEnableOut <= 1'b0;
+                                lcdBus <= 8'hZZ;
+                                if(counter == wait50us)
+                                begin
+                                    counter <= 20'b0;
+
+                                    subStates <= subState1;
+                                    state <= displaySet;
+                                end
+
+                                else
+                                begin
+                                    counter <= counter + 1'b1;
+
+                                    subStates <= subState3;
+                                    state <= displaySet;
+                                end
+                            end
+                        endcase
+							end
 
                     //Turn on display.
                     else
                     begin
-                        if(lcdBus[7] == 1'b1)
-                        begin
-                            state <= write;
-                        end
+                        case(subStates)
+                            subState1:
+                            begin
+                                lcdEnableOut <= 1'b0;
+                                lcdBus <= 8'hZZ;
 
-                        else
-                        begin
-                            lcdBus <= 8'b00000000;
-                            lcdRsSelect <= 1'b0;
-                            lcdReadWriteSel <= 1'b0;
-                            //
-                            state <= write;
-                        end
+                                subStates <= subState2;
+                                state <= displaySet;
+                            end
+
+                            subState2:
+                            begin
+                                lcdEnableOut <= 1'b1;
+                                lcdBus <= DISPLAY_ON;
+                                if(counter == wait260ns)
+                                begin
+                                    counter <= 20'b0;
+
+                                    subStates <= subState3;
+                                    state <= displaySet;
+                                end
+
+                                else
+                                begin
+                                    counter <= counter + 1'b1;
+
+                                    subStates <= subState2;
+                                    state <= displaySet;
+                                end
+                            end
+
+                            subState3:
+                            begin
+                                lcdEnableOut <= 1'b0;
+                                lcdBus <= 8'hZZ;
+                                if(counter == wait50us)
+                                begin
+                                    counter <= 20'b0;
+
+                                    subStates <= subState1;
+                                    state <= displayClear;
+                                end
+
+                                else
+                                begin
+                                    counter <= counter + 1'b1;
+
+                                    subStates <= subState3;
+                                    state <= displaySet;
+                                end
+                            end
+                        endcase
                     end
-
                 end
 
                 displayClear:
                 begin
-                    lcdBus <= 8'hZZ;
+                    errorLed <= 1'b0;
                     lcdRsSelect <= 1'b0;
-                    lcdReadWriteSel <= 1'b1;
+                    lcdReadWriteSel <= 1'b0;
 
-                    if(lcdBus[7] == 1'b1)
-                    begin
-                        state <= displayClear;
-                    end
+                    case(subStates)
+                        subState1:
+                        begin
+                            lcdEnableOut <= 1'b0;
+                            lcdBus <= 8'hZZ;
 
-                    else
-                    begin
-                        lcdBus <= 8'b00000001;
-                        lcdRsSelect <= 1'b0;
-                        lcdReadWriteSel <= 1'b0;
-                        state <= entryModeSet;
-                    end
+                            subStates <= subState2;
+                            state <= displayClear;
+                        end
+
+                        subState2:
+                        begin
+                            lcdEnableOut <= 1'b1;
+                            lcdBus <= DISPLAY_CLEAR;
+                            if(counter == wait260ns)
+                            begin
+                                counter <= 20'b0;
+
+                                subStates <= subState3;
+                                state <= displayClear;
+                            end
+
+                            else
+                            begin
+                                counter <= counter + 1'b1;
+
+                                subStates <= subState2;
+                                state <= displayClear;
+                            end
+                        end
+
+                        subState3:
+                        begin
+                            lcdEnableOut <= 1'b0;
+                            lcdBus <= 8'hZZ;
+                            if(counter == wait5ms)
+                            begin
+                                counter <= 20'b0;
+
+                                subStates <= subState1;
+                                state <= entryModeSet;
+                            end
+
+                            else
+                            begin
+                                counter <= counter + 1'b1;
+
+                                subStates <= subState3;
+                                state <= displayClear;
+                            end
+                        end
+                    endcase
                 end
 
                 entryModeSet:
                 begin
-                    lcdBus <= 8'hZZ;
+                    errorLed <= 1'b0;
                     lcdRsSelect <= 1'b0;
-                    lcdReadWriteSel <= 1'b1;
+                    lcdReadWriteSel <= 1'b0;
 
-                    if(lcdBus[7] == 1'b1)
-                    begin
-                        state <= entryModeSet;
-                    end
+                    case(subStates)
+                        subState1:
+                        begin
+                            lcdEnableOut <= 1'b0;
+                            lcdBus <= 8'hZZ;
 
-                    else
-                    begin
-                        lcdBus <= 8'b00000001;
-                        lcdRsSelect <= 1'b0;
-                        lcdReadWriteSel <= 1'b0;
-                        displayOnOff <= 1'b1;
-                        state <= displaySet;
-                    end
+                            subStates <= subState2;
+                            state <= entryModeSet;
+                        end
+
+                        subState2:
+                        begin
+                            lcdEnableOut <= 1'b1;
+                            lcdBus <= ENTRY_MODE_SET;
+                            displayOnOff <= 1'b1;
+                            if(counter == wait260ns)
+                            begin
+                                counter <= 20'b0;
+
+                                subStates <= subState3;
+                                state <= entryModeSet;
+                            end
+
+                            else
+                            begin
+                                counter <= counter + 1'b1;
+
+                                subStates <= subState2;
+                                state <= entryModeSet;
+                            end
+                        end
+
+                        subState3:
+                        begin
+                            lcdEnableOut <= 1'b0;
+                            lcdBus <= 8'hZZ;
+                            if(counter == wait5ms)
+                            begin
+                                counter <= 20'b0;
+
+                                subStates <= subState1;
+                                state <= displaySet;
+                            end
+
+                            else
+                            begin
+                                counter <= counter + 1'b1;
+
+                                subStates <= subState3;
+                                state <= entryModeSet;
+                            end
+                        end
+                    endcase
                 end
 
                 write:
                 begin
-                    state = write;//loop here for ever
-                    if(addrOrData == 1'b0) //1'b0 is addr, 1'b1 is data
-                    begin
-                        busLock <= 1'b1;//DO NOT CHANGE dataInBus.
-                        lcdEnableOut <= 1'b1; //lcd chip enable
-                        lcdRsSelect <= 1'b0;//write to DDRAM addr
-                        lcdReadWriteSel <= 1'b0;//write to DDRAM addr
-                        lcdBus <= {1'b1, dataInBus[6:0]};//DDRAM addr
+                /*
+							  errorLed <= 1'b1;
+							  state = write;//loop here for ever
+							  if(addrOrData == 1'b0) //1'b0 is addr, 1'b1 is data
+							  begin
+									lcdEnableOut <= 1'b1;
+									lcdBus <= 8'hZZ;
+									lcdRsSelect <= 1'b0;
+									lcdReadWriteSel <= 1'b1;
 
-                        if(counter == wait50us)
-                        begin
-                            busLock <= 1'b0;//Change dataInBus
-                            counter <= 20'b0;
-                            lcdEnableOut <= 1'b0; //lcd chip enable
-                        end
+									if(lcdBus[7] == 1'b0)
+									begin
+										 //busLock <= 1'b0;//Change dataInBus
+										 addrOrData <= 1'b1;
 
-                        else
-                        begin
-                            counter <= counter + 1'b1;
-                        end
-                    end
+										 //busLock <= 1'b1;//DO NOT CHANGE dataInBus.
+										 lcdEnableOut <= 1'b1; //lcd chip enable
+										 lcdRsSelect <= 1'b0;//write to DDRAM addr
+										 lcdReadWriteSel <= 1'b0;//write to DDRAM addr
+										 lcdBus <= {1'b1, 7'b0000000};//DDRAM addr
 
-                    else
-                    begin
-                        busLock <= 1'b1;//DO NOT CHANGE dataInBus.
-                        lcdEnableOut <= 1'b1; //lcd chip enable
-                        lcdRsSelect <= 1'b1;//write to DDRAM addr
-                        lcdReadWriteSel <= 1'b1;//write to DDRAM addr
-                        lcdBus <= dataInBus;
+									end
 
-                        if(counter == wait50us)
-                        begin
-                            busLock <= 1'b0;//Change dataInBus
-                            counter <= 20'b0;
-                            lcdEnableOut <= 1'b0; //lcd chip enable
-                        end
+									else
+									begin
+										 state = write;
+									end
+							  end
 
-                        else
-                        begin
-                            counter <= counter + 1'b1;
-                        end
-                    end
-                end
+							  else
+							  begin
+									//busLock <= 1'b1;//DO NOT CHANGE dataInBus.
+									lcdEnableOut <= 1'b1; //lcd chip enable
+									lcdRsSelect <= 1'b1;//write to DDRAM addr
+									lcdReadWriteSel <= 1'b1;//write to DDRAM addr
+									lcdBus <= 8'b00100000;
 
-                default:
-                begin
-                    errorLed <= 1'b1;
-                end
+									if(counter == wait50us)
+									begin
+										 //busLock <= 1'b0;//Change dataInBus
+										 counter <= 20'b0;
+										 lcdEnableOut <= 1'b1; //lcd chip enable
+													 addrOrData <= 1'b0;
+									end
+
+									else
+									begin
+										 counter <= counter + 1'b1;
+									end
+							  end
+						 end
+
+						 default:
+						 begin
+							  errorLed <= 1'b0;
+						 end
+					 */
+					 end
             endcase
         end
     end

@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C35F672C6
-set_global_assignment -name TOP_LEVEL_ENTITY lcdControllerTop
+set_global_assignment -name TOP_LEVEL_ENTITY lcdController
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:57:06  JUNE 16, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.0
@@ -50,12 +50,25 @@ set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VERILOG_FILE ../source/lcdControllerTop.v
-set_global_assignment -name VERILOG_FILE ../source/patternConverter.v
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name SDC_FILE ../source/LCDcontroller.sdc
 set_global_assignment -name VERILOG_FILE ../source/lcdController.v
-set_global_assignment -name VERILOG_FILE ../source/bcdConverter.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_N2 -to clk
+set_location_assignment PIN_AE23 -to errorLed
+set_location_assignment PIN_H3 -to lcdBus[7]
+set_location_assignment PIN_H4 -to lcdBus[6]
+set_location_assignment PIN_J3 -to lcdBus[5]
+set_location_assignment PIN_J4 -to lcdBus[4]
+set_location_assignment PIN_H2 -to lcdBus[3]
+set_location_assignment PIN_H1 -to lcdBus[2]
+set_location_assignment PIN_J2 -to lcdBus[1]
+set_location_assignment PIN_J1 -to lcdBus[0]
+set_location_assignment PIN_K3 -to lcdEnableOut
+set_location_assignment PIN_V2 -to lcdOnIn
+set_location_assignment PIN_L4 -to lcdOnOut
+set_location_assignment PIN_K4 -to lcdReadWriteSel
+set_location_assignment PIN_K1 -to lcdRsSelect
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
