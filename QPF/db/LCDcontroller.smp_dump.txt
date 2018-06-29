@@ -13,11 +13,14 @@ functionSetCase.functionSet3 0 1 0 1
 functionSetCase.functionSet4 1 0 0 1 
 
 State Machine - |lcdController|state
-Name state.writeData state.writeAddr state.entryModeSet state.displayClear state.displaySet state.functionSet state.powerOn 
-state.powerOn 0 0 0 0 0 0 0 
-state.functionSet 0 0 0 0 0 1 1 
-state.displaySet 0 0 0 0 1 0 1 
-state.displayClear 0 0 0 1 0 0 1 
-state.entryModeSet 0 0 1 0 0 0 1 
-state.writeAddr 0 1 0 0 0 0 1 
-state.writeData 1 0 0 0 0 0 1 
+Name state.cursorCarriageReturn state.cursorShift state.cursorLogicState state.writeData state.writeAddr state.entryModeSet state.displayClear state.displaySet state.functionSet state.powerOn 
+state.powerOn 0 0 0 0 0 0 0 0 0 0 
+state.functionSet 0 0 0 0 0 0 0 0 1 1 
+state.displaySet 0 0 0 0 0 0 0 1 0 1 
+state.displayClear 0 0 0 0 0 0 1 0 0 1 
+state.entryModeSet 0 0 0 0 0 1 0 0 0 1 
+state.writeAddr 0 0 0 0 1 0 0 0 0 1 
+state.writeData 0 0 0 1 0 0 0 0 0 1 
+state.cursorLogicState 0 0 1 0 0 0 0 0 0 1 
+state.cursorShift 0 1 0 0 0 0 0 0 0 1 
+state.cursorCarriageReturn 1 0 0 0 0 0 0 0 0 1 

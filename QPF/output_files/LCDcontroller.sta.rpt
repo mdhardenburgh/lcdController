@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for LCDcontroller
-Tue Jun 26 20:41:41 2018
+Thu Jun 28 19:51:46 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -118,7 +118,7 @@ applicable agreement for further details.
 +-----------------------------+--------+--------------------------+
 ; SDC File Path               ; Status ; Read at                  ;
 +-----------------------------+--------+--------------------------+
-; ../source/LCDcontroller.sdc ; OK     ; Tue Jun 26 20:41:40 2018 ;
+; ../source/LCDcontroller.sdc ; OK     ; Thu Jun 28 19:51:45 2018 ;
 +-----------------------------+--------+--------------------------+
 
 
@@ -136,7 +136,7 @@ applicable agreement for further details.
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 138.41 MHz ; 138.41 MHz      ; clk        ;      ;
+; 126.41 MHz ; 126.41 MHz      ; clk        ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -146,7 +146,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clk   ; 12.775 ; 0.000         ;
+; clk   ; 12.089 ; 0.000         ;
 +-------+--------+---------------+
 
 
@@ -185,106 +185,106 @@ No paths to report.
 +--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
-; 12.775 ; counter[13] ; counter[10] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.261      ;
-; 12.775 ; counter[13] ; counter[12] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.261      ;
-; 12.775 ; counter[13] ; counter[13] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.261      ;
-; 12.775 ; counter[13] ; counter[15] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.261      ;
-; 12.775 ; counter[13] ; counter[16] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.261      ;
-; 12.775 ; counter[13] ; counter[17] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.261      ;
-; 12.775 ; counter[13] ; counter[18] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.261      ;
-; 12.775 ; counter[13] ; counter[19] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.261      ;
-; 12.775 ; counter[13] ; counter[11] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.261      ;
-; 12.775 ; counter[13] ; counter[14] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.261      ;
-; 12.871 ; counter[15] ; counter[10] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.165      ;
-; 12.871 ; counter[15] ; counter[12] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.165      ;
-; 12.871 ; counter[15] ; counter[13] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.165      ;
-; 12.871 ; counter[15] ; counter[15] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.165      ;
-; 12.871 ; counter[15] ; counter[16] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.165      ;
-; 12.871 ; counter[15] ; counter[17] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.165      ;
-; 12.871 ; counter[15] ; counter[18] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.165      ;
-; 12.871 ; counter[15] ; counter[19] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.165      ;
-; 12.871 ; counter[15] ; counter[11] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.165      ;
-; 12.871 ; counter[15] ; counter[14] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.165      ;
-; 13.202 ; counter[0]  ; counter[10] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.840      ;
-; 13.202 ; counter[0]  ; counter[12] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.840      ;
-; 13.202 ; counter[0]  ; counter[13] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.840      ;
-; 13.202 ; counter[0]  ; counter[15] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.840      ;
-; 13.202 ; counter[0]  ; counter[16] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.840      ;
-; 13.202 ; counter[0]  ; counter[17] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.840      ;
-; 13.202 ; counter[0]  ; counter[18] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.840      ;
-; 13.202 ; counter[0]  ; counter[19] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.840      ;
-; 13.202 ; counter[0]  ; counter[11] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.840      ;
-; 13.202 ; counter[0]  ; counter[14] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.840      ;
-; 13.223 ; counter[13] ; counter[0]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.807      ;
-; 13.223 ; counter[13] ; counter[1]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.807      ;
-; 13.223 ; counter[13] ; counter[2]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.807      ;
-; 13.223 ; counter[13] ; counter[3]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.807      ;
-; 13.223 ; counter[13] ; counter[4]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.807      ;
-; 13.223 ; counter[13] ; counter[5]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.807      ;
-; 13.223 ; counter[13] ; counter[6]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.807      ;
-; 13.223 ; counter[13] ; counter[7]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.807      ;
-; 13.223 ; counter[13] ; counter[8]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.807      ;
-; 13.223 ; counter[13] ; counter[9]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.807      ;
-; 13.319 ; counter[15] ; counter[0]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.711      ;
-; 13.319 ; counter[15] ; counter[1]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.711      ;
-; 13.319 ; counter[15] ; counter[2]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.711      ;
-; 13.319 ; counter[15] ; counter[3]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.711      ;
-; 13.319 ; counter[15] ; counter[4]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.711      ;
-; 13.319 ; counter[15] ; counter[5]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.711      ;
-; 13.319 ; counter[15] ; counter[6]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.711      ;
-; 13.319 ; counter[15] ; counter[7]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.711      ;
-; 13.319 ; counter[15] ; counter[8]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.711      ;
-; 13.319 ; counter[15] ; counter[9]  ; clk          ; clk         ; 20.000       ; -0.006     ; 6.711      ;
-; 13.463 ; counter[5]  ; counter[10] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.579      ;
-; 13.463 ; counter[5]  ; counter[12] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.579      ;
-; 13.463 ; counter[5]  ; counter[13] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.579      ;
-; 13.463 ; counter[5]  ; counter[15] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.579      ;
-; 13.463 ; counter[5]  ; counter[16] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.579      ;
-; 13.463 ; counter[5]  ; counter[17] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.579      ;
-; 13.463 ; counter[5]  ; counter[18] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.579      ;
-; 13.463 ; counter[5]  ; counter[19] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.579      ;
-; 13.463 ; counter[5]  ; counter[11] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.579      ;
-; 13.463 ; counter[5]  ; counter[14] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.579      ;
-; 13.650 ; counter[0]  ; counter[0]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.386      ;
-; 13.650 ; counter[0]  ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.386      ;
-; 13.650 ; counter[0]  ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.386      ;
-; 13.650 ; counter[0]  ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.386      ;
-; 13.650 ; counter[0]  ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.386      ;
-; 13.650 ; counter[0]  ; counter[5]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.386      ;
-; 13.650 ; counter[0]  ; counter[6]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.386      ;
-; 13.650 ; counter[0]  ; counter[7]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.386      ;
-; 13.650 ; counter[0]  ; counter[8]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.386      ;
-; 13.650 ; counter[0]  ; counter[9]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.386      ;
-; 13.782 ; counter[9]  ; counter[10] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.260      ;
-; 13.782 ; counter[9]  ; counter[12] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.260      ;
-; 13.782 ; counter[9]  ; counter[13] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.260      ;
-; 13.782 ; counter[9]  ; counter[15] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.260      ;
-; 13.782 ; counter[9]  ; counter[16] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.260      ;
-; 13.782 ; counter[9]  ; counter[17] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.260      ;
-; 13.782 ; counter[9]  ; counter[18] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.260      ;
-; 13.782 ; counter[9]  ; counter[19] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.260      ;
-; 13.782 ; counter[9]  ; counter[11] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.260      ;
-; 13.782 ; counter[9]  ; counter[14] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.260      ;
-; 13.882 ; counter[8]  ; counter[10] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.160      ;
-; 13.882 ; counter[8]  ; counter[12] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.160      ;
-; 13.882 ; counter[8]  ; counter[13] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.160      ;
-; 13.882 ; counter[8]  ; counter[15] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.160      ;
-; 13.882 ; counter[8]  ; counter[16] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.160      ;
-; 13.882 ; counter[8]  ; counter[17] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.160      ;
-; 13.882 ; counter[8]  ; counter[18] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.160      ;
-; 13.882 ; counter[8]  ; counter[19] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.160      ;
-; 13.882 ; counter[8]  ; counter[11] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.160      ;
-; 13.882 ; counter[8]  ; counter[14] ; clk          ; clk         ; 20.000       ; 0.006      ; 6.160      ;
-; 13.911 ; counter[5]  ; counter[0]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.125      ;
-; 13.911 ; counter[5]  ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.125      ;
-; 13.911 ; counter[5]  ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.125      ;
-; 13.911 ; counter[5]  ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.125      ;
-; 13.911 ; counter[5]  ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.125      ;
-; 13.911 ; counter[5]  ; counter[5]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.125      ;
-; 13.911 ; counter[5]  ; counter[6]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.125      ;
-; 13.911 ; counter[5]  ; counter[7]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.125      ;
-; 13.911 ; counter[5]  ; counter[8]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.125      ;
-; 13.911 ; counter[5]  ; counter[9]  ; clk          ; clk         ; 20.000       ; 0.000      ; 6.125      ;
+; 12.089 ; counter[13] ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.949      ;
+; 12.089 ; counter[13] ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.949      ;
+; 12.089 ; counter[13] ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.949      ;
+; 12.089 ; counter[13] ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.949      ;
+; 12.089 ; counter[13] ; counter[5]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.949      ;
+; 12.089 ; counter[13] ; counter[6]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.949      ;
+; 12.089 ; counter[13] ; counter[7]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.949      ;
+; 12.089 ; counter[13] ; counter[0]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.949      ;
+; 12.102 ; counter[13] ; counter[8]  ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[9]  ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[10] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[11] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[12] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[13] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[15] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[16] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[17] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[18] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[19] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[20] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[21] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[22] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[23] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.102 ; counter[13] ; counter[14] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.934      ;
+; 12.123 ; counter[20] ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.915      ;
+; 12.123 ; counter[20] ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.915      ;
+; 12.123 ; counter[20] ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.915      ;
+; 12.123 ; counter[20] ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.915      ;
+; 12.123 ; counter[20] ; counter[5]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.915      ;
+; 12.123 ; counter[20] ; counter[6]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.915      ;
+; 12.123 ; counter[20] ; counter[7]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.915      ;
+; 12.123 ; counter[20] ; counter[0]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.915      ;
+; 12.126 ; counter[23] ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.912      ;
+; 12.126 ; counter[23] ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.912      ;
+; 12.126 ; counter[23] ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.912      ;
+; 12.126 ; counter[23] ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.912      ;
+; 12.126 ; counter[23] ; counter[5]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.912      ;
+; 12.126 ; counter[23] ; counter[6]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.912      ;
+; 12.126 ; counter[23] ; counter[7]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.912      ;
+; 12.126 ; counter[23] ; counter[0]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.912      ;
+; 12.136 ; counter[20] ; counter[8]  ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[9]  ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[10] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[11] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[12] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[13] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[15] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[16] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[17] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[18] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[19] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[20] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[21] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[22] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[23] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.136 ; counter[20] ; counter[14] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.900      ;
+; 12.139 ; counter[23] ; counter[8]  ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[9]  ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[10] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[11] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[12] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[13] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[15] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[16] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[17] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[18] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[19] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[20] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[21] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[22] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[23] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.139 ; counter[23] ; counter[14] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.897      ;
+; 12.301 ; counter[21] ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.737      ;
+; 12.301 ; counter[21] ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.737      ;
+; 12.301 ; counter[21] ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.737      ;
+; 12.301 ; counter[21] ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.737      ;
+; 12.301 ; counter[21] ; counter[5]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.737      ;
+; 12.301 ; counter[21] ; counter[6]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.737      ;
+; 12.301 ; counter[21] ; counter[7]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.737      ;
+; 12.301 ; counter[21] ; counter[0]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.737      ;
+; 12.314 ; counter[21] ; counter[8]  ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[9]  ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[10] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[11] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[12] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[13] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[15] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[16] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[17] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[18] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[19] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[20] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[21] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[22] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[23] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.314 ; counter[21] ; counter[14] ; clk          ; clk         ; 20.000       ; 0.000      ; 7.722      ;
+; 12.448 ; counter[22] ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.590      ;
+; 12.448 ; counter[22] ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.590      ;
+; 12.448 ; counter[22] ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.590      ;
+; 12.448 ; counter[22] ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.002      ; 7.590      ;
 +--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -294,105 +294,105 @@ No paths to report.
 ; Slack ; From Node                    ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
 ; 0.391 ; state.powerOn                ; state.powerOn                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; functionSetCase.00           ; functionSetCase.00           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; subStates.subState2          ; subStates.subState2          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; displayOnOff                 ; displayOnOff                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; state.displayClear           ; state.displayClear           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; state.entryModeSet           ; state.entryModeSet           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
-; 0.391 ; state.writeData              ; state.writeData              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
-; 0.391 ; state.writeAddr              ; state.writeAddr              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
-; 0.391 ; functionSetCase.00           ; functionSetCase.00           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; functionSetCase.functionSet2 ; functionSetCase.functionSet2 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; functionSetCase.functionSet3 ; functionSetCase.functionSet3 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; functionSetCase.functionSet4 ; functionSetCase.functionSet4 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; state.functionSet            ; state.functionSet            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
-; 0.528 ; functionSetCase.functionSet2 ; functionSetCase.functionSet3 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.794      ;
-; 0.529 ; functionSetCase.functionSet3 ; functionSetCase.functionSet4 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.795      ;
-; 0.532 ; subStates.subState2          ; lcdBus[2]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.798      ;
-; 0.535 ; displayOnOff                 ; state.displayClear           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.801      ;
-; 0.539 ; functionSetCase.00           ; functionSetCase.functionSet2 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
-; 0.544 ; counter[19]                  ; counter[19]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.810      ;
-; 0.544 ; state.writeAddr              ; errorLed~reg0                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.810      ;
-; 0.549 ; state.writeData              ; lcdRsSelect~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.815      ;
-; 0.549 ; state.writeAddr              ; lcdBus[7]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.815      ;
-; 0.568 ; state.entryModeSet           ; lcdBus[2]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.834      ;
-; 0.571 ; state.entryModeSet           ; displayOnOff                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.837      ;
-; 0.575 ; state.entryModeSet           ; lcdBus[1]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.841      ;
-; 0.720 ; state.displayClear           ; lcdBus[0]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.986      ;
-; 0.795 ; counter[10]                  ; counter[10]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.061      ;
-; 0.805 ; subStates.00                 ; subStates.subState2          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.071      ;
-; 0.805 ; functionSetCase.functionSet4 ; state.functionSet            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.071      ;
-; 0.810 ; functionSetCase.functionSet4 ; state.displaySet             ; clk          ; clk         ; 0.000        ; 0.000      ; 1.076      ;
-; 0.810 ; displayOnOff                 ; lcdBus[2]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.076      ;
-; 0.811 ; counter[5]                   ; counter[5]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.077      ;
-; 0.812 ; counter[1]                   ; counter[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.078      ;
-; 0.814 ; counter[11]                  ; counter[11]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.080      ;
-; 0.815 ; counter[3]                   ; counter[3]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.081      ;
-; 0.817 ; counter[8]                   ; counter[8]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.083      ;
-; 0.820 ; state.functionSet            ; functionSetCase.00           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.086      ;
-; 0.821 ; counter[9]                   ; counter[9]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.087      ;
-; 0.824 ; counter[7]                   ; counter[7]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.090      ;
-; 0.825 ; counter[12]                  ; counter[12]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.091      ;
-; 0.826 ; counter[14]                  ; counter[14]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.092      ;
-; 0.828 ; counter[17]                  ; counter[17]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.094      ;
-; 0.842 ; counter[0]                   ; counter[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.108      ;
-; 0.844 ; counter[18]                  ; counter[18]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.110      ;
-; 0.849 ; counter[13]                  ; counter[13]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.115      ;
-; 0.850 ; counter[15]                  ; counter[15]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.116      ;
-; 0.854 ; counter[16]                  ; counter[16]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.120      ;
-; 0.855 ; state.writeAddr              ; state.writeData              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.121      ;
-; 0.859 ; state.writeData              ; lcdBus[5]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.125      ;
-; 0.859 ; state.writeData              ; state.writeAddr              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.125      ;
-; 0.860 ; state.writeData              ; errorLed~reg0                ; clk          ; clk         ; 0.000        ; 0.000      ; 1.126      ;
-; 0.862 ; counter[2]                   ; counter[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.128      ;
-; 0.867 ; counter[6]                   ; counter[6]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.133      ;
-; 0.868 ; counter[4]                   ; counter[4]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.134      ;
-; 0.877 ; state.displayClear           ; state.entryModeSet           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.143      ;
-; 0.939 ; state.powerOn                ; state.functionSet            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.205      ;
-; 0.958 ; state.functionSet            ; functionSetCase.functionSet2 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.224      ;
-; 0.958 ; state.functionSet            ; functionSetCase.functionSet3 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.224      ;
-; 0.995 ; subStates.subState2          ; displayOnOff                 ; clk          ; clk         ; 0.000        ; 0.002      ; 1.263      ;
-; 1.017 ; state.displaySet             ; lcdBus[3]~reg0               ; clk          ; clk         ; 0.000        ; -0.014     ; 1.269      ;
-; 1.106 ; subStates.subState2          ; lcdBus[1]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.372      ;
-; 1.109 ; subStates.subState2          ; lcdBus[0]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.375      ;
-; 1.116 ; subStates.subState2          ; lcdBus[7]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.382      ;
-; 1.117 ; subStates.subState2          ; lcdEnableOut~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.383      ;
-; 1.117 ; subStates.subState2          ; lcdBus[6]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.383      ;
-; 1.118 ; subStates.subState2          ; lcdBus[3]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.384      ;
-; 1.118 ; subStates.subState2          ; lcdBus[4]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.384      ;
-; 1.119 ; subStates.subState2          ; lcdBus[5]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.385      ;
-; 1.178 ; counter[10]                  ; counter[11]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.444      ;
-; 1.194 ; counter[5]                   ; counter[6]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.460      ;
-; 1.197 ; counter[11]                  ; counter[12]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.463      ;
-; 1.198 ; counter[3]                   ; counter[4]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.464      ;
-; 1.200 ; counter[8]                   ; counter[9]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.466      ;
-; 1.207 ; counter[7]                   ; counter[8]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.473      ;
-; 1.208 ; counter[12]                  ; counter[13]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.474      ;
-; 1.209 ; counter[14]                  ; counter[15]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.475      ;
-; 1.228 ; counter[0]                   ; counter[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.494      ;
-; 1.230 ; counter[18]                  ; counter[19]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.496      ;
-; 1.235 ; counter[13]                  ; counter[14]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.501      ;
-; 1.236 ; counter[15]                  ; counter[16]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.502      ;
-; 1.240 ; counter[16]                  ; counter[17]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.506      ;
-; 1.248 ; state.writeData              ; lcdBus[4]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.514      ;
-; 1.248 ; counter[2]                   ; counter[3]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.514      ;
-; 1.249 ; counter[10]                  ; counter[12]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.515      ;
-; 1.253 ; counter[6]                   ; counter[7]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.519      ;
-; 1.254 ; counter[4]                   ; counter[5]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.520      ;
-; 1.265 ; counter[5]                   ; counter[7]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.531      ;
-; 1.268 ; counter[11]                  ; counter[13]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.534      ;
-; 1.269 ; counter[3]                   ; counter[5]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.535      ;
-; 1.278 ; counter[7]                   ; counter[9]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.544      ;
-; 1.279 ; counter[12]                  ; counter[14]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.545      ;
-; 1.280 ; counter[14]                  ; counter[16]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.546      ;
-; 1.287 ; counter[1]                   ; counter[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.553      ;
-; 1.290 ; counter[9]                   ; counter[10]                  ; clk          ; clk         ; 0.000        ; 0.006      ; 1.562      ;
-; 1.303 ; counter[17]                  ; counter[18]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.569      ;
-; 1.306 ; counter[13]                  ; counter[15]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.572      ;
-; 1.307 ; counter[15]                  ; counter[17]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.573      ;
-; 1.318 ; state.displaySet             ; lcdBus[2]~reg0               ; clk          ; clk         ; 0.000        ; 0.004      ; 1.588      ;
-; 1.319 ; counter[2]                   ; counter[4]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.585      ;
-; 1.320 ; counter[10]                  ; counter[13]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.586      ;
-; 1.324 ; counter[6]                   ; counter[8]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.590      ;
+; 0.391 ; state.writeData              ; state.writeData              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; lcdRsSelect~reg0             ; lcdRsSelect~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; lcdEnableOut~reg0            ; lcdEnableOut~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.536 ; addrCounter[6]               ; lcdBus[6]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.802      ;
+; 0.545 ; functionSetCase.00           ; functionSetCase.functionSet2 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.811      ;
+; 0.548 ; state.cursorLogicState       ; state.writeAddr              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.814      ;
+; 0.561 ; state.entryModeSet           ; state.displaySet             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.827      ;
+; 0.676 ; state.writeData              ; state.cursorLogicState       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.942      ;
+; 0.705 ; addrCounter[3]               ; lcdBus[3]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.971      ;
+; 0.773 ; state.cursorLogicState       ; lcdBus[4]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.039      ;
+; 0.794 ; subStates.subState3          ; functionSetCase.functionSet3 ; clk          ; clk         ; 0.000        ; 0.002      ; 1.062      ;
+; 0.795 ; counter[8]                   ; counter[8]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.061      ;
+; 0.796 ; counter[24]                  ; counter[24]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.062      ;
+; 0.804 ; counter[25]                  ; counter[25]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.070      ;
+; 0.805 ; counter[9]                   ; counter[9]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.071      ;
+; 0.806 ; counter[10]                  ; counter[10]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; counter[12]                  ; counter[12]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; counter[15]                  ; counter[15]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; counter[17]                  ; counter[17]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; counter[19]                  ; counter[19]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; counter[21]                  ; counter[21]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; counter[22]                  ; counter[22]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; counter[23]                  ; counter[23]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.072      ;
+; 0.809 ; counter[1]                   ; counter[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.075      ;
+; 0.812 ; addrCounter[5]               ; addrCounter[5]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.078      ;
+; 0.813 ; counter[26]                  ; counter[26]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.079      ;
+; 0.814 ; counter[3]                   ; counter[3]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; counter[28]                  ; counter[28]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.080      ;
+; 0.814 ; addrCounter[5]               ; lcdBus[5]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.080      ;
+; 0.815 ; counter[31]                  ; counter[31]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.081      ;
+; 0.816 ; subStates.00                 ; subStates.subState2          ; clk          ; clk         ; 0.000        ; 0.000      ; 1.082      ;
+; 0.821 ; functionSetCase.functionSet4 ; state.functionSet            ; clk          ; clk         ; 0.000        ; 0.000      ; 1.087      ;
+; 0.822 ; addrCounter[4]               ; lcdBus[4]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.088      ;
+; 0.823 ; addrCounter[0]               ; addrCounter[0]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.089      ;
+; 0.824 ; addrCounter[2]               ; addrCounter[2]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.090      ;
+; 0.825 ; counter[5]                   ; counter[5]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.091      ;
+; 0.826 ; state.functionSet            ; functionSetCase.00           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.092      ;
+; 0.826 ; displayOnOff                 ; state.displayClear           ; clk          ; clk         ; 0.000        ; 0.000      ; 1.092      ;
+; 0.830 ; functionSetCase.functionSet2 ; functionSetCase.functionSet3 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.096      ;
+; 0.835 ; counter[7]                   ; counter[7]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.101      ;
+; 0.836 ; counter[6]                   ; counter[6]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.102      ;
+; 0.838 ; counter[11]                  ; counter[11]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; counter[16]                  ; counter[16]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; counter[18]                  ; counter[18]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.104      ;
+; 0.838 ; counter[20]                  ; counter[20]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.104      ;
+; 0.839 ; counter[13]                  ; counter[13]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.105      ;
+; 0.839 ; counter[14]                  ; counter[14]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.105      ;
+; 0.841 ; counter[32]                  ; counter[32]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.107      ;
+; 0.844 ; addrCounter[1]               ; addrCounter[1]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.110      ;
+; 0.845 ; counter[27]                  ; counter[27]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.111      ;
+; 0.845 ; addrCounter[3]               ; addrCounter[3]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.111      ;
+; 0.846 ; counter[29]                  ; counter[29]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.112      ;
+; 0.847 ; counter[30]                  ; counter[30]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.113      ;
+; 0.854 ; displayOnOff                 ; state.writeAddr              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.120      ;
+; 0.855 ; counter[0]                   ; counter[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.121      ;
+; 0.859 ; state.writeAddr              ; state.writeData              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.125      ;
+; 0.860 ; counter[2]                   ; counter[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.126      ;
+; 0.867 ; subStates.subState2          ; lcdBus[4]~en                 ; clk          ; clk         ; 0.000        ; -0.002     ; 1.131      ;
+; 0.870 ; counter[4]                   ; counter[4]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.136      ;
+; 0.940 ; addrCounter[6]               ; addrCounter[6]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.206      ;
+; 0.947 ; state.entryModeSet           ; lcdBus[1]~reg0               ; clk          ; clk         ; 0.000        ; -0.005     ; 1.208      ;
+; 0.958 ; state.writeAddr              ; lcdBus[0]~reg0               ; clk          ; clk         ; 0.000        ; -0.003     ; 1.221      ;
+; 0.965 ; state.functionSet            ; functionSetCase.functionSet2 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.231      ;
+; 0.965 ; state.functionSet            ; functionSetCase.functionSet3 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.231      ;
+; 0.965 ; state.cursorLogicState       ; lcdEnableOut~reg0            ; clk          ; clk         ; 0.000        ; -0.003     ; 1.228      ;
+; 0.969 ; state.cursorLogicState       ; lcdRsSelect~reg0             ; clk          ; clk         ; 0.000        ; -0.003     ; 1.232      ;
+; 0.969 ; state.powerOn                ; lcdBus[4]~en                 ; clk          ; clk         ; 0.000        ; -0.005     ; 1.230      ;
+; 0.971 ; state.entryModeSet           ; lcdBus[2]~reg0               ; clk          ; clk         ; 0.000        ; -0.004     ; 1.233      ;
+; 0.976 ; state.entryModeSet           ; displayOnOff                 ; clk          ; clk         ; 0.000        ; -0.004     ; 1.238      ;
+; 0.980 ; state.functionSet            ; functionSetCase.functionSet4 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.246      ;
+; 0.988 ; addrCounter[1]               ; lcdBus[1]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.254      ;
+; 1.002 ; addrCounter[0]               ; lcdBus[0]~reg0               ; clk          ; clk         ; 0.000        ; -0.002     ; 1.266      ;
+; 1.045 ; subStates.subState2          ; displayOnOff                 ; clk          ; clk         ; 0.000        ; -0.002     ; 1.309      ;
+; 1.059 ; functionSetCase.functionSet3 ; functionSetCase.functionSet4 ; clk          ; clk         ; 0.000        ; 0.000      ; 1.325      ;
+; 1.093 ; state.writeData              ; lcdBus[0]~reg0               ; clk          ; clk         ; 0.000        ; -0.003     ; 1.356      ;
+; 1.095 ; state.writeData              ; lcdBus[6]~reg0               ; clk          ; clk         ; 0.000        ; -0.001     ; 1.360      ;
+; 1.105 ; state.writeData              ; lcdBus[3]~reg0               ; clk          ; clk         ; 0.000        ; -0.001     ; 1.370      ;
+; 1.106 ; state.writeData              ; lcdBus[1]~reg0               ; clk          ; clk         ; 0.000        ; -0.001     ; 1.371      ;
+; 1.108 ; state.writeAddr              ; lcdBus[7]~reg0               ; clk          ; clk         ; 0.000        ; -0.003     ; 1.371      ;
+; 1.119 ; state.writeAddr              ; lcdBus[5]~reg0               ; clk          ; clk         ; 0.000        ; -0.001     ; 1.384      ;
+; 1.122 ; state.writeAddr              ; lcdBus[4]~reg0               ; clk          ; clk         ; 0.000        ; -0.001     ; 1.387      ;
+; 1.177 ; addrCounter[0]               ; addrCounter[4]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.443      ;
+; 1.178 ; counter[8]                   ; counter[9]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 1.444      ;
+; 1.179 ; counter[24]                  ; counter[25]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.445      ;
+; 1.180 ; addrCounter[0]               ; addrCounter[6]               ; clk          ; clk         ; 0.000        ; 0.000      ; 1.446      ;
+; 1.187 ; counter[25]                  ; counter[26]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.453      ;
+; 1.188 ; state.writeAddr              ; state.writeAddr              ; clk          ; clk         ; 0.000        ; 0.000      ; 1.454      ;
+; 1.188 ; counter[9]                   ; counter[10]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.454      ;
+; 1.189 ; counter[21]                  ; counter[22]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; counter[22]                  ; counter[23]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 1.455      ;
 +-------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -401,6 +401,20 @@ No paths to report.
 +-------+--------------+----------------+------------------+-------+------------+------------------------------+
 ; Slack ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                       ;
 +-------+--------------+----------------+------------------+-------+------------+------------------------------+
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[0]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[0]               ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[1]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[1]               ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[2]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[2]               ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[3]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[3]               ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[4]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[4]               ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[5]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[5]               ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[6]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[6]               ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[0]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[0]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[10]                  ;
@@ -425,8 +439,34 @@ No paths to report.
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[19]                  ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[1]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[1]                   ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[20]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[20]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[21]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[21]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[22]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[22]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[23]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[23]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[24]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[24]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[25]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[25]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[26]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[26]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[27]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[27]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[28]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[28]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[29]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[29]                  ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[2]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[2]                   ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[30]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[30]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[31]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[31]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[32]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[32]                  ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[3]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[3]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[4]                   ;
@@ -443,8 +483,6 @@ No paths to report.
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[9]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; displayOnOff                 ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; displayOnOff                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; errorLed~reg0                ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; errorLed~reg0                ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; functionSetCase.00           ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; functionSetCase.00           ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; functionSetCase.functionSet2 ;
@@ -463,44 +501,6 @@ No paths to report.
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[1]~reg0               ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[2]~en                 ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[2]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[2]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[2]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[3]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[3]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[3]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[3]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[4]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[4]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[4]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[4]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[5]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[5]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[5]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[5]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[6]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[6]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[7]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[7]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[7]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[7]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdEnableOut~reg0            ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdEnableOut~reg0            ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdRsSelect~reg0             ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdRsSelect~reg0             ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.displayClear           ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.displayClear           ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.displaySet             ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.displaySet             ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.entryModeSet           ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.entryModeSet           ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.functionSet            ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.functionSet            ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.powerOn                ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.powerOn                ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.writeAddr              ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.writeAddr              ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.writeData              ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.writeData              ;
 +-------+--------------+----------------+------------------+-------+------------+------------------------------+
 
 
@@ -509,7 +509,7 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; lcdOnIn   ; clk        ; 4.702 ; 4.702 ; Rise       ; clk             ;
+; lcdOnIn   ; clk        ; 4.087 ; 4.087 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -518,7 +518,7 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; lcdOnIn   ; clk        ; -4.472 ; -4.472 ; Rise       ; clk             ;
+; lcdOnIn   ; clk        ; -3.857 ; -3.857 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -527,18 +527,17 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; errorLed     ; clk        ; 9.181 ; 9.181 ; Rise       ; clk             ;
-; lcdBus[*]    ; clk        ; 6.897 ; 6.897 ; Rise       ; clk             ;
-;  lcdBus[0]   ; clk        ; 6.595 ; 6.595 ; Rise       ; clk             ;
-;  lcdBus[1]   ; clk        ; 6.604 ; 6.604 ; Rise       ; clk             ;
-;  lcdBus[2]   ; clk        ; 6.623 ; 6.623 ; Rise       ; clk             ;
-;  lcdBus[3]   ; clk        ; 6.478 ; 6.478 ; Rise       ; clk             ;
-;  lcdBus[4]   ; clk        ; 6.585 ; 6.585 ; Rise       ; clk             ;
-;  lcdBus[5]   ; clk        ; 6.586 ; 6.586 ; Rise       ; clk             ;
-;  lcdBus[6]   ; clk        ; 6.610 ; 6.610 ; Rise       ; clk             ;
-;  lcdBus[7]   ; clk        ; 6.897 ; 6.897 ; Rise       ; clk             ;
-; lcdEnableOut ; clk        ; 6.589 ; 6.589 ; Rise       ; clk             ;
-; lcdRsSelect  ; clk        ; 6.574 ; 6.574 ; Rise       ; clk             ;
+; lcdBus[*]    ; clk        ; 7.230 ; 7.230 ; Rise       ; clk             ;
+;  lcdBus[0]   ; clk        ; 6.997 ; 6.997 ; Rise       ; clk             ;
+;  lcdBus[1]   ; clk        ; 6.889 ; 6.889 ; Rise       ; clk             ;
+;  lcdBus[2]   ; clk        ; 7.230 ; 7.230 ; Rise       ; clk             ;
+;  lcdBus[3]   ; clk        ; 7.201 ; 7.201 ; Rise       ; clk             ;
+;  lcdBus[4]   ; clk        ; 7.190 ; 7.190 ; Rise       ; clk             ;
+;  lcdBus[5]   ; clk        ; 7.217 ; 7.217 ; Rise       ; clk             ;
+;  lcdBus[6]   ; clk        ; 7.132 ; 7.132 ; Rise       ; clk             ;
+;  lcdBus[7]   ; clk        ; 7.196 ; 7.196 ; Rise       ; clk             ;
+; lcdEnableOut ; clk        ; 6.863 ; 6.863 ; Rise       ; clk             ;
+; lcdRsSelect  ; clk        ; 6.875 ; 6.875 ; Rise       ; clk             ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -547,18 +546,17 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; errorLed     ; clk        ; 9.181 ; 9.181 ; Rise       ; clk             ;
-; lcdBus[*]    ; clk        ; 6.478 ; 6.478 ; Rise       ; clk             ;
-;  lcdBus[0]   ; clk        ; 6.595 ; 6.595 ; Rise       ; clk             ;
-;  lcdBus[1]   ; clk        ; 6.604 ; 6.604 ; Rise       ; clk             ;
-;  lcdBus[2]   ; clk        ; 6.623 ; 6.623 ; Rise       ; clk             ;
-;  lcdBus[3]   ; clk        ; 6.478 ; 6.478 ; Rise       ; clk             ;
-;  lcdBus[4]   ; clk        ; 6.585 ; 6.585 ; Rise       ; clk             ;
-;  lcdBus[5]   ; clk        ; 6.586 ; 6.586 ; Rise       ; clk             ;
-;  lcdBus[6]   ; clk        ; 6.610 ; 6.610 ; Rise       ; clk             ;
-;  lcdBus[7]   ; clk        ; 6.897 ; 6.897 ; Rise       ; clk             ;
-; lcdEnableOut ; clk        ; 6.589 ; 6.589 ; Rise       ; clk             ;
-; lcdRsSelect  ; clk        ; 6.574 ; 6.574 ; Rise       ; clk             ;
+; lcdBus[*]    ; clk        ; 6.889 ; 6.889 ; Rise       ; clk             ;
+;  lcdBus[0]   ; clk        ; 6.997 ; 6.997 ; Rise       ; clk             ;
+;  lcdBus[1]   ; clk        ; 6.889 ; 6.889 ; Rise       ; clk             ;
+;  lcdBus[2]   ; clk        ; 7.230 ; 7.230 ; Rise       ; clk             ;
+;  lcdBus[3]   ; clk        ; 7.201 ; 7.201 ; Rise       ; clk             ;
+;  lcdBus[4]   ; clk        ; 7.190 ; 7.190 ; Rise       ; clk             ;
+;  lcdBus[5]   ; clk        ; 7.217 ; 7.217 ; Rise       ; clk             ;
+;  lcdBus[6]   ; clk        ; 7.132 ; 7.132 ; Rise       ; clk             ;
+;  lcdBus[7]   ; clk        ; 7.196 ; 7.196 ; Rise       ; clk             ;
+; lcdEnableOut ; clk        ; 6.863 ; 6.863 ; Rise       ; clk             ;
+; lcdRsSelect  ; clk        ; 6.875 ; 6.875 ; Rise       ; clk             ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -567,7 +565,7 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; lcdOnIn    ; lcdOnOut    ; 9.778 ;    ;    ; 9.778 ;
+; lcdOnIn    ; lcdOnOut    ; 9.125 ;    ;    ; 9.125 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -576,7 +574,7 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; lcdOnIn    ; lcdOnOut    ; 9.778 ;    ;    ; 9.778 ;
+; lcdOnIn    ; lcdOnOut    ; 9.125 ;    ;    ; 9.125 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -585,14 +583,15 @@ No paths to report.
 +------------+------------+-------+------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+------+------------+-----------------+
-; lcdBus[*]  ; clk        ; 6.534 ;      ; Rise       ; clk             ;
-;  lcdBus[0] ; clk        ; 6.534 ;      ; Rise       ; clk             ;
-;  lcdBus[1] ; clk        ; 6.538 ;      ; Rise       ; clk             ;
-;  lcdBus[2] ; clk        ; 6.565 ;      ; Rise       ; clk             ;
-;  lcdBus[3] ; clk        ; 6.554 ;      ; Rise       ; clk             ;
-;  lcdBus[4] ; clk        ; 6.544 ;      ; Rise       ; clk             ;
-;  lcdBus[5] ; clk        ; 6.545 ;      ; Rise       ; clk             ;
-;  lcdBus[7] ; clk        ; 6.845 ;      ; Rise       ; clk             ;
+; lcdBus[*]  ; clk        ; 5.994 ;      ; Rise       ; clk             ;
+;  lcdBus[0] ; clk        ; 5.994 ;      ; Rise       ; clk             ;
+;  lcdBus[1] ; clk        ; 5.994 ;      ; Rise       ; clk             ;
+;  lcdBus[2] ; clk        ; 6.290 ;      ; Rise       ; clk             ;
+;  lcdBus[3] ; clk        ; 6.283 ;      ; Rise       ; clk             ;
+;  lcdBus[4] ; clk        ; 7.236 ;      ; Rise       ; clk             ;
+;  lcdBus[5] ; clk        ; 6.171 ;      ; Rise       ; clk             ;
+;  lcdBus[6] ; clk        ; 7.053 ;      ; Rise       ; clk             ;
+;  lcdBus[7] ; clk        ; 6.296 ;      ; Rise       ; clk             ;
 +------------+------------+-------+------+------------+-----------------+
 
 
@@ -601,14 +600,15 @@ No paths to report.
 +------------+------------+-------+------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+------+------------+-----------------+
-; lcdBus[*]  ; clk        ; 6.534 ;      ; Rise       ; clk             ;
-;  lcdBus[0] ; clk        ; 6.534 ;      ; Rise       ; clk             ;
-;  lcdBus[1] ; clk        ; 6.538 ;      ; Rise       ; clk             ;
-;  lcdBus[2] ; clk        ; 6.565 ;      ; Rise       ; clk             ;
-;  lcdBus[3] ; clk        ; 6.554 ;      ; Rise       ; clk             ;
-;  lcdBus[4] ; clk        ; 6.544 ;      ; Rise       ; clk             ;
-;  lcdBus[5] ; clk        ; 6.545 ;      ; Rise       ; clk             ;
-;  lcdBus[7] ; clk        ; 6.845 ;      ; Rise       ; clk             ;
+; lcdBus[*]  ; clk        ; 5.994 ;      ; Rise       ; clk             ;
+;  lcdBus[0] ; clk        ; 5.994 ;      ; Rise       ; clk             ;
+;  lcdBus[1] ; clk        ; 5.994 ;      ; Rise       ; clk             ;
+;  lcdBus[2] ; clk        ; 6.290 ;      ; Rise       ; clk             ;
+;  lcdBus[3] ; clk        ; 6.283 ;      ; Rise       ; clk             ;
+;  lcdBus[4] ; clk        ; 7.236 ;      ; Rise       ; clk             ;
+;  lcdBus[5] ; clk        ; 6.171 ;      ; Rise       ; clk             ;
+;  lcdBus[6] ; clk        ; 7.053 ;      ; Rise       ; clk             ;
+;  lcdBus[7] ; clk        ; 6.296 ;      ; Rise       ; clk             ;
 +------------+------------+-------+------+------------+-----------------+
 
 
@@ -617,14 +617,15 @@ No paths to report.
 +------------+------------+-----------+-----------+------------+-----------------+
 ; Data Port  ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
 +------------+------------+-----------+-----------+------------+-----------------+
-; lcdBus[*]  ; clk        ; 6.534     ;           ; Rise       ; clk             ;
-;  lcdBus[0] ; clk        ; 6.534     ;           ; Rise       ; clk             ;
-;  lcdBus[1] ; clk        ; 6.538     ;           ; Rise       ; clk             ;
-;  lcdBus[2] ; clk        ; 6.565     ;           ; Rise       ; clk             ;
-;  lcdBus[3] ; clk        ; 6.554     ;           ; Rise       ; clk             ;
-;  lcdBus[4] ; clk        ; 6.544     ;           ; Rise       ; clk             ;
-;  lcdBus[5] ; clk        ; 6.545     ;           ; Rise       ; clk             ;
-;  lcdBus[7] ; clk        ; 6.845     ;           ; Rise       ; clk             ;
+; lcdBus[*]  ; clk        ; 5.994     ;           ; Rise       ; clk             ;
+;  lcdBus[0] ; clk        ; 5.994     ;           ; Rise       ; clk             ;
+;  lcdBus[1] ; clk        ; 5.994     ;           ; Rise       ; clk             ;
+;  lcdBus[2] ; clk        ; 6.290     ;           ; Rise       ; clk             ;
+;  lcdBus[3] ; clk        ; 6.283     ;           ; Rise       ; clk             ;
+;  lcdBus[4] ; clk        ; 7.236     ;           ; Rise       ; clk             ;
+;  lcdBus[5] ; clk        ; 6.171     ;           ; Rise       ; clk             ;
+;  lcdBus[6] ; clk        ; 7.053     ;           ; Rise       ; clk             ;
+;  lcdBus[7] ; clk        ; 6.296     ;           ; Rise       ; clk             ;
 +------------+------------+-----------+-----------+------------+-----------------+
 
 
@@ -633,14 +634,15 @@ No paths to report.
 +------------+------------+-----------+-----------+------------+-----------------+
 ; Data Port  ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
 +------------+------------+-----------+-----------+------------+-----------------+
-; lcdBus[*]  ; clk        ; 6.534     ;           ; Rise       ; clk             ;
-;  lcdBus[0] ; clk        ; 6.534     ;           ; Rise       ; clk             ;
-;  lcdBus[1] ; clk        ; 6.538     ;           ; Rise       ; clk             ;
-;  lcdBus[2] ; clk        ; 6.565     ;           ; Rise       ; clk             ;
-;  lcdBus[3] ; clk        ; 6.554     ;           ; Rise       ; clk             ;
-;  lcdBus[4] ; clk        ; 6.544     ;           ; Rise       ; clk             ;
-;  lcdBus[5] ; clk        ; 6.545     ;           ; Rise       ; clk             ;
-;  lcdBus[7] ; clk        ; 6.845     ;           ; Rise       ; clk             ;
+; lcdBus[*]  ; clk        ; 5.994     ;           ; Rise       ; clk             ;
+;  lcdBus[0] ; clk        ; 5.994     ;           ; Rise       ; clk             ;
+;  lcdBus[1] ; clk        ; 5.994     ;           ; Rise       ; clk             ;
+;  lcdBus[2] ; clk        ; 6.290     ;           ; Rise       ; clk             ;
+;  lcdBus[3] ; clk        ; 6.283     ;           ; Rise       ; clk             ;
+;  lcdBus[4] ; clk        ; 7.236     ;           ; Rise       ; clk             ;
+;  lcdBus[5] ; clk        ; 6.171     ;           ; Rise       ; clk             ;
+;  lcdBus[6] ; clk        ; 7.053     ;           ; Rise       ; clk             ;
+;  lcdBus[7] ; clk        ; 6.296     ;           ; Rise       ; clk             ;
 +------------+------------+-----------+-----------+------------+-----------------+
 
 
@@ -649,7 +651,7 @@ No paths to report.
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clk   ; 16.684 ; 0.000         ;
+; clk   ; 16.396 ; 0.000         ;
 +-------+--------+---------------+
 
 
@@ -688,106 +690,106 @@ No paths to report.
 +--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
-; 16.684 ; counter[13] ; counter[10] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.348      ;
-; 16.684 ; counter[13] ; counter[12] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.348      ;
-; 16.684 ; counter[13] ; counter[13] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.348      ;
-; 16.684 ; counter[13] ; counter[15] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.348      ;
-; 16.684 ; counter[13] ; counter[16] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.348      ;
-; 16.684 ; counter[13] ; counter[17] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.348      ;
-; 16.684 ; counter[13] ; counter[18] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.348      ;
-; 16.684 ; counter[13] ; counter[19] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.348      ;
-; 16.684 ; counter[13] ; counter[11] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.348      ;
-; 16.684 ; counter[13] ; counter[14] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.348      ;
-; 16.753 ; counter[15] ; counter[10] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.279      ;
-; 16.753 ; counter[15] ; counter[12] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.279      ;
-; 16.753 ; counter[15] ; counter[13] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.279      ;
-; 16.753 ; counter[15] ; counter[15] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.279      ;
-; 16.753 ; counter[15] ; counter[16] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.279      ;
-; 16.753 ; counter[15] ; counter[17] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.279      ;
-; 16.753 ; counter[15] ; counter[18] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.279      ;
-; 16.753 ; counter[15] ; counter[19] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.279      ;
-; 16.753 ; counter[15] ; counter[11] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.279      ;
-; 16.753 ; counter[15] ; counter[14] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.279      ;
-; 16.876 ; counter[13] ; counter[0]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.151      ;
-; 16.876 ; counter[13] ; counter[1]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.151      ;
-; 16.876 ; counter[13] ; counter[2]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.151      ;
-; 16.876 ; counter[13] ; counter[3]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.151      ;
-; 16.876 ; counter[13] ; counter[4]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.151      ;
-; 16.876 ; counter[13] ; counter[5]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.151      ;
-; 16.876 ; counter[13] ; counter[6]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.151      ;
-; 16.876 ; counter[13] ; counter[7]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.151      ;
-; 16.876 ; counter[13] ; counter[8]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.151      ;
-; 16.876 ; counter[13] ; counter[9]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.151      ;
-; 16.879 ; counter[0]  ; counter[10] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.158      ;
-; 16.879 ; counter[0]  ; counter[12] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.158      ;
-; 16.879 ; counter[0]  ; counter[13] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.158      ;
-; 16.879 ; counter[0]  ; counter[15] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.158      ;
-; 16.879 ; counter[0]  ; counter[16] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.158      ;
-; 16.879 ; counter[0]  ; counter[17] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.158      ;
-; 16.879 ; counter[0]  ; counter[18] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.158      ;
-; 16.879 ; counter[0]  ; counter[19] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.158      ;
-; 16.879 ; counter[0]  ; counter[11] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.158      ;
-; 16.879 ; counter[0]  ; counter[14] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.158      ;
-; 16.945 ; counter[15] ; counter[0]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.082      ;
-; 16.945 ; counter[15] ; counter[1]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.082      ;
-; 16.945 ; counter[15] ; counter[2]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.082      ;
-; 16.945 ; counter[15] ; counter[3]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.082      ;
-; 16.945 ; counter[15] ; counter[4]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.082      ;
-; 16.945 ; counter[15] ; counter[5]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.082      ;
-; 16.945 ; counter[15] ; counter[6]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.082      ;
-; 16.945 ; counter[15] ; counter[7]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.082      ;
-; 16.945 ; counter[15] ; counter[8]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.082      ;
-; 16.945 ; counter[15] ; counter[9]  ; clk          ; clk         ; 20.000       ; -0.005     ; 3.082      ;
-; 17.010 ; counter[5]  ; counter[10] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.027      ;
-; 17.010 ; counter[5]  ; counter[12] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.027      ;
-; 17.010 ; counter[5]  ; counter[13] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.027      ;
-; 17.010 ; counter[5]  ; counter[15] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.027      ;
-; 17.010 ; counter[5]  ; counter[16] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.027      ;
-; 17.010 ; counter[5]  ; counter[17] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.027      ;
-; 17.010 ; counter[5]  ; counter[18] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.027      ;
-; 17.010 ; counter[5]  ; counter[19] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.027      ;
-; 17.010 ; counter[5]  ; counter[11] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.027      ;
-; 17.010 ; counter[5]  ; counter[14] ; clk          ; clk         ; 20.000       ; 0.005      ; 3.027      ;
-; 17.071 ; counter[0]  ; counter[0]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.961      ;
-; 17.071 ; counter[0]  ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.961      ;
-; 17.071 ; counter[0]  ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.961      ;
-; 17.071 ; counter[0]  ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.961      ;
-; 17.071 ; counter[0]  ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.961      ;
-; 17.071 ; counter[0]  ; counter[5]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.961      ;
-; 17.071 ; counter[0]  ; counter[6]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.961      ;
-; 17.071 ; counter[0]  ; counter[7]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.961      ;
-; 17.071 ; counter[0]  ; counter[8]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.961      ;
-; 17.071 ; counter[0]  ; counter[9]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.961      ;
-; 17.193 ; counter[9]  ; counter[10] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.844      ;
-; 17.193 ; counter[9]  ; counter[12] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.844      ;
-; 17.193 ; counter[9]  ; counter[13] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.844      ;
-; 17.193 ; counter[9]  ; counter[15] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.844      ;
-; 17.193 ; counter[9]  ; counter[16] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.844      ;
-; 17.193 ; counter[9]  ; counter[17] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.844      ;
-; 17.193 ; counter[9]  ; counter[18] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.844      ;
-; 17.193 ; counter[9]  ; counter[19] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.844      ;
-; 17.193 ; counter[9]  ; counter[11] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.844      ;
-; 17.193 ; counter[9]  ; counter[14] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.844      ;
-; 17.197 ; counter[8]  ; counter[10] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.840      ;
-; 17.197 ; counter[8]  ; counter[12] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.840      ;
-; 17.197 ; counter[8]  ; counter[13] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.840      ;
-; 17.197 ; counter[8]  ; counter[15] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.840      ;
-; 17.197 ; counter[8]  ; counter[16] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.840      ;
-; 17.197 ; counter[8]  ; counter[17] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.840      ;
-; 17.197 ; counter[8]  ; counter[18] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.840      ;
-; 17.197 ; counter[8]  ; counter[19] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.840      ;
-; 17.197 ; counter[8]  ; counter[11] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.840      ;
-; 17.197 ; counter[8]  ; counter[14] ; clk          ; clk         ; 20.000       ; 0.005      ; 2.840      ;
-; 17.202 ; counter[5]  ; counter[0]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.830      ;
-; 17.202 ; counter[5]  ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.830      ;
-; 17.202 ; counter[5]  ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.830      ;
-; 17.202 ; counter[5]  ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.830      ;
-; 17.202 ; counter[5]  ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.830      ;
-; 17.202 ; counter[5]  ; counter[5]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.830      ;
-; 17.202 ; counter[5]  ; counter[6]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.830      ;
-; 17.202 ; counter[5]  ; counter[7]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.830      ;
-; 17.202 ; counter[5]  ; counter[8]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.830      ;
-; 17.202 ; counter[5]  ; counter[9]  ; clk          ; clk         ; 20.000       ; 0.000      ; 2.830      ;
+; 16.396 ; counter[23] ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.637      ;
+; 16.396 ; counter[23] ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.637      ;
+; 16.396 ; counter[23] ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.637      ;
+; 16.396 ; counter[23] ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.637      ;
+; 16.396 ; counter[23] ; counter[5]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.637      ;
+; 16.396 ; counter[23] ; counter[6]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.637      ;
+; 16.396 ; counter[23] ; counter[7]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.637      ;
+; 16.396 ; counter[23] ; counter[0]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.637      ;
+; 16.398 ; counter[13] ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.635      ;
+; 16.398 ; counter[13] ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.635      ;
+; 16.398 ; counter[13] ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.635      ;
+; 16.398 ; counter[13] ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.635      ;
+; 16.398 ; counter[13] ; counter[5]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.635      ;
+; 16.398 ; counter[13] ; counter[6]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.635      ;
+; 16.398 ; counter[13] ; counter[7]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.635      ;
+; 16.398 ; counter[13] ; counter[0]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.635      ;
+; 16.405 ; counter[20] ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.628      ;
+; 16.405 ; counter[20] ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.628      ;
+; 16.405 ; counter[20] ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.628      ;
+; 16.405 ; counter[20] ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.628      ;
+; 16.405 ; counter[20] ; counter[5]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.628      ;
+; 16.405 ; counter[20] ; counter[6]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.628      ;
+; 16.405 ; counter[20] ; counter[7]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.628      ;
+; 16.405 ; counter[20] ; counter[0]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.628      ;
+; 16.408 ; counter[23] ; counter[8]  ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[9]  ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[10] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[11] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[12] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[13] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[15] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[16] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[17] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[18] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[19] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[20] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[21] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[22] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[23] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.408 ; counter[23] ; counter[14] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.624      ;
+; 16.410 ; counter[13] ; counter[8]  ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[9]  ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[10] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[11] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[12] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[13] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[15] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[16] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[17] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[18] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[19] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[20] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[21] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[22] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[23] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.410 ; counter[13] ; counter[14] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.622      ;
+; 16.417 ; counter[20] ; counter[8]  ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[9]  ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[10] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[11] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[12] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[13] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[15] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[16] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[17] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[18] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[19] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[20] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[21] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[22] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[23] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.417 ; counter[20] ; counter[14] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.615      ;
+; 16.479 ; counter[21] ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.554      ;
+; 16.479 ; counter[21] ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.554      ;
+; 16.479 ; counter[21] ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.554      ;
+; 16.479 ; counter[21] ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.554      ;
+; 16.479 ; counter[21] ; counter[5]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.554      ;
+; 16.479 ; counter[21] ; counter[6]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.554      ;
+; 16.479 ; counter[21] ; counter[7]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.554      ;
+; 16.479 ; counter[21] ; counter[0]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.554      ;
+; 16.491 ; counter[21] ; counter[8]  ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[9]  ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[10] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[11] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[12] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[13] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[15] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[16] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[17] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[18] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[19] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[20] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[21] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[22] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[23] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.491 ; counter[21] ; counter[14] ; clk          ; clk         ; 20.000       ; 0.000      ; 3.541      ;
+; 16.566 ; counter[22] ; counter[1]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.467      ;
+; 16.566 ; counter[22] ; counter[2]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.467      ;
+; 16.566 ; counter[22] ; counter[3]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.467      ;
+; 16.566 ; counter[22] ; counter[4]  ; clk          ; clk         ; 20.000       ; 0.001      ; 3.467      ;
 +--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -797,105 +799,105 @@ No paths to report.
 ; Slack ; From Node                    ; To Node                      ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +-------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
 ; 0.215 ; state.powerOn                ; state.powerOn                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; functionSetCase.00           ; functionSetCase.00           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; subStates.subState2          ; subStates.subState2          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; displayOnOff                 ; displayOnOff                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; state.displayClear           ; state.displayClear           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; state.entryModeSet           ; state.entryModeSet           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; state.writeData              ; state.writeData              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; state.writeAddr              ; state.writeAddr              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.215 ; functionSetCase.00           ; functionSetCase.00           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; functionSetCase.functionSet2 ; functionSetCase.functionSet2 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; functionSetCase.functionSet3 ; functionSetCase.functionSet3 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; functionSetCase.functionSet4 ; functionSetCase.functionSet4 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; state.functionSet            ; state.functionSet            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
-; 0.244 ; subStates.subState2          ; lcdBus[2]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.396      ;
-; 0.244 ; functionSetCase.functionSet2 ; functionSetCase.functionSet3 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.396      ;
-; 0.244 ; functionSetCase.functionSet3 ; functionSetCase.functionSet4 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.396      ;
-; 0.246 ; displayOnOff                 ; state.displayClear           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.398      ;
-; 0.249 ; functionSetCase.00           ; functionSetCase.functionSet2 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.401      ;
-; 0.250 ; counter[19]                  ; counter[19]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.402      ;
-; 0.254 ; state.writeAddr              ; errorLed~reg0                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.406      ;
-; 0.257 ; state.writeData              ; lcdRsSelect~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.409      ;
-; 0.258 ; state.writeAddr              ; lcdBus[7]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.410      ;
-; 0.264 ; state.entryModeSet           ; lcdBus[2]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.416      ;
-; 0.266 ; state.entryModeSet           ; displayOnOff                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.418      ;
-; 0.271 ; state.entryModeSet           ; lcdBus[1]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.423      ;
-; 0.355 ; counter[10]                  ; counter[10]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.507      ;
-; 0.363 ; subStates.00                 ; subStates.subState2          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.515      ;
-; 0.364 ; state.displayClear           ; lcdBus[0]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
-; 0.364 ; displayOnOff                 ; lcdBus[2]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
-; 0.365 ; counter[1]                   ; counter[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
-; 0.365 ; counter[3]                   ; counter[3]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
-; 0.365 ; counter[11]                  ; counter[11]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.517      ;
-; 0.366 ; counter[5]                   ; counter[5]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
-; 0.367 ; counter[8]                   ; counter[8]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
-; 0.367 ; functionSetCase.functionSet4 ; state.displaySet             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
-; 0.367 ; functionSetCase.functionSet4 ; state.functionSet            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.519      ;
-; 0.369 ; counter[9]                   ; counter[9]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.521      ;
-; 0.370 ; state.functionSet            ; functionSetCase.00           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
-; 0.371 ; counter[7]                   ; counter[7]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
-; 0.371 ; counter[12]                  ; counter[12]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
-; 0.373 ; counter[14]                  ; counter[14]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
-; 0.374 ; counter[18]                  ; counter[18]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
-; 0.375 ; counter[17]                  ; counter[17]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
-; 0.376 ; counter[0]                   ; counter[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
-; 0.378 ; counter[13]                  ; counter[13]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
-; 0.378 ; counter[15]                  ; counter[15]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
-; 0.382 ; counter[16]                  ; counter[16]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.534      ;
-; 0.385 ; counter[2]                   ; counter[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.537      ;
-; 0.386 ; state.writeData              ; lcdBus[5]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.538      ;
-; 0.386 ; state.writeData              ; state.writeAddr              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.538      ;
-; 0.387 ; state.writeData              ; errorLed~reg0                ; clk          ; clk         ; 0.000        ; 0.000      ; 0.539      ;
-; 0.388 ; counter[6]                   ; counter[6]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.540      ;
-; 0.389 ; counter[4]                   ; counter[4]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.541      ;
-; 0.391 ; state.writeAddr              ; state.writeData              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.543      ;
-; 0.406 ; state.displayClear           ; state.entryModeSet           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.558      ;
-; 0.414 ; state.powerOn                ; state.functionSet            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.566      ;
-; 0.447 ; subStates.subState2          ; displayOnOff                 ; clk          ; clk         ; 0.000        ; 0.002      ; 0.601      ;
-; 0.472 ; state.displaySet             ; lcdBus[3]~reg0               ; clk          ; clk         ; 0.000        ; -0.013     ; 0.611      ;
-; 0.493 ; counter[10]                  ; counter[11]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.645      ;
-; 0.503 ; counter[11]                  ; counter[12]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.655      ;
-; 0.503 ; counter[3]                   ; counter[4]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.655      ;
-; 0.504 ; counter[5]                   ; counter[6]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.656      ;
-; 0.505 ; counter[8]                   ; counter[9]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.657      ;
-; 0.509 ; counter[7]                   ; counter[8]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
-; 0.509 ; counter[12]                  ; counter[13]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.661      ;
-; 0.511 ; counter[14]                  ; counter[15]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.663      ;
-; 0.514 ; counter[18]                  ; counter[19]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.666      ;
-; 0.516 ; counter[0]                   ; counter[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.668      ;
-; 0.518 ; counter[13]                  ; counter[14]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.670      ;
-; 0.518 ; counter[15]                  ; counter[16]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.670      ;
-; 0.519 ; subStates.subState2          ; lcdBus[1]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.671      ;
-; 0.521 ; subStates.subState2          ; lcdBus[0]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.673      ;
-; 0.522 ; counter[16]                  ; counter[17]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.674      ;
-; 0.523 ; state.functionSet            ; functionSetCase.functionSet2 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.675      ;
-; 0.523 ; state.functionSet            ; functionSetCase.functionSet3 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.675      ;
-; 0.525 ; counter[2]                   ; counter[3]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.677      ;
-; 0.528 ; subStates.subState2          ; lcdBus[7]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.680      ;
-; 0.528 ; counter[6]                   ; counter[7]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.680      ;
-; 0.528 ; counter[10]                  ; counter[12]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.680      ;
-; 0.529 ; counter[4]                   ; counter[5]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.681      ;
-; 0.530 ; subStates.subState2          ; lcdEnableOut~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.682      ;
-; 0.530 ; subStates.subState2          ; lcdBus[6]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.682      ;
-; 0.531 ; subStates.subState2          ; lcdBus[3]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
-; 0.531 ; subStates.subState2          ; lcdBus[4]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.683      ;
-; 0.532 ; subStates.subState2          ; lcdBus[5]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.684      ;
-; 0.538 ; counter[11]                  ; counter[13]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.690      ;
-; 0.538 ; counter[3]                   ; counter[5]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.690      ;
-; 0.539 ; counter[5]                   ; counter[7]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.691      ;
-; 0.544 ; counter[7]                   ; counter[9]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
-; 0.544 ; counter[12]                  ; counter[14]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.696      ;
-; 0.546 ; counter[14]                  ; counter[16]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.698      ;
-; 0.547 ; state.writeData              ; lcdBus[4]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.699      ;
-; 0.549 ; counter[9]                   ; counter[10]                  ; clk          ; clk         ; 0.000        ; 0.005      ; 0.706      ;
-; 0.553 ; counter[13]                  ; counter[15]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.705      ;
-; 0.553 ; counter[15]                  ; counter[17]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.705      ;
-; 0.558 ; counter[1]                   ; counter[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.710      ;
-; 0.560 ; counter[2]                   ; counter[4]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.712      ;
-; 0.563 ; counter[6]                   ; counter[8]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.715      ;
-; 0.563 ; counter[10]                  ; counter[13]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.715      ;
-; 0.564 ; counter[4]                   ; counter[6]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.716      ;
-; 0.568 ; counter[17]                  ; counter[18]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.720      ;
+; 0.215 ; state.writeData              ; state.writeData              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; lcdRsSelect~reg0             ; lcdRsSelect~reg0             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; lcdEnableOut~reg0            ; lcdEnableOut~reg0            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.250 ; addrCounter[6]               ; lcdBus[6]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.402      ;
+; 0.252 ; state.cursorLogicState       ; state.writeAddr              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.404      ;
+; 0.253 ; functionSetCase.00           ; functionSetCase.functionSet2 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.405      ;
+; 0.262 ; state.entryModeSet           ; state.displaySet             ; clk          ; clk         ; 0.000        ; 0.000      ; 0.414      ;
+; 0.320 ; addrCounter[3]               ; lcdBus[3]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.472      ;
+; 0.326 ; state.writeData              ; state.cursorLogicState       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.478      ;
+; 0.355 ; counter[8]                   ; counter[8]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.507      ;
+; 0.357 ; counter[24]                  ; counter[24]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.509      ;
+; 0.359 ; counter[9]                   ; counter[9]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; counter[10]                  ; counter[10]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; counter[17]                  ; counter[17]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; counter[19]                  ; counter[19]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.512      ;
+; 0.361 ; counter[12]                  ; counter[12]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; counter[15]                  ; counter[15]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; counter[21]                  ; counter[21]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; counter[22]                  ; counter[22]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; counter[23]                  ; counter[23]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; counter[25]                  ; counter[25]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; counter[1]                   ; counter[1]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.514      ;
+; 0.364 ; counter[3]                   ; counter[3]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.516      ;
+; 0.366 ; counter[26]                  ; counter[26]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.366 ; addrCounter[5]               ; addrCounter[5]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.518      ;
+; 0.368 ; counter[28]                  ; counter[28]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.368 ; counter[31]                  ; counter[31]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.368 ; state.cursorLogicState       ; lcdBus[4]~en                 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.520      ;
+; 0.369 ; subStates.subState3          ; functionSetCase.functionSet3 ; clk          ; clk         ; 0.000        ; 0.001      ; 0.522      ;
+; 0.370 ; addrCounter[0]               ; addrCounter[0]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; subStates.00                 ; subStates.subState2          ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.370 ; functionSetCase.functionSet2 ; functionSetCase.functionSet3 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.522      ;
+; 0.371 ; counter[11]                  ; counter[11]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; counter[16]                  ; counter[16]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; counter[18]                  ; counter[18]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.371 ; addrCounter[2]               ; addrCounter[2]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.523      ;
+; 0.372 ; counter[13]                  ; counter[13]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; counter[20]                  ; counter[20]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; counter[14]                  ; counter[14]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; addrCounter[4]               ; lcdBus[4]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.372 ; addrCounter[5]               ; lcdBus[5]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.524      ;
+; 0.373 ; counter[5]                   ; counter[5]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; state.functionSet            ; functionSetCase.00           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.526      ;
+; 0.375 ; counter[32]                  ; counter[32]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.375 ; addrCounter[1]               ; addrCounter[1]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.527      ;
+; 0.376 ; addrCounter[3]               ; addrCounter[3]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.528      ;
+; 0.377 ; counter[7]                   ; counter[7]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; counter[27]                  ; counter[27]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.377 ; functionSetCase.functionSet4 ; state.functionSet            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.529      ;
+; 0.378 ; counter[29]                  ; counter[29]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.378 ; counter[30]                  ; counter[30]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.530      ;
+; 0.379 ; counter[6]                   ; counter[6]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.531      ;
+; 0.382 ; displayOnOff                 ; state.displayClear           ; clk          ; clk         ; 0.000        ; 0.000      ; 0.534      ;
+; 0.383 ; counter[0]                   ; counter[0]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.535      ;
+; 0.385 ; state.writeAddr              ; state.writeData              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.537      ;
+; 0.385 ; displayOnOff                 ; state.writeAddr              ; clk          ; clk         ; 0.000        ; 0.000      ; 0.537      ;
+; 0.386 ; counter[2]                   ; counter[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.538      ;
+; 0.391 ; counter[4]                   ; counter[4]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.543      ;
+; 0.413 ; subStates.subState2          ; lcdBus[4]~en                 ; clk          ; clk         ; 0.000        ; -0.002     ; 0.563      ;
+; 0.419 ; addrCounter[6]               ; addrCounter[6]               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.571      ;
+; 0.431 ; state.entryModeSet           ; lcdBus[1]~reg0               ; clk          ; clk         ; 0.000        ; -0.004     ; 0.579      ;
+; 0.437 ; state.writeAddr              ; lcdBus[0]~reg0               ; clk          ; clk         ; 0.000        ; -0.003     ; 0.586      ;
+; 0.439 ; state.functionSet            ; functionSetCase.functionSet4 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.591      ;
+; 0.439 ; state.cursorLogicState       ; lcdEnableOut~reg0            ; clk          ; clk         ; 0.000        ; -0.003     ; 0.588      ;
+; 0.440 ; state.cursorLogicState       ; lcdRsSelect~reg0             ; clk          ; clk         ; 0.000        ; -0.003     ; 0.589      ;
+; 0.443 ; addrCounter[1]               ; lcdBus[1]~reg0               ; clk          ; clk         ; 0.000        ; 0.000      ; 0.595      ;
+; 0.444 ; state.powerOn                ; lcdBus[4]~en                 ; clk          ; clk         ; 0.000        ; -0.004     ; 0.592      ;
+; 0.446 ; state.entryModeSet           ; lcdBus[2]~reg0               ; clk          ; clk         ; 0.000        ; -0.003     ; 0.595      ;
+; 0.449 ; state.entryModeSet           ; displayOnOff                 ; clk          ; clk         ; 0.000        ; -0.003     ; 0.598      ;
+; 0.456 ; addrCounter[0]               ; lcdBus[0]~reg0               ; clk          ; clk         ; 0.000        ; -0.002     ; 0.606      ;
+; 0.472 ; subStates.subState2          ; displayOnOff                 ; clk          ; clk         ; 0.000        ; -0.002     ; 0.622      ;
+; 0.478 ; functionSetCase.functionSet3 ; functionSetCase.functionSet4 ; clk          ; clk         ; 0.000        ; 0.000      ; 0.630      ;
+; 0.491 ; state.writeData              ; lcdBus[6]~reg0               ; clk          ; clk         ; 0.000        ; -0.001     ; 0.642      ;
+; 0.491 ; state.writeData              ; lcdBus[0]~reg0               ; clk          ; clk         ; 0.000        ; -0.003     ; 0.640      ;
+; 0.493 ; counter[8]                   ; counter[9]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.645      ;
+; 0.495 ; counter[24]                  ; counter[25]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.647      ;
+; 0.497 ; counter[9]                   ; counter[10]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.649      ;
+; 0.498 ; state.writeData              ; lcdBus[3]~reg0               ; clk          ; clk         ; 0.000        ; -0.001     ; 0.649      ;
+; 0.498 ; counter[10]                  ; counter[11]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; counter[17]                  ; counter[18]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; counter[19]                  ; counter[20]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; state.writeData              ; lcdBus[1]~reg0               ; clk          ; clk         ; 0.000        ; -0.001     ; 0.649      ;
+; 0.499 ; counter[21]                  ; counter[22]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; counter[22]                  ; counter[23]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; counter[25]                  ; counter[26]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; counter[12]                  ; counter[13]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.651      ;
+; 0.500 ; counter[1]                   ; counter[2]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.652      ;
+; 0.502 ; counter[3]                   ; counter[4]                   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.654      ;
+; 0.504 ; counter[26]                  ; counter[27]                  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.656      ;
+; 0.505 ; state.writeAddr              ; lcdBus[5]~reg0               ; clk          ; clk         ; 0.000        ; -0.001     ; 0.656      ;
 +-------+------------------------------+------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -904,6 +906,20 @@ No paths to report.
 +-------+--------------+----------------+------------------+-------+------------+------------------------------+
 ; Slack ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                       ;
 +-------+--------------+----------------+------------------+-------+------------+------------------------------+
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[0]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[0]               ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[1]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[1]               ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[2]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[2]               ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[3]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[3]               ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[4]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[4]               ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[5]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[5]               ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; addrCounter[6]               ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; addrCounter[6]               ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[0]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[0]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[10]                  ;
@@ -928,8 +944,34 @@ No paths to report.
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[19]                  ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[1]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[1]                   ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[20]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[20]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[21]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[21]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[22]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[22]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[23]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[23]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[24]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[24]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[25]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[25]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[26]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[26]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[27]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[27]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[28]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[28]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[29]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[29]                  ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[2]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[2]                   ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[30]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[30]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[31]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[31]                  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[32]                  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[32]                  ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[3]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[3]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter[4]                   ;
@@ -946,8 +988,6 @@ No paths to report.
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter[9]                   ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; displayOnOff                 ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; displayOnOff                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; errorLed~reg0                ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; errorLed~reg0                ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; functionSetCase.00           ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; functionSetCase.00           ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; functionSetCase.functionSet2 ;
@@ -966,44 +1006,6 @@ No paths to report.
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[1]~reg0               ;
 ; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[2]~en                 ;
 ; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[2]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[2]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[2]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[3]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[3]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[3]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[3]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[4]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[4]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[4]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[4]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[5]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[5]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[5]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[5]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[6]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[6]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[7]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[7]~en                 ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdBus[7]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdBus[7]~reg0               ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdEnableOut~reg0            ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdEnableOut~reg0            ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; lcdRsSelect~reg0             ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; lcdRsSelect~reg0             ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.displayClear           ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.displayClear           ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.displaySet             ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.displaySet             ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.entryModeSet           ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.entryModeSet           ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.functionSet            ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.functionSet            ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.powerOn                ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.powerOn                ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.writeAddr              ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.writeAddr              ;
-; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; state.writeData              ;
-; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; state.writeData              ;
 +-------+--------------+----------------+------------------+-------+------------+------------------------------+
 
 
@@ -1012,7 +1014,7 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; lcdOnIn   ; clk        ; 2.626 ; 2.626 ; Rise       ; clk             ;
+; lcdOnIn   ; clk        ; 2.258 ; 2.258 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1021,7 +1023,7 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; lcdOnIn   ; clk        ; -2.506 ; -2.506 ; Rise       ; clk             ;
+; lcdOnIn   ; clk        ; -2.138 ; -2.138 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -1030,18 +1032,17 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; errorLed     ; clk        ; 5.097 ; 5.097 ; Rise       ; clk             ;
-; lcdBus[*]    ; clk        ; 3.856 ; 3.856 ; Rise       ; clk             ;
-;  lcdBus[0]   ; clk        ; 3.711 ; 3.711 ; Rise       ; clk             ;
-;  lcdBus[1]   ; clk        ; 3.716 ; 3.716 ; Rise       ; clk             ;
-;  lcdBus[2]   ; clk        ; 3.732 ; 3.732 ; Rise       ; clk             ;
-;  lcdBus[3]   ; clk        ; 3.643 ; 3.643 ; Rise       ; clk             ;
-;  lcdBus[4]   ; clk        ; 3.702 ; 3.702 ; Rise       ; clk             ;
-;  lcdBus[5]   ; clk        ; 3.706 ; 3.706 ; Rise       ; clk             ;
-;  lcdBus[6]   ; clk        ; 3.724 ; 3.724 ; Rise       ; clk             ;
-;  lcdBus[7]   ; clk        ; 3.856 ; 3.856 ; Rise       ; clk             ;
-; lcdEnableOut ; clk        ; 3.703 ; 3.703 ; Rise       ; clk             ;
-; lcdRsSelect  ; clk        ; 3.694 ; 3.694 ; Rise       ; clk             ;
+; lcdBus[*]    ; clk        ; 4.043 ; 4.043 ; Rise       ; clk             ;
+;  lcdBus[0]   ; clk        ; 3.937 ; 3.937 ; Rise       ; clk             ;
+;  lcdBus[1]   ; clk        ; 3.891 ; 3.891 ; Rise       ; clk             ;
+;  lcdBus[2]   ; clk        ; 4.043 ; 4.043 ; Rise       ; clk             ;
+;  lcdBus[3]   ; clk        ; 4.032 ; 4.032 ; Rise       ; clk             ;
+;  lcdBus[4]   ; clk        ; 4.012 ; 4.012 ; Rise       ; clk             ;
+;  lcdBus[5]   ; clk        ; 4.036 ; 4.036 ; Rise       ; clk             ;
+;  lcdBus[6]   ; clk        ; 3.994 ; 3.994 ; Rise       ; clk             ;
+;  lcdBus[7]   ; clk        ; 4.034 ; 4.034 ; Rise       ; clk             ;
+; lcdEnableOut ; clk        ; 3.873 ; 3.873 ; Rise       ; clk             ;
+; lcdRsSelect  ; clk        ; 3.883 ; 3.883 ; Rise       ; clk             ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -1050,18 +1051,17 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; errorLed     ; clk        ; 5.097 ; 5.097 ; Rise       ; clk             ;
-; lcdBus[*]    ; clk        ; 3.643 ; 3.643 ; Rise       ; clk             ;
-;  lcdBus[0]   ; clk        ; 3.711 ; 3.711 ; Rise       ; clk             ;
-;  lcdBus[1]   ; clk        ; 3.716 ; 3.716 ; Rise       ; clk             ;
-;  lcdBus[2]   ; clk        ; 3.732 ; 3.732 ; Rise       ; clk             ;
-;  lcdBus[3]   ; clk        ; 3.643 ; 3.643 ; Rise       ; clk             ;
-;  lcdBus[4]   ; clk        ; 3.702 ; 3.702 ; Rise       ; clk             ;
-;  lcdBus[5]   ; clk        ; 3.706 ; 3.706 ; Rise       ; clk             ;
-;  lcdBus[6]   ; clk        ; 3.724 ; 3.724 ; Rise       ; clk             ;
-;  lcdBus[7]   ; clk        ; 3.856 ; 3.856 ; Rise       ; clk             ;
-; lcdEnableOut ; clk        ; 3.703 ; 3.703 ; Rise       ; clk             ;
-; lcdRsSelect  ; clk        ; 3.694 ; 3.694 ; Rise       ; clk             ;
+; lcdBus[*]    ; clk        ; 3.891 ; 3.891 ; Rise       ; clk             ;
+;  lcdBus[0]   ; clk        ; 3.937 ; 3.937 ; Rise       ; clk             ;
+;  lcdBus[1]   ; clk        ; 3.891 ; 3.891 ; Rise       ; clk             ;
+;  lcdBus[2]   ; clk        ; 4.043 ; 4.043 ; Rise       ; clk             ;
+;  lcdBus[3]   ; clk        ; 4.032 ; 4.032 ; Rise       ; clk             ;
+;  lcdBus[4]   ; clk        ; 4.012 ; 4.012 ; Rise       ; clk             ;
+;  lcdBus[5]   ; clk        ; 4.036 ; 4.036 ; Rise       ; clk             ;
+;  lcdBus[6]   ; clk        ; 3.994 ; 3.994 ; Rise       ; clk             ;
+;  lcdBus[7]   ; clk        ; 4.034 ; 4.034 ; Rise       ; clk             ;
+; lcdEnableOut ; clk        ; 3.873 ; 3.873 ; Rise       ; clk             ;
+; lcdRsSelect  ; clk        ; 3.883 ; 3.883 ; Rise       ; clk             ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -1070,7 +1070,7 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; lcdOnIn    ; lcdOnOut    ; 5.529 ;    ;    ; 5.529 ;
+; lcdOnIn    ; lcdOnOut    ; 5.184 ;    ;    ; 5.184 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -1079,7 +1079,7 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; lcdOnIn    ; lcdOnOut    ; 5.529 ;    ;    ; 5.529 ;
+; lcdOnIn    ; lcdOnOut    ; 5.184 ;    ;    ; 5.184 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -1088,14 +1088,15 @@ No paths to report.
 +------------+------------+-------+------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+------+------------+-----------------+
-; lcdBus[*]  ; clk        ; 3.651 ;      ; Rise       ; clk             ;
-;  lcdBus[0] ; clk        ; 3.651 ;      ; Rise       ; clk             ;
-;  lcdBus[1] ; clk        ; 3.653 ;      ; Rise       ; clk             ;
-;  lcdBus[2] ; clk        ; 3.672 ;      ; Rise       ; clk             ;
-;  lcdBus[3] ; clk        ; 3.667 ;      ; Rise       ; clk             ;
-;  lcdBus[4] ; clk        ; 3.652 ;      ; Rise       ; clk             ;
-;  lcdBus[5] ; clk        ; 3.656 ;      ; Rise       ; clk             ;
-;  lcdBus[7] ; clk        ; 3.800 ;      ; Rise       ; clk             ;
+; lcdBus[*]  ; clk        ; 3.387 ;      ; Rise       ; clk             ;
+;  lcdBus[0] ; clk        ; 3.387 ;      ; Rise       ; clk             ;
+;  lcdBus[1] ; clk        ; 3.387 ;      ; Rise       ; clk             ;
+;  lcdBus[2] ; clk        ; 3.528 ;      ; Rise       ; clk             ;
+;  lcdBus[3] ; clk        ; 3.525 ;      ; Rise       ; clk             ;
+;  lcdBus[4] ; clk        ; 4.005 ;      ; Rise       ; clk             ;
+;  lcdBus[5] ; clk        ; 3.464 ;      ; Rise       ; clk             ;
+;  lcdBus[6] ; clk        ; 3.941 ;      ; Rise       ; clk             ;
+;  lcdBus[7] ; clk        ; 3.536 ;      ; Rise       ; clk             ;
 +------------+------------+-------+------+------------+-----------------+
 
 
@@ -1104,14 +1105,15 @@ No paths to report.
 +------------+------------+-------+------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise  ; Fall ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+------+------------+-----------------+
-; lcdBus[*]  ; clk        ; 3.651 ;      ; Rise       ; clk             ;
-;  lcdBus[0] ; clk        ; 3.651 ;      ; Rise       ; clk             ;
-;  lcdBus[1] ; clk        ; 3.653 ;      ; Rise       ; clk             ;
-;  lcdBus[2] ; clk        ; 3.672 ;      ; Rise       ; clk             ;
-;  lcdBus[3] ; clk        ; 3.667 ;      ; Rise       ; clk             ;
-;  lcdBus[4] ; clk        ; 3.652 ;      ; Rise       ; clk             ;
-;  lcdBus[5] ; clk        ; 3.656 ;      ; Rise       ; clk             ;
-;  lcdBus[7] ; clk        ; 3.800 ;      ; Rise       ; clk             ;
+; lcdBus[*]  ; clk        ; 3.387 ;      ; Rise       ; clk             ;
+;  lcdBus[0] ; clk        ; 3.387 ;      ; Rise       ; clk             ;
+;  lcdBus[1] ; clk        ; 3.387 ;      ; Rise       ; clk             ;
+;  lcdBus[2] ; clk        ; 3.528 ;      ; Rise       ; clk             ;
+;  lcdBus[3] ; clk        ; 3.525 ;      ; Rise       ; clk             ;
+;  lcdBus[4] ; clk        ; 4.005 ;      ; Rise       ; clk             ;
+;  lcdBus[5] ; clk        ; 3.464 ;      ; Rise       ; clk             ;
+;  lcdBus[6] ; clk        ; 3.941 ;      ; Rise       ; clk             ;
+;  lcdBus[7] ; clk        ; 3.536 ;      ; Rise       ; clk             ;
 +------------+------------+-------+------+------------+-----------------+
 
 
@@ -1120,14 +1122,15 @@ No paths to report.
 +------------+------------+-----------+-----------+------------+-----------------+
 ; Data Port  ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
 +------------+------------+-----------+-----------+------------+-----------------+
-; lcdBus[*]  ; clk        ; 3.651     ;           ; Rise       ; clk             ;
-;  lcdBus[0] ; clk        ; 3.651     ;           ; Rise       ; clk             ;
-;  lcdBus[1] ; clk        ; 3.653     ;           ; Rise       ; clk             ;
-;  lcdBus[2] ; clk        ; 3.672     ;           ; Rise       ; clk             ;
-;  lcdBus[3] ; clk        ; 3.667     ;           ; Rise       ; clk             ;
-;  lcdBus[4] ; clk        ; 3.652     ;           ; Rise       ; clk             ;
-;  lcdBus[5] ; clk        ; 3.656     ;           ; Rise       ; clk             ;
-;  lcdBus[7] ; clk        ; 3.800     ;           ; Rise       ; clk             ;
+; lcdBus[*]  ; clk        ; 3.387     ;           ; Rise       ; clk             ;
+;  lcdBus[0] ; clk        ; 3.387     ;           ; Rise       ; clk             ;
+;  lcdBus[1] ; clk        ; 3.387     ;           ; Rise       ; clk             ;
+;  lcdBus[2] ; clk        ; 3.528     ;           ; Rise       ; clk             ;
+;  lcdBus[3] ; clk        ; 3.525     ;           ; Rise       ; clk             ;
+;  lcdBus[4] ; clk        ; 4.005     ;           ; Rise       ; clk             ;
+;  lcdBus[5] ; clk        ; 3.464     ;           ; Rise       ; clk             ;
+;  lcdBus[6] ; clk        ; 3.941     ;           ; Rise       ; clk             ;
+;  lcdBus[7] ; clk        ; 3.536     ;           ; Rise       ; clk             ;
 +------------+------------+-----------+-----------+------------+-----------------+
 
 
@@ -1136,14 +1139,15 @@ No paths to report.
 +------------+------------+-----------+-----------+------------+-----------------+
 ; Data Port  ; Clock Port ; 0 to Hi-Z ; 1 to Hi-Z ; Clock Edge ; Clock Reference ;
 +------------+------------+-----------+-----------+------------+-----------------+
-; lcdBus[*]  ; clk        ; 3.651     ;           ; Rise       ; clk             ;
-;  lcdBus[0] ; clk        ; 3.651     ;           ; Rise       ; clk             ;
-;  lcdBus[1] ; clk        ; 3.653     ;           ; Rise       ; clk             ;
-;  lcdBus[2] ; clk        ; 3.672     ;           ; Rise       ; clk             ;
-;  lcdBus[3] ; clk        ; 3.667     ;           ; Rise       ; clk             ;
-;  lcdBus[4] ; clk        ; 3.652     ;           ; Rise       ; clk             ;
-;  lcdBus[5] ; clk        ; 3.656     ;           ; Rise       ; clk             ;
-;  lcdBus[7] ; clk        ; 3.800     ;           ; Rise       ; clk             ;
+; lcdBus[*]  ; clk        ; 3.387     ;           ; Rise       ; clk             ;
+;  lcdBus[0] ; clk        ; 3.387     ;           ; Rise       ; clk             ;
+;  lcdBus[1] ; clk        ; 3.387     ;           ; Rise       ; clk             ;
+;  lcdBus[2] ; clk        ; 3.528     ;           ; Rise       ; clk             ;
+;  lcdBus[3] ; clk        ; 3.525     ;           ; Rise       ; clk             ;
+;  lcdBus[4] ; clk        ; 4.005     ;           ; Rise       ; clk             ;
+;  lcdBus[5] ; clk        ; 3.464     ;           ; Rise       ; clk             ;
+;  lcdBus[6] ; clk        ; 3.941     ;           ; Rise       ; clk             ;
+;  lcdBus[7] ; clk        ; 3.536     ;           ; Rise       ; clk             ;
 +------------+------------+-----------+-----------+------------+-----------------+
 
 
@@ -1152,8 +1156,8 @@ No paths to report.
 +------------------+--------+-------+----------+---------+---------------------+
 ; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack ; 12.775 ; 0.215 ; N/A      ; N/A     ; 9.000               ;
-;  clk             ; 12.775 ; 0.215 ; N/A      ; N/A     ; 9.000               ;
+; Worst-case Slack ; 12.089 ; 0.215 ; N/A      ; N/A     ; 9.000               ;
+;  clk             ; 12.089 ; 0.215 ; N/A      ; N/A     ; 9.000               ;
 ; Design-wide TNS  ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  clk             ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
 +------------------+--------+-------+----------+---------+---------------------+
@@ -1164,7 +1168,7 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; lcdOnIn   ; clk        ; 4.702 ; 4.702 ; Rise       ; clk             ;
+; lcdOnIn   ; clk        ; 4.087 ; 4.087 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -1173,7 +1177,7 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; lcdOnIn   ; clk        ; -2.506 ; -2.506 ; Rise       ; clk             ;
+; lcdOnIn   ; clk        ; -2.138 ; -2.138 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -1182,18 +1186,17 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; errorLed     ; clk        ; 9.181 ; 9.181 ; Rise       ; clk             ;
-; lcdBus[*]    ; clk        ; 6.897 ; 6.897 ; Rise       ; clk             ;
-;  lcdBus[0]   ; clk        ; 6.595 ; 6.595 ; Rise       ; clk             ;
-;  lcdBus[1]   ; clk        ; 6.604 ; 6.604 ; Rise       ; clk             ;
-;  lcdBus[2]   ; clk        ; 6.623 ; 6.623 ; Rise       ; clk             ;
-;  lcdBus[3]   ; clk        ; 6.478 ; 6.478 ; Rise       ; clk             ;
-;  lcdBus[4]   ; clk        ; 6.585 ; 6.585 ; Rise       ; clk             ;
-;  lcdBus[5]   ; clk        ; 6.586 ; 6.586 ; Rise       ; clk             ;
-;  lcdBus[6]   ; clk        ; 6.610 ; 6.610 ; Rise       ; clk             ;
-;  lcdBus[7]   ; clk        ; 6.897 ; 6.897 ; Rise       ; clk             ;
-; lcdEnableOut ; clk        ; 6.589 ; 6.589 ; Rise       ; clk             ;
-; lcdRsSelect  ; clk        ; 6.574 ; 6.574 ; Rise       ; clk             ;
+; lcdBus[*]    ; clk        ; 7.230 ; 7.230 ; Rise       ; clk             ;
+;  lcdBus[0]   ; clk        ; 6.997 ; 6.997 ; Rise       ; clk             ;
+;  lcdBus[1]   ; clk        ; 6.889 ; 6.889 ; Rise       ; clk             ;
+;  lcdBus[2]   ; clk        ; 7.230 ; 7.230 ; Rise       ; clk             ;
+;  lcdBus[3]   ; clk        ; 7.201 ; 7.201 ; Rise       ; clk             ;
+;  lcdBus[4]   ; clk        ; 7.190 ; 7.190 ; Rise       ; clk             ;
+;  lcdBus[5]   ; clk        ; 7.217 ; 7.217 ; Rise       ; clk             ;
+;  lcdBus[6]   ; clk        ; 7.132 ; 7.132 ; Rise       ; clk             ;
+;  lcdBus[7]   ; clk        ; 7.196 ; 7.196 ; Rise       ; clk             ;
+; lcdEnableOut ; clk        ; 6.863 ; 6.863 ; Rise       ; clk             ;
+; lcdRsSelect  ; clk        ; 6.875 ; 6.875 ; Rise       ; clk             ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -1202,18 +1205,17 @@ No paths to report.
 +--------------+------------+-------+-------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +--------------+------------+-------+-------+------------+-----------------+
-; errorLed     ; clk        ; 5.097 ; 5.097 ; Rise       ; clk             ;
-; lcdBus[*]    ; clk        ; 3.643 ; 3.643 ; Rise       ; clk             ;
-;  lcdBus[0]   ; clk        ; 3.711 ; 3.711 ; Rise       ; clk             ;
-;  lcdBus[1]   ; clk        ; 3.716 ; 3.716 ; Rise       ; clk             ;
-;  lcdBus[2]   ; clk        ; 3.732 ; 3.732 ; Rise       ; clk             ;
-;  lcdBus[3]   ; clk        ; 3.643 ; 3.643 ; Rise       ; clk             ;
-;  lcdBus[4]   ; clk        ; 3.702 ; 3.702 ; Rise       ; clk             ;
-;  lcdBus[5]   ; clk        ; 3.706 ; 3.706 ; Rise       ; clk             ;
-;  lcdBus[6]   ; clk        ; 3.724 ; 3.724 ; Rise       ; clk             ;
-;  lcdBus[7]   ; clk        ; 3.856 ; 3.856 ; Rise       ; clk             ;
-; lcdEnableOut ; clk        ; 3.703 ; 3.703 ; Rise       ; clk             ;
-; lcdRsSelect  ; clk        ; 3.694 ; 3.694 ; Rise       ; clk             ;
+; lcdBus[*]    ; clk        ; 3.891 ; 3.891 ; Rise       ; clk             ;
+;  lcdBus[0]   ; clk        ; 3.937 ; 3.937 ; Rise       ; clk             ;
+;  lcdBus[1]   ; clk        ; 3.891 ; 3.891 ; Rise       ; clk             ;
+;  lcdBus[2]   ; clk        ; 4.043 ; 4.043 ; Rise       ; clk             ;
+;  lcdBus[3]   ; clk        ; 4.032 ; 4.032 ; Rise       ; clk             ;
+;  lcdBus[4]   ; clk        ; 4.012 ; 4.012 ; Rise       ; clk             ;
+;  lcdBus[5]   ; clk        ; 4.036 ; 4.036 ; Rise       ; clk             ;
+;  lcdBus[6]   ; clk        ; 3.994 ; 3.994 ; Rise       ; clk             ;
+;  lcdBus[7]   ; clk        ; 4.034 ; 4.034 ; Rise       ; clk             ;
+; lcdEnableOut ; clk        ; 3.873 ; 3.873 ; Rise       ; clk             ;
+; lcdRsSelect  ; clk        ; 3.883 ; 3.883 ; Rise       ; clk             ;
 +--------------+------------+-------+-------+------------+-----------------+
 
 
@@ -1222,7 +1224,7 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; lcdOnIn    ; lcdOnOut    ; 9.778 ;    ;    ; 9.778 ;
+; lcdOnIn    ; lcdOnOut    ; 9.125 ;    ;    ; 9.125 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -1231,7 +1233,7 @@ No paths to report.
 +------------+-------------+-------+----+----+-------+
 ; Input Port ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------+-------------+-------+----+----+-------+
-; lcdOnIn    ; lcdOnOut    ; 5.529 ;    ;    ; 5.529 ;
+; lcdOnIn    ; lcdOnOut    ; 5.184 ;    ;    ; 5.184 ;
 +------------+-------------+-------+----+----+-------+
 
 
@@ -1240,7 +1242,7 @@ No paths to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 3948     ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 9515     ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1250,7 +1252,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clk        ; clk      ; 3948     ; 0        ; 0        ; 0        ;
+; clk        ; clk      ; 9515     ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1275,8 +1277,8 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 1     ; 1    ;
-; Unconstrained Input Port Paths  ; 47    ; 47   ;
-; Unconstrained Output Ports      ; 12    ; 12   ;
+; Unconstrained Input Port Paths  ; 67    ; 67   ;
+; Unconstrained Output Ports      ; 11    ; 11   ;
 ; Unconstrained Output Port Paths ; 19    ; 19   ;
 +---------------------------------+-------+------+
 
@@ -1287,7 +1289,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Tue Jun 26 20:41:39 2018
+    Info: Processing started: Thu Jun 28 19:51:44 2018
 Info: Command: quartus_sta LCDcontroller -c LCDcontroller
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -1296,10 +1298,10 @@ Info (21077): High junction temperature is 85 degrees C
 Info (332104): Reading SDC File: '../source/LCDcontroller.sdc'
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
-Info (332146): Worst-case setup slack is 12.775
+Info (332146): Worst-case setup slack is 12.089
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    12.775         0.000 clk 
+    Info (332119):    12.089         0.000 clk 
 Info (332146): Worst-case hold slack is 0.391
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1312,10 +1314,10 @@ Info (332146): Worst-case minimum pulse width slack is 9.000
     Info (332119):     9.000         0.000 clk 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
-Info (332146): Worst-case setup slack is 16.684
+Info (332146): Worst-case setup slack is 16.396
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    16.684         0.000 clk 
+    Info (332119):    16.396         0.000 clk 
 Info (332146): Worst-case hold slack is 0.215
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1330,8 +1332,8 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 525 megabytes
-    Info: Processing ended: Tue Jun 26 20:41:41 2018
+    Info: Peak virtual memory: 520 megabytes
+    Info: Processing ended: Thu Jun 28 19:51:46 2018
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
