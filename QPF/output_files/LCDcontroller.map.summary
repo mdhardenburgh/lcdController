@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 Analysis & Synthesis Status : Successful - Sat Jun 23 23:12:26 2018
+=======
+<<<<<<< HEAD
+Analysis & Synthesis Status : Successful - Sat Jun 23 23:53:58 2018
+=======
+Analysis & Synthesis Status : Successful - Sun Jul 01 21:40:33 2018
+>>>>>>> 216d4b2a943b65d61a996758fb30b1ac3cce30d8
+>>>>>>> justLcdControler
 Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Web Edition
 Revision Name : LCDcontroller
-Top-level Entity Name : lcdControllerTop
+Top-level Entity Name : lcdController
 Family : Cyclone II
+<<<<<<< HEAD
 Total logic elements : 1,086
     Total combinational functions : 574
     Dedicated logic registers : 854
@@ -10,5 +19,14 @@ Total registers : 854
 Total pins : 34
 Total virtual pins : 0
 Total memory bits : 270,336
+=======
+Total logic elements : 149
+    Total combinational functions : 137
+    Dedicated logic registers : 80
+Total registers : 80
+Total pins : 29
+Total virtual pins : 0
+Total memory bits : 256
+>>>>>>> justLcdControler
 Embedded Multiplier 9-bit elements : 0
 Total PLLs : 0

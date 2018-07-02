@@ -1,6 +1,10 @@
 <sld_project_info>
   <project>
+<<<<<<< HEAD
     <hash md5_digest_80b="cedf4eee45554e028606"/>
+=======
+    <hash md5_digest_80b="eb2cfbefc89e55715691"/>
+>>>>>>> justLcdControler
   </project>
   <file_info>
     <file device="EP2C35F672C6" path="LCDcontroller.sof" usercode="0xFFFFFFFF"/>

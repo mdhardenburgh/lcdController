@@ -1,11 +1,11 @@
 
-State Machine - |lcdControllerTop|lcdController:myController|functionSetCounter
-Name functionSetCounter.11 functionSetCounter.10 functionSetCounter.01 functionSetCounter.00 
-functionSetCounter.00 0 0 0 0 
-functionSetCounter.01 0 0 1 1 
-functionSetCounter.10 0 1 0 1 
-functionSetCounter.11 1 0 0 1 
+State Machine - |lcdController|lcdStateMachine:myStateMachine|subStates
+Name subStates.00 subStates.subState3 subStates.subState2 
+subStates.00 0 0 0 
+subStates.subState2 1 0 1 
+subStates.subState3 1 1 0 
 
+<<<<<<< HEAD
 State Machine - |lcdControllerTop|lcdController:myController|state
 Name state.functionSet state.write state.entryModeSet state.displayClear state.displaySet state.powerOn 
 state.powerOn 0 0 0 0 0 0 
@@ -14,11 +14,22 @@ state.displayClear 0 0 0 1 0 1
 state.entryModeSet 0 0 1 0 0 1 
 state.write 0 1 0 0 0 1 
 state.functionSet 1 0 0 0 0 1 
+=======
+State Machine - |lcdController|lcdStateMachine:myStateMachine|functionSetCase
+Name functionSetCase.functionSet4 functionSetCase.functionSet3 functionSetCase.functionSet2 functionSetCase.00 
+functionSetCase.00 0 0 0 0 
+functionSetCase.functionSet2 0 0 1 1 
+functionSetCase.functionSet3 0 1 0 1 
+functionSetCase.functionSet4 1 0 0 1 
+>>>>>>> justLcdControler
 
-State Machine - |lcdControllerTop|lcdInterface:myInterface|state
-Name state.ten state.hundred state.thousand state.tenThousand state.one 
-state.tenThousand 0 0 0 0 0 
-state.thousand 0 0 1 1 0 
-state.hundred 0 1 0 1 0 
-state.ten 1 0 0 1 0 
-state.one 0 0 0 1 1 
+State Machine - |lcdController|lcdStateMachine:myStateMachine|state
+Name state.writeData state.writeAddr state.entryModeSet state.displayClear state.displaySet state.functionSet state.powerOn state.cursorLogicState 
+state.powerOn 0 0 0 0 0 0 0 0 
+state.functionSet 0 0 0 0 0 1 1 0 
+state.displaySet 0 0 0 0 1 0 1 0 
+state.displayClear 0 0 0 1 0 0 1 0 
+state.entryModeSet 0 0 1 0 0 0 1 0 
+state.writeAddr 0 1 0 0 0 0 1 0 
+state.writeData 1 0 0 0 0 0 1 0 
+state.cursorLogicState 0 0 0 0 0 0 1 1 

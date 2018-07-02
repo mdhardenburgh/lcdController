@@ -79,7 +79,11 @@ GND*                         : A9        :        :                   :         
 GND*                         : A10       :        :                   :         : 3         :                
 VCCIO3                       : A11       : power  :                   : 3.3V    : 3         :                
 GND                          : A12       : gnd    :                   :         :           :                
+<<<<<<< HEAD
 switches[9]                  : A13       : input  : 3.3-V LVTTL       :         : 4         : Y              
+=======
+writeAddr[1]                 : A13       : input  : 3.3-V LVTTL       :         : 4         : Y              
+>>>>>>> justLcdControler
 GND*                         : A14       :        :                   :         : 4         :                
 GND                          : A15       : gnd    :                   :         :           :                
 VCCIO4                       : A16       : power  :                   : 3.3V    : 4         :                
@@ -156,7 +160,11 @@ GND*                         : AC9       :        :                   :         
 GND*                         : AC10      :        :                   :         : 8         :                
 GND*                         : AC11      :        :                   :         : 8         :                
 GND*                         : AC12      :        :                   :         : 8         :                
+<<<<<<< HEAD
 switches[6]                  : AC13      : input  : 3.3-V LVTTL       :         : 8         : Y              
+=======
+charCode[6]                  : AC13      : input  : 3.3-V LVTTL       :         : 8         : Y              
+>>>>>>> justLcdControler
 GND*                         : AC14      :        :                   :         : 7         :                
 GND*                         : AC15      :        :                   :         : 7         :                
 GND*                         : AC16      :        :                   :         : 7         :                
@@ -182,7 +190,11 @@ GND                          : AD9       : gnd    :                   :         
 GND*                         : AD10      :        :                   :         : 8         :                
 GND*                         : AD11      :        :                   :         : 8         :                
 GND*                         : AD12      :        :                   :         : 8         :                
+<<<<<<< HEAD
 switches[5]                  : AD13      : input  : 3.3-V LVTTL       :         : 8         : Y              
+=======
+charCode[5]                  : AD13      : input  : 3.3-V LVTTL       :         : 8         : Y              
+>>>>>>> justLcdControler
 GND                          : AD14      : gnd    :                   :         :           :                
 GND*                         : AD15      :        :                   :         : 7         :                
 GND*                         : AD16      :        :                   :         : 7         :                
@@ -209,7 +221,11 @@ GND*                         : AE10      :        :                   :         
 GND*                         : AE11      :        :                   :         : 8         :                
 GND*                         : AE12      :        :                   :         : 8         :                
 GND*                         : AE13      :        :                   :         : 8         :                
+<<<<<<< HEAD
 switches[3]                  : AE14      : input  : 3.3-V LVTTL       :         : 7         : Y              
+=======
+charCode[3]                  : AE14      : input  : 3.3-V LVTTL       :         : 7         : Y              
+>>>>>>> justLcdControler
 GND*                         : AE15      :        :                   :         : 7         :                
 GND*                         : AE16      :        :                   :         : 7         :                
 GND*                         : AE17      :        :                   :         : 7         :                
@@ -218,7 +234,11 @@ GND*                         : AE19      :        :                   :         
 GND*                         : AE20      :        :                   :         : 7         :                
 GND*                         : AE21      :        :                   :         : 7         :                
 GND*                         : AE22      :        :                   :         : 7         :                
+<<<<<<< HEAD
 errorLed1                    : AE23      : output : 3.3-V LVTTL       :         : 7         : Y              
+=======
+errorLed                     : AE23      : output : 3.3-V LVTTL       :         : 7         : Y              
+>>>>>>> justLcdControler
 ~LVDS150p/nCEO~              : AE24      : output : 3.3-V LVTTL       :         : 6         : N              
 GND*                         : AE25      :        :                   :         : 6         :                
 GND                          : AE26      : gnd    :                   :         :           :                
@@ -234,7 +254,11 @@ GND*                         : AF10      :        :                   :         
 VCCIO8                       : AF11      : power  :                   : 3.3V    : 8         :                
 GND                          : AF12      : gnd    :                   :         :           :                
 GND*                         : AF13      :        :                   :         : 8         :                
+<<<<<<< HEAD
 switches[4]                  : AF14      : input  : 3.3-V LVTTL       :         : 7         : Y              
+=======
+charCode[4]                  : AF14      : input  : 3.3-V LVTTL       :         : 7         : Y              
+>>>>>>> justLcdControler
 GND                          : AF15      : gnd    :                   :         :           :                
 VCCIO7                       : AF16      : power  :                   : 3.3V    : 7         :                
 GND*                         : AF17      :        :                   :         : 7         :                
@@ -258,7 +282,11 @@ GND*                         : B9        :        :                   :         
 GND*                         : B10       :        :                   :         : 3         :                
 GND*                         : B11       :        :                   :         : 3         :                
 GND*                         : B12       :        :                   :         : 3         :                
+<<<<<<< HEAD
 switches[8]                  : B13       : input  : 3.3-V LVTTL       :         : 4         : Y              
+=======
+writeAddr[0]                 : B13       : input  : 3.3-V LVTTL       :         : 4         : Y              
+>>>>>>> justLcdControler
 GND*                         : B14       :        :                   :         : 4         :                
 GND*                         : B15       :        :                   :         : 4         :                
 GND*                         : B16       :        :                   :         : 4         :                
@@ -284,7 +312,11 @@ GND*                         : C9        :        :                   :         
 GND*                         : C10       :        :                   :         : 3         :                
 GND*                         : C11       :        :                   :         : 3         :                
 GND*                         : C12       :        :                   :         : 3         :                
+<<<<<<< HEAD
 switches[7]                  : C13       : input  : 3.3-V LVTTL       :         : 3         : Y              
+=======
+charCode[7]                  : C13       : input  : 3.3-V LVTTL       :         : 3         : Y              
+>>>>>>> justLcdControler
 GND                          : C14       : gnd    :                   :         :           :                
 GND*                         : C15       :        :                   :         : 4         :                
 GND*                         : C16       :        :                   :         : 4         :                
@@ -401,11 +433,19 @@ GND*                         : G22       :        :                   :         
 GND*                         : G23       :        :                   :         : 5         :                
 GND*                         : G24       :        :                   :         : 5         :                
 GND*                         : G25       :        :                   :         : 5         :                
+<<<<<<< HEAD
 GND*                         : G26       :        :                   :         : 5         :                
 lcdBus[2]                    : H1        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 lcdBus[3]                    : H2        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 lcdBus[7]                    : H3        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 lcdBus[6]                    : H4        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+=======
+writeEnable                  : G26       : input  : 3.3-V LVTTL       :         : 5         : Y              
+lcdBus[2]                    : H1        : output : 3.3-V LVTTL       :         : 2         : Y              
+lcdBus[3]                    : H2        : output : 3.3-V LVTTL       :         : 2         : Y              
+lcdBus[7]                    : H3        : output : 3.3-V LVTTL       :         : 2         : Y              
+lcdBus[6]                    : H4        : output : 3.3-V LVTTL       :         : 2         : Y              
+>>>>>>> justLcdControler
 GND                          : H5        : gnd    :                   :         :           :                
 GND*                         : H6        :        :                   :         : 2         :                
 VCCD_PLL3                    : H7        : power  :                   : 1.2V    :           :                
@@ -428,10 +468,17 @@ GND*                         : H23       :        :                   :         
 GND*                         : H24       :        :                   :         : 5         :                
 GND*                         : H25       :        :                   :         : 5         :                
 GND*                         : H26       :        :                   :         : 5         :                
+<<<<<<< HEAD
 lcdBus[0]                    : J1        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 lcdBus[1]                    : J2        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 lcdBus[5]                    : J3        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 lcdBus[4]                    : J4        : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+=======
+lcdBus[0]                    : J1        : output : 3.3-V LVTTL       :         : 2         : Y              
+lcdBus[1]                    : J2        : output : 3.3-V LVTTL       :         : 2         : Y              
+lcdBus[5]                    : J3        : output : 3.3-V LVTTL       :         : 2         : Y              
+lcdBus[4]                    : J4        : output : 3.3-V LVTTL       :         : 2         : Y              
+>>>>>>> justLcdControler
 GND*                         : J5        :        :                   :         : 2         :                
 GND*                         : J6        :        :                   :         : 2         :                
 GND*                         : J7        :        :                   :         : 2         :                
@@ -455,7 +502,11 @@ GND*                         : J24       :        :                   :         
 GND*                         : J25       :        :                   :         : 5         :                
 GND*                         : J26       :        :                   :         : 5         :                
 lcdRsSelect                  : K1        : output : 3.3-V LVTTL       :         : 2         : Y              
+<<<<<<< HEAD
 lcdBacklightOut              : K2        : output : 3.3-V LVTTL       :         : 2         : Y              
+=======
+GND*                         : K2        :        :                   :         : 2         :                
+>>>>>>> justLcdControler
 lcdEnableOut                 : K3        : output : 3.3-V LVTTL       :         : 2         : Y              
 lcdReadWriteSel              : K4        : output : 3.3-V LVTTL       :         : 2         : Y              
 GND*                         : K5        :        :                   :         : 2         :                
@@ -483,7 +534,11 @@ GND*                         : K26       :        :                   :         
 VCCIO2                       : L1        : power  :                   : 3.3V    : 2         :                
 GND*                         : L2        :        :                   :         : 2         :                
 GND*                         : L3        :        :                   :         : 2         :                
+<<<<<<< HEAD
 lcdPwr                       : L4        : output : 3.3-V LVTTL       :         : 2         : Y              
+=======
+lcdOnOut                     : L4        : output : 3.3-V LVTTL       :         : 2         : Y              
+>>>>>>> justLcdControler
 GND                          : L5        : gnd    :                   :         :           :                
 GND*                         : L6        :        :                   :         : 2         :                
 GND*                         : L7        :        :                   :         : 2         :                
@@ -532,7 +587,11 @@ GND*                         : M23       :        :                   :         
 GND*                         : M24       :        :                   :         : 5         :                
 GND*                         : M25       :        :                   :         : 5         :                
 GND                          : M26       : gnd    :                   :         :           :                
+<<<<<<< HEAD
 switches[10]                 : N1        : input  : 3.3-V LVTTL       :         : 2         : Y              
+=======
+writeAddr[2]                 : N1        : input  : 3.3-V LVTTL       :         : 2         : Y              
+>>>>>>> justLcdControler
 clk                          : N2        : input  : 3.3-V LVTTL       :         : 2         : Y              
 DATA0                        : N3        : input  :                   :         : 2         :                
 nCE                          : N4        :        :                   :         : 2         :                
@@ -556,10 +615,17 @@ NC                           : N21       :        :                   :         
 VCCIO5                       : N22       : power  :                   : 3.3V    : 5         :                
 GND*                         : N23       :        :                   :         : 5         :                
 GND*                         : N24       :        :                   :         : 5         :                
+<<<<<<< HEAD
 switches[0]                  : N25       : input  : 3.3-V LVTTL       :         : 5         : Y              
 switches[1]                  : N26       : input  : 3.3-V LVTTL       :         : 5         : Y              
 switches[11]                 : P1        : input  : 3.3-V LVTTL       :         : 1         : Y              
 switches[12]                 : P2        : input  : 3.3-V LVTTL       :         : 1         : Y              
+=======
+charCode[0]                  : N25       : input  : 3.3-V LVTTL       :         : 5         : Y              
+charCode[1]                  : N26       : input  : 3.3-V LVTTL       :         : 5         : Y              
+writeAddr[3]                 : P1        : input  : 3.3-V LVTTL       :         : 1         : Y              
+writeAddr[4]                 : P2        : input  : 3.3-V LVTTL       :         : 1         : Y              
+>>>>>>> justLcdControler
 GND*                         : P3        :        :                   :         : 1         :                
 GND*                         : P4        :        :                   :         : 1         :                
 VCCIO1                       : P5        : power  :                   : 3.3V    : 1         :                
@@ -582,7 +648,11 @@ MSEL1                        : P21       :        :                   :         
 VCCIO6                       : P22       : power  :                   : 3.3V    : 6         :                
 GND*                         : P23       :        :                   :         : 6         :                
 GND*                         : P24       :        :                   :         : 6         :                
+<<<<<<< HEAD
 switches[2]                  : P25       : input  : 3.3-V LVTTL       :         : 6         : Y              
+=======
+charCode[2]                  : P25       : input  : 3.3-V LVTTL       :         : 6         : Y              
+>>>>>>> justLcdControler
 GND+                         : P26       :        :                   :         : 6         :                
 GND                          : R1        : gnd    :                   :         :           :                
 GND*                         : R2        :        :                   :         : 1         :                
@@ -662,8 +732,13 @@ GND*                         : U23       :        :                   :         
 GND*                         : U24       :        :                   :         : 6         :                
 GND*                         : U25       :        :                   :         : 6         :                
 GND*                         : U26       :        :                   :         : 6         :                
+<<<<<<< HEAD
 lcdBackLightIn               : V1        : input  : 3.3-V LVTTL       :         : 1         : Y              
 lcdOn                        : V2        : input  : 3.3-V LVTTL       :         : 1         : Y              
+=======
+GND*                         : V1        :        :                   :         : 1         :                
+lcdOnIn                      : V2        : input  : 3.3-V LVTTL       :         : 1         : Y              
+>>>>>>> justLcdControler
 GND*                         : V3        :        :                   :         : 1         :                
 GND*                         : V4        :        :                   :         : 1         :                
 GND*                         : V5        :        :                   :         : 1         :                
