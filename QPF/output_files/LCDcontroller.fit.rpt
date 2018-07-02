@@ -1,5 +1,5 @@
 Fitter report for LCDcontroller
-Thu Jun 28 19:51:40 2018
+Sun Jul 01 21:40:40 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -18,16 +18,16 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
  10. Fitter Partition Statistics
  11. Input Pins
  12. Output Pins
- 13. Bidir Pins
- 14. I/O Bank Usage
- 15. All Package Pins
- 16. Output Pin Default Load For Reported TCO
- 17. Fitter Resource Utilization by Entity
- 18. Delay Chain Summary
- 19. Pad To Core Delay Chain Fanout
- 20. Control Signals
- 21. Global & Other Fast Signals
- 22. Non-Global High Fan-Out Signals
+ 13. I/O Bank Usage
+ 14. All Package Pins
+ 15. Output Pin Default Load For Reported TCO
+ 16. Fitter Resource Utilization by Entity
+ 17. Delay Chain Summary
+ 18. Pad To Core Delay Chain Fanout
+ 19. Control Signals
+ 20. Global & Other Fast Signals
+ 21. Non-Global High Fan-Out Signals
+ 22. Fitter RAM Summary
  23. Other Routing Usage Summary
  24. LAB Logic Elements
  25. LAB-wide Signals
@@ -63,20 +63,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Thu Jun 28 19:51:40 2018      ;
+; Fitter Status                      ; Successful - Sun Jul 01 21:40:40 2018      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; LCDcontroller                              ;
 ; Top-level Entity Name              ; lcdController                              ;
 ; Family                             ; Cyclone II                                 ;
 ; Device                             ; EP2C35F672C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 140 / 33,216 ( < 1 % )                     ;
-;     Total combinational functions  ; 132 / 33,216 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 74 / 33,216 ( < 1 % )                      ;
-; Total registers                    ; 74                                         ;
-; Total pins                         ; 15 / 475 ( 3 % )                           ;
+; Total logic elements               ; 152 / 33,216 ( < 1 % )                     ;
+;     Total combinational functions  ; 137 / 33,216 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 80 / 33,216 ( < 1 % )                      ;
+; Total registers                    ; 80                                         ;
+; Total pins                         ; 29 / 475 ( 6 % )                           ;
 ; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0 / 483,840 ( 0 % )                        ;
+; Total memory bits                  ; 256 / 483,840 ( < 1 % )                    ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
 +------------------------------------+--------------------------------------------+
@@ -141,12 +141,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 2.17        ;
+; Average used               ; 2.40        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;  16.7%      ;
+;     Processors 2-8         ;  20.0%      ;
 ;     Processors 9-12        ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -157,8 +157,8 @@ applicable agreement for further details.
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 226 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 226 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 259 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 259 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -181,7 +181,7 @@ applicable agreement for further details.
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 223     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 256     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -192,52 +192,52 @@ applicable agreement for further details.
 The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdControler/lcdController/QPF/output_files/LCDcontroller.pin.
 
 
-+----------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                        ;
-+---------------------------------------------+------------------------+
-; Resource                                    ; Usage                  ;
-+---------------------------------------------+------------------------+
-; Total logic elements                        ; 140 / 33,216 ( < 1 % ) ;
-;     -- Combinational with no register       ; 66                     ;
-;     -- Register only                        ; 8                      ;
-;     -- Combinational with a register        ; 66                     ;
-;                                             ;                        ;
-; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 61                     ;
-;     -- 3 input functions                    ; 19                     ;
-;     -- <=2 input functions                  ; 52                     ;
-;     -- Register only                        ; 8                      ;
-;                                             ;                        ;
-; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 94                     ;
-;     -- arithmetic mode                      ; 38                     ;
-;                                             ;                        ;
-; Total registers*                            ; 74 / 34,593 ( < 1 % )  ;
-;     -- Dedicated logic registers            ; 74 / 33,216 ( < 1 % )  ;
-;     -- I/O registers                        ; 0 / 1,377 ( 0 % )      ;
-;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 10 / 2,076 ( < 1 % )   ;
-; Virtual pins                                ; 0                      ;
-; I/O pins                                    ; 15 / 475 ( 3 % )       ;
-;     -- Clock pins                           ; 1 / 8 ( 13 % )         ;
-;                                             ;                        ;
-; Global signals                              ; 1                      ;
-; M4Ks                                        ; 0 / 105 ( 0 % )        ;
-; Total block memory bits                     ; 0 / 483,840 ( 0 % )    ;
-; Total block memory implementation bits      ; 0 / 483,840 ( 0 % )    ;
-; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )         ;
-; PLLs                                        ; 0 / 4 ( 0 % )          ;
-; Global clocks                               ; 1 / 16 ( 6 % )         ;
-; JTAGs                                       ; 0 / 1 ( 0 % )          ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
-; Peak interconnect usage (total/H/V)         ; 1% / 1% / 1%           ;
-; Maximum fan-out                             ; 74                     ;
-; Highest non-global fan-out                  ; 67                     ;
-; Total fan-out                               ; 718                    ;
-; Average fan-out                             ; 3.11                   ;
-+---------------------------------------------+------------------------+
++-------------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                           ;
++---------------------------------------------+---------------------------+
+; Resource                                    ; Usage                     ;
++---------------------------------------------+---------------------------+
+; Total logic elements                        ; 152 / 33,216 ( < 1 % )    ;
+;     -- Combinational with no register       ; 72                        ;
+;     -- Register only                        ; 15                        ;
+;     -- Combinational with a register        ; 65                        ;
+;                                             ;                           ;
+; Logic element usage by number of LUT inputs ;                           ;
+;     -- 4 input functions                    ; 68                        ;
+;     -- 3 input functions                    ; 16                        ;
+;     -- <=2 input functions                  ; 53                        ;
+;     -- Register only                        ; 15                        ;
+;                                             ;                           ;
+; Logic elements by mode                      ;                           ;
+;     -- normal mode                          ; 99                        ;
+;     -- arithmetic mode                      ; 38                        ;
+;                                             ;                           ;
+; Total registers*                            ; 80 / 34,593 ( < 1 % )     ;
+;     -- Dedicated logic registers            ; 80 / 33,216 ( < 1 % )     ;
+;     -- I/O registers                        ; 0 / 1,377 ( 0 % )         ;
+;                                             ;                           ;
+; Total LABs:  partially or completely used   ; 11 / 2,076 ( < 1 % )      ;
+; Virtual pins                                ; 0                         ;
+; I/O pins                                    ; 29 / 475 ( 6 % )          ;
+;     -- Clock pins                           ; 8 / 8 ( 100 % )           ;
+;                                             ;                           ;
+; Global signals                              ; 1                         ;
+; M4Ks                                        ; 1 / 105 ( < 1 % )         ;
+; Total block memory bits                     ; 256 / 483,840 ( < 1 % )   ;
+; Total block memory implementation bits      ; 4,608 / 483,840 ( < 1 % ) ;
+; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )            ;
+; PLLs                                        ; 0 / 4 ( 0 % )             ;
+; Global clocks                               ; 1 / 16 ( 6 % )            ;
+; JTAGs                                       ; 0 / 1 ( 0 % )             ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )             ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )             ;
+; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%              ;
+; Peak interconnect usage (total/H/V)         ; 1% / 1% / 1%              ;
+; Maximum fan-out                             ; 82                        ;
+; Highest non-global fan-out                  ; 77                        ;
+; Total fan-out                               ; 822                       ;
+; Average fan-out                             ; 3.19                      ;
++---------------------------------------------+---------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
@@ -249,31 +249,32 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 140 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
-;     -- Combinational with no register       ; 66                    ; 0                              ;
-;     -- Register only                        ; 8                     ; 0                              ;
-;     -- Combinational with a register        ; 66                    ; 0                              ;
+; Total logic elements                        ; 152 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
+;     -- Combinational with no register       ; 72                    ; 0                              ;
+;     -- Register only                        ; 15                    ; 0                              ;
+;     -- Combinational with a register        ; 65                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 61                    ; 0                              ;
-;     -- 3 input functions                    ; 19                    ; 0                              ;
-;     -- <=2 input functions                  ; 52                    ; 0                              ;
-;     -- Register only                        ; 8                     ; 0                              ;
+;     -- 4 input functions                    ; 68                    ; 0                              ;
+;     -- 3 input functions                    ; 16                    ; 0                              ;
+;     -- <=2 input functions                  ; 53                    ; 0                              ;
+;     -- Register only                        ; 15                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 94                    ; 0                              ;
+;     -- normal mode                          ; 99                    ; 0                              ;
 ;     -- arithmetic mode                      ; 38                    ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 74                    ; 0                              ;
-;     -- Dedicated logic registers            ; 74 / 33216 ( < 1 % )  ; 0 / 33216 ( 0 % )              ;
+; Total registers                             ; 80                    ; 0                              ;
+;     -- Dedicated logic registers            ; 80 / 33216 ( < 1 % )  ; 0 / 33216 ( 0 % )              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 10 / 2076 ( < 1 % )   ; 0 / 2076 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 11 / 2076 ( < 1 % )   ; 0 / 2076 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
-; I/O pins                                    ; 15                    ; 0                              ;
+; I/O pins                                    ; 29                    ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )        ; 0 / 70 ( 0 % )                 ;
-; Total memory bits                           ; 0                     ; 0                              ;
-; Total RAM block bits                        ; 0                     ; 0                              ;
+; Total memory bits                           ; 256                   ; 0                              ;
+; Total RAM block bits                        ; 4608                  ; 0                              ;
+; M4K                                         ; 1 / 105 ( < 1 % )     ; 0 / 105 ( 0 % )                ;
 ; Clock control block                         ; 1 / 20 ( 5 % )        ; 0 / 20 ( 0 % )                 ;
 ;                                             ;                       ;                                ;
 ; Connections                                 ;                       ;                                ;
@@ -283,17 +284,17 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 718                   ; 0                              ;
-;     -- Registered Connections               ; 264                   ; 0                              ;
+;     -- Total Connections                    ; 824                   ; 0                              ;
+;     -- Registered Connections               ; 288                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 0                     ; 0                              ;
 ;     -- hard_block:auto_generated_inst       ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Partition Interface                         ;                       ;                                ;
-;     -- Input Ports                          ; 2                     ; 0                              ;
-;     -- Output Ports                         ; 5                     ; 0                              ;
-;     -- Bidir Ports                          ; 8                     ; 0                              ;
+;     -- Input Ports                          ; 16                    ; 0                              ;
+;     -- Output Ports                         ; 13                    ; 0                              ;
+;     -- Bidir Ports                          ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Registered Ports                            ;                       ;                                ;
 ;     -- Registered Input Ports               ; 0                     ; 0                              ;
@@ -311,14 +312,28 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 +---------------------------------------------+-----------------------+--------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Input Pins                                                                                                                                                                                                                                                    ;
-+---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; Name    ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
-+---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; clk     ; N2    ; 2        ; 0            ; 18           ; 0           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-; lcdOnIn ; V2    ; 1        ; 0            ; 12           ; 3           ; 67                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
-+---------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                                                                                                                                                         ;
++--------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
+; Name         ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
++--------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
+; charCode[0]  ; N25   ; 5        ; 65           ; 19           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; charCode[1]  ; N26   ; 5        ; 65           ; 19           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; charCode[2]  ; P25   ; 6        ; 65           ; 19           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; charCode[3]  ; AE14  ; 7        ; 33           ; 0            ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; charCode[4]  ; AF14  ; 7        ; 33           ; 0            ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; charCode[5]  ; AD13  ; 8        ; 33           ; 0            ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; charCode[6]  ; AC13  ; 8        ; 33           ; 0            ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; charCode[7]  ; C13   ; 3        ; 31           ; 36           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; clk          ; N2    ; 2        ; 0            ; 18           ; 0           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; lcdOnIn      ; V2    ; 1        ; 0            ; 12           ; 3           ; 77                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; writeAddr[0] ; B13   ; 4        ; 31           ; 36           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; writeAddr[1] ; A13   ; 4        ; 31           ; 36           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; writeAddr[2] ; N1    ; 2        ; 0            ; 18           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; writeAddr[3] ; P1    ; 1        ; 0            ; 18           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; writeAddr[4] ; P2    ; 1        ; 0            ; 18           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; writeEnable  ; G26   ; 5        ; 65           ; 27           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
++--------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -327,6 +342,14 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ; Name            ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
 +-----------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 ; errorLed        ; AE23  ; 7        ; 63           ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; lcdBus[0]       ; J1    ; 2        ; 0            ; 26           ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; lcdBus[1]       ; J2    ; 2        ; 0            ; 26           ; 0           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; lcdBus[2]       ; H1    ; 2        ; 0            ; 27           ; 4           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; lcdBus[3]       ; H2    ; 2        ; 0            ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; lcdBus[4]       ; J4    ; 2        ; 0            ; 27           ; 2           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; lcdBus[5]       ; J3    ; 2        ; 0            ; 27           ; 1           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; lcdBus[6]       ; H4    ; 2        ; 0            ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
+; lcdBus[7]       ; H3    ; 2        ; 0            ; 28           ; 4           ; no              ; no                     ; no            ; no              ; no         ; yes           ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; lcdEnableOut    ; K3    ; 2        ; 0            ; 26           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; lcdOnOut        ; L4    ; 2        ; 0            ; 25           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; lcdReadWriteSel ; K4    ; 2        ; 0            ; 26           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
@@ -334,35 +357,19 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 +-----------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Bidir Pins                                                                                                                                                                                                                                                                                                                                                                                     ;
-+-----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------------+------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; Name      ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
-+-----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------------+------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; lcdBus[0] ; J1    ; 2        ; 0            ; 26           ; 1           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; lcdBus[0]~en         ; -                   ;
-; lcdBus[1] ; J2    ; 2        ; 0            ; 26           ; 0           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; lcdBus[1]~en         ; -                   ;
-; lcdBus[2] ; H1    ; 2        ; 0            ; 27           ; 4           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; lcdBus[2]~en         ; -                   ;
-; lcdBus[3] ; H2    ; 2        ; 0            ; 27           ; 3           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; lcdBus[3]~en         ; -                   ;
-; lcdBus[4] ; J4    ; 2        ; 0            ; 27           ; 2           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; lcdBus[4]~en         ; -                   ;
-; lcdBus[5] ; J3    ; 2        ; 0            ; 27           ; 1           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; lcdBus[5]~en         ; -                   ;
-; lcdBus[6] ; H4    ; 2        ; 0            ; 27           ; 0           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; lcdBus[6]~en         ; -                   ;
-; lcdBus[7] ; H3    ; 2        ; 0            ; 28           ; 4           ; 0                     ; 0                  ; no     ; no             ; no              ; no                     ; no            ; no              ; no         ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; lcdBus[7]~en         ; -                   ;
-+-----------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+-----------------+------------------------+---------------+-----------------+------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-
-
 +------------------------------------------------------------+
 ; I/O Bank Usage                                             ;
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 1 / 64 ( 2 % )   ; 3.3V          ; --           ;
-; 2        ; 15 / 59 ( 25 % ) ; 3.3V          ; --           ;
-; 3        ; 0 / 56 ( 0 % )   ; 3.3V          ; --           ;
-; 4        ; 0 / 58 ( 0 % )   ; 3.3V          ; --           ;
-; 5        ; 0 / 65 ( 0 % )   ; 3.3V          ; --           ;
-; 6        ; 1 / 59 ( 2 % )   ; 3.3V          ; --           ;
-; 7        ; 1 / 58 ( 2 % )   ; 3.3V          ; --           ;
-; 8        ; 0 / 56 ( 0 % )   ; 3.3V          ; --           ;
+; 1        ; 3 / 64 ( 5 % )   ; 3.3V          ; --           ;
+; 2        ; 16 / 59 ( 27 % ) ; 3.3V          ; --           ;
+; 3        ; 1 / 56 ( 2 % )   ; 3.3V          ; --           ;
+; 4        ; 2 / 58 ( 3 % )   ; 3.3V          ; --           ;
+; 5        ; 3 / 65 ( 5 % )   ; 3.3V          ; --           ;
+; 6        ; 2 / 59 ( 3 % )   ; 3.3V          ; --           ;
+; 7        ; 3 / 58 ( 5 % )   ; 3.3V          ; --           ;
+; 8        ; 2 / 56 ( 4 % )   ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
 
@@ -382,7 +389,7 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ; A10      ; 447        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A11      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; A12      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; A13      ; 430        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; A13      ; 430        ; 4        ; writeAddr[1]                             ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; A14      ; 427        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; A15      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; A16      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -459,7 +466,7 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ; AC10     ; 164        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC11     ; 168        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC12     ; 172        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; AC13     ; 185        ; 8        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; AC13     ; 185        ; 8        ; charCode[6]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AC14     ; 191        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC15     ; 199        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AC16     ; 202        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
@@ -485,7 +492,7 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ; AD10     ; 167        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD11     ; 173        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD12     ; 181        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AD13     ; 186        ; 8        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; AD13     ; 186        ; 8        ; charCode[5]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AD14     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AD15     ; 190        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AD16     ; 201        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -512,7 +519,7 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ; AE11     ; 174        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE12     ; 182        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE13     ; 183        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AE14     ; 188        ; 7        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; AE14     ; 188        ; 7        ; charCode[3]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AE15     ; 189        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE16     ; 200        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; AE17     ; 206        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -537,7 +544,7 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ; AF11     ;            ; 8        ; VCCIO8                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AF12     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AF13     ; 184        ; 8        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; AF14     ; 187        ; 7        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; AF14     ; 187        ; 7        ; charCode[4]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; AF15     ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; AF16     ;            ; 7        ; VCCIO7                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; AF17     ; 205        ; 7        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -561,7 +568,7 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ; B10      ; 448        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B11      ; 435        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B12      ; 433        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; B13      ; 429        ; 4        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; B13      ; 429        ; 4        ; writeAddr[0]                             ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; B14      ; 428        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B15      ; 420        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; B16      ; 419        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -587,7 +594,7 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ; C10      ; 450        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C11      ; 436        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C12      ; 434        ; 3        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; C13      ; 431        ; 3        ; GND+                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
+; C13      ; 431        ; 3        ; charCode[7]                              ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; Off          ;
 ; C14      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; C15      ; 421        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; C16      ; 418        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
@@ -704,11 +711,11 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ; G23      ; 346        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G24      ; 345        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G25      ; 343        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; G26      ; 342        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; H1       ; 37         ; 2        ; lcdBus[2]                                ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; H2       ; 36         ; 2        ; lcdBus[3]                                ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; H3       ; 32         ; 2        ; lcdBus[7]                                ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; H4       ; 33         ; 2        ; lcdBus[6]                                ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; G26      ; 342        ; 5        ; writeEnable                              ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; H1       ; 37         ; 2        ; lcdBus[2]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; H2       ; 36         ; 2        ; lcdBus[3]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; H3       ; 32         ; 2        ; lcdBus[7]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; H4       ; 33         ; 2        ; lcdBus[6]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; H5       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H6       ; 18         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H7       ;            ;          ; VCCD_PLL3                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -731,10 +738,10 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ; H24      ; 340        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H25      ; 337        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H26      ; 336        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J1       ; 39         ; 2        ; lcdBus[0]                                ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; J2       ; 38         ; 2        ; lcdBus[1]                                ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; J3       ; 34         ; 2        ; lcdBus[5]                                ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
-; J4       ; 35         ; 2        ; lcdBus[4]                                ; bidir  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; J1       ; 39         ; 2        ; lcdBus[0]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; J2       ; 38         ; 2        ; lcdBus[1]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; J3       ; 34         ; 2        ; lcdBus[5]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; J4       ; 35         ; 2        ; lcdBus[4]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; J5       ; 15         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; J6       ; 25         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J7       ; 17         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -835,7 +842,7 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ; M24      ; 313        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; M25      ; 312        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; M26      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; N1       ; 65         ; 2        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; N1       ; 65         ; 2        ; writeAddr[2]                             ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; N2       ; 64         ; 2        ; clk                                      ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; N3       ; 62         ; 2        ; ^DATA0                                   ; input  ;              ;         ; --         ;                 ; --       ; --           ;
 ; N4       ; 63         ; 2        ; ^nCE                                     ;        ;              ;         ; --         ;                 ; --       ; --           ;
@@ -859,10 +866,10 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ; N22      ;            ; 5        ; VCCIO5                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; N23      ; 311        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; N24      ; 310        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; N25      ; 309        ; 5        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; N26      ; 308        ; 5        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; P1       ; 68         ; 1        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; P2       ; 67         ; 1        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; N25      ; 309        ; 5        ; charCode[0]                              ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; N26      ; 308        ; 5        ; charCode[1]                              ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; P1       ; 68         ; 1        ; writeAddr[3]                             ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
+; P2       ; 67         ; 1        ; writeAddr[4]                             ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; P3       ; 69         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; P4       ; 70         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; P5       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -885,7 +892,7 @@ The pin-out file can be found in H:/Google Drive/Logic Design Practice/justLcdCo
 ; P22      ;            ; 6        ; VCCIO6                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; P23      ; 305        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; P24      ; 304        ; 6        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; P25      ; 307        ; 6        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; P25      ; 307        ; 6        ; charCode[2]                              ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; P26      ; 306        ; 6        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; R1       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; R2       ; 71         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1084,13 +1091,17 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                           ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
-; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
-; |lcdController             ; 140 (140)   ; 74 (74)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 15   ; 0            ; 66 (66)      ; 8 (8)             ; 66 (66)          ; |lcdController      ;              ;
-+----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                          ;
++-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                 ; Library Name ;
++-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------------------------------------------------+--------------+
+; |lcdController                            ; 152 (0)     ; 80 (0)                    ; 0 (0)         ; 256         ; 1    ; 0            ; 0       ; 0         ; 29   ; 0            ; 72 (0)       ; 15 (0)            ; 65 (0)           ; |lcdController                                                                                      ;              ;
+;    |lcdRegisterFile:myRegisters|          ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 256         ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |lcdController|lcdRegisterFile:myRegisters                                                          ;              ;
+;       |altsyncram:charCode_rtl_0|         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 256         ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |lcdController|lcdRegisterFile:myRegisters|altsyncram:charCode_rtl_0                                ;              ;
+;          |altsyncram_ohd1:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 256         ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |lcdController|lcdRegisterFile:myRegisters|altsyncram:charCode_rtl_0|altsyncram_ohd1:auto_generated ;              ;
+;    |lcdStateMachine:myStateMachine|       ; 151 (151)   ; 80 (80)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 71 (71)      ; 15 (15)           ; 65 (65)          ; |lcdController|lcdStateMachine:myStateMachine                                                       ;              ;
++-------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+-----------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1099,14 +1110,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------+---------------+---------------+-----------------------+-----+
 ; Name            ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ;
 +-----------------+----------+---------------+---------------+-----------------------+-----+
-; lcdBus[0]       ; Bidir    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; lcdBus[1]       ; Bidir    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; lcdBus[2]       ; Bidir    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; lcdBus[3]       ; Bidir    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; lcdBus[4]       ; Bidir    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; lcdBus[5]       ; Bidir    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; lcdBus[6]       ; Bidir    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; lcdBus[7]       ; Bidir    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; lcdBus[0]       ; Output   ; --            ; --            ; --                    ; --  ;
+; lcdBus[1]       ; Output   ; --            ; --            ; --                    ; --  ;
+; lcdBus[2]       ; Output   ; --            ; --            ; --                    ; --  ;
+; lcdBus[3]       ; Output   ; --            ; --            ; --                    ; --  ;
+; lcdBus[4]       ; Output   ; --            ; --            ; --                    ; --  ;
+; lcdBus[5]       ; Output   ; --            ; --            ; --                    ; --  ;
+; lcdBus[6]       ; Output   ; --            ; --            ; --                    ; --  ;
+; lcdBus[7]       ; Output   ; --            ; --            ; --                    ; --  ;
 ; lcdOnOut        ; Output   ; --            ; --            ; --                    ; --  ;
 ; lcdReadWriteSel ; Output   ; --            ; --            ; --                    ; --  ;
 ; lcdRsSelect     ; Output   ; --            ; --            ; --                    ; --  ;
@@ -1114,114 +1125,151 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; errorLed        ; Output   ; --            ; --            ; --                    ; --  ;
 ; lcdOnIn         ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 ; clk             ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; writeEnable     ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
+; charCode[0]     ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; writeAddr[0]    ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
+; writeAddr[1]    ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
+; writeAddr[2]    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; writeAddr[3]    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; writeAddr[4]    ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; charCode[1]     ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; charCode[2]     ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
+; charCode[3]     ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
+; charCode[4]     ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
+; charCode[5]     ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
+; charCode[6]     ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
+; charCode[7]     ; Input    ; (0) 170 ps    ; (0) 170 ps    ; --                    ; --  ;
 +-----------------+----------+---------------+---------------+-----------------------+-----+
 
 
-+-------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                    ;
-+-------------------------------------+-------------------+---------+
-; Source Pin / Fanout                 ; Pad To Core Index ; Setting ;
-+-------------------------------------+-------------------+---------+
-; lcdBus[0]                           ;                   ;         ;
-; lcdBus[1]                           ;                   ;         ;
-; lcdBus[2]                           ;                   ;         ;
-; lcdBus[3]                           ;                   ;         ;
-; lcdBus[4]                           ;                   ;         ;
-; lcdBus[5]                           ;                   ;         ;
-; lcdBus[6]                           ;                   ;         ;
-; lcdBus[7]                           ;                   ;         ;
-; lcdOnIn                             ;                   ;         ;
-;      - counter[0]                   ; 0                 ; 6       ;
-;      - counter[1]                   ; 0                 ; 6       ;
-;      - counter[2]                   ; 0                 ; 6       ;
-;      - counter[3]                   ; 0                 ; 6       ;
-;      - counter[4]                   ; 0                 ; 6       ;
-;      - counter[5]                   ; 0                 ; 6       ;
-;      - counter[6]                   ; 0                 ; 6       ;
-;      - counter[7]                   ; 0                 ; 6       ;
-;      - counter[8]                   ; 0                 ; 6       ;
-;      - counter[9]                   ; 0                 ; 6       ;
-;      - counter[10]                  ; 0                 ; 6       ;
-;      - counter[11]                  ; 0                 ; 6       ;
-;      - counter[12]                  ; 0                 ; 6       ;
-;      - counter[13]                  ; 0                 ; 6       ;
-;      - counter[14]                  ; 0                 ; 6       ;
-;      - counter[15]                  ; 0                 ; 6       ;
-;      - counter[16]                  ; 0                 ; 6       ;
-;      - counter[17]                  ; 0                 ; 6       ;
-;      - counter[18]                  ; 0                 ; 6       ;
-;      - counter[19]                  ; 0                 ; 6       ;
-;      - counter[20]                  ; 0                 ; 6       ;
-;      - counter[21]                  ; 0                 ; 6       ;
-;      - counter[22]                  ; 0                 ; 6       ;
-;      - counter[23]                  ; 0                 ; 6       ;
-;      - counter[24]                  ; 0                 ; 6       ;
-;      - counter[25]                  ; 0                 ; 6       ;
-;      - counter[26]                  ; 0                 ; 6       ;
-;      - counter[27]                  ; 0                 ; 6       ;
-;      - counter[28]                  ; 0                 ; 6       ;
-;      - counter[29]                  ; 0                 ; 6       ;
-;      - counter[30]                  ; 0                 ; 6       ;
-;      - counter[31]                  ; 0                 ; 6       ;
-;      - counter[32]                  ; 0                 ; 6       ;
-;      - lcdRsSelect~reg0             ; 0                 ; 6       ;
-;      - lcdEnableOut~reg0            ; 0                 ; 6       ;
-;      - state.writeData              ; 0                 ; 6       ;
-;      - state.cursorLogicState       ; 0                 ; 6       ;
-;      - subStates.subState2          ; 0                 ; 6       ;
-;      - state.functionSet            ; 0                 ; 6       ;
-;      - state.displayClear           ; 0                 ; 6       ;
-;      - state.entryModeSet           ; 0                 ; 6       ;
-;      - state.displaySet             ; 0                 ; 6       ;
-;      - state.writeAddr              ; 0                 ; 6       ;
-;      - subStates.subState3          ; 0                 ; 6       ;
-;      - state.powerOn                ; 0                 ; 6       ;
-;      - subStates.00                 ; 0                 ; 6       ;
-;      - functionSetCase.functionSet4 ; 0                 ; 6       ;
-;      - displayOnOff                 ; 0                 ; 6       ;
-;      - lcdBus[0]~en                 ; 0                 ; 6       ;
-;      - lcdBus[1]~en                 ; 0                 ; 6       ;
-;      - lcdBus[2]~en                 ; 0                 ; 6       ;
-;      - lcdBus[3]~en                 ; 0                 ; 6       ;
-;      - lcdBus[4]~en                 ; 0                 ; 6       ;
-;      - lcdBus[5]~en                 ; 0                 ; 6       ;
-;      - lcdBus[6]~en                 ; 0                 ; 6       ;
-;      - lcdBus[7]~en                 ; 0                 ; 6       ;
-;      - functionSetCase.00           ; 0                 ; 6       ;
-;      - functionSetCase.functionSet3 ; 0                 ; 6       ;
-;      - addrCounter[0]               ; 0                 ; 6       ;
-;      - addrCounter[1]               ; 0                 ; 6       ;
-;      - addrCounter[2]               ; 0                 ; 6       ;
-;      - addrCounter[3]               ; 0                 ; 6       ;
-;      - addrCounter[4]               ; 0                 ; 6       ;
-;      - addrCounter[5]               ; 0                 ; 6       ;
-;      - addrCounter[6]               ; 0                 ; 6       ;
-;      - functionSetCase.functionSet2 ; 0                 ; 6       ;
-;      - lcdOnOut                     ; 0                 ; 6       ;
-; clk                                 ;                   ;         ;
-+-------------------------------------+-------------------+---------+
++--------------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                                   ;
++--------------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                                ; Pad To Core Index ; Setting ;
++--------------------------------------------------------------------+-------------------+---------+
+; lcdOnIn                                                            ;                   ;         ;
+;      - lcdStateMachine:myStateMachine|lcdBus[0]~reg0               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[1]~reg0               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[3]~reg0               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[4]~reg0               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[5]~reg0               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[6]~reg0               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|addrCounter[0]               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|addrCounter[1]               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|addrCounter[2]               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|addrCounter[3]               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|addrCounter[4]               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|addrCounter[5]               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|addrCounter[6]               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[0]                   ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[1]                   ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[2]                   ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[3]                   ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[4]                   ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[5]                   ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[6]                   ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[7]                   ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[8]                   ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[9]                   ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[10]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[11]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[12]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[13]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[14]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[15]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[16]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[17]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[18]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[19]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[20]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[21]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[22]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[23]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[24]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[25]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[26]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[27]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[28]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[29]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[30]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[31]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|counter[32]                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdRsSelect                  ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdEnableOut                 ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[0]~en                 ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[1]~en                 ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[2]~reg0               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[2]~en                 ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[3]~en                 ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[4]~en                 ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[5]~en                 ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[6]~en                 ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[7]~reg0               ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|lcdBus[7]~en                 ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|state.writeData              ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|state.cursorLogicState       ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|subStates.subState2          ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|state.writeAddr              ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|state.functionSet            ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|state.displaySet             ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|state.displayClear           ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|state.entryModeSet           ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|state.powerOn                ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|displayOnOff                 ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|subStates.subState3          ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|subStates.00                 ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|functionSetCase.functionSet4 ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|readEnable                   ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|functionSetCase.00           ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|functionSetCase.functionSet3 ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|addrToRead[0]~0              ; 1                 ; 6       ;
+;      - lcdStateMachine:myStateMachine|functionSetCase.functionSet2 ; 1                 ; 6       ;
+;      - lcdOnOut                                                    ; 1                 ; 6       ;
+; clk                                                                ;                   ;         ;
+; writeEnable                                                        ;                   ;         ;
+;      - lcdRegisterFile:myRegisters|always0~0                       ; 0                 ; 6       ;
+; charCode[0]                                                        ;                   ;         ;
+; writeAddr[0]                                                       ;                   ;         ;
+; writeAddr[1]                                                       ;                   ;         ;
+; writeAddr[2]                                                       ;                   ;         ;
+; writeAddr[3]                                                       ;                   ;         ;
+; writeAddr[4]                                                       ;                   ;         ;
+; charCode[1]                                                        ;                   ;         ;
+; charCode[2]                                                        ;                   ;         ;
+; charCode[3]                                                        ;                   ;         ;
+; charCode[4]                                                        ;                   ;         ;
+; charCode[5]                                                        ;                   ;         ;
+; charCode[6]                                                        ;                   ;         ;
+; charCode[7]                                                        ;                   ;         ;
++--------------------------------------------------------------------+-------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                  ;
-+------------------------+-------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; Name                   ; Location          ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+------------------------+-------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
-; clk                    ; PIN_N2            ; 74      ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; counter[4]~45          ; LCCOMB_X7_Y16_N22 ; 33      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; counter[4]~46          ; LCCOMB_X4_Y18_N0  ; 33      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; lcdBus[0]~en           ; LCFF_X1_Y26_N17   ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; lcdBus[1]~en           ; LCFF_X1_Y26_N3    ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; lcdBus[2]~en           ; LCFF_X1_Y26_N13   ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; lcdBus[3]~en           ; LCFF_X1_Y26_N7    ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; lcdBus[4]~en           ; LCFF_X4_Y18_N21   ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; lcdBus[5]~en           ; LCFF_X1_Y26_N1    ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; lcdBus[6]~en           ; LCFF_X2_Y18_N17   ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; lcdBus[7]~en           ; LCFF_X1_Y26_N11   ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
-; lcdOnIn                ; PIN_V2            ; 67      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
-; state.cursorLogicState ; LCFF_X4_Y18_N19   ; 14      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; state.functionSet      ; LCFF_X6_Y18_N1    ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-+------------------------+-------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                  ;
++-------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
+; Name                                                  ; Location           ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
+; clk                                                   ; PIN_N2             ; 81      ; Clock                      ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; lcdOnIn                                               ; PIN_V2             ; 77      ; Async. clear, Clock enable ; no     ; --                   ; --               ; --                        ;
+; lcdRegisterFile:myRegisters|always0~0                 ; LCCOMB_X29_Y27_N16 ; 1       ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|LessThan0~1            ; LCCOMB_X27_Y24_N28 ; 7       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|Selector37~1           ; LCCOMB_X25_Y25_N20 ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|addrToRead[0]~0        ; LCCOMB_X25_Y25_N30 ; 5       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|counter[4]~49          ; LCCOMB_X29_Y25_N6  ; 33      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|counter[4]~50          ; LCCOMB_X25_Y25_N16 ; 33      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|lcdBus[0]~en           ; LCFF_X1_Y27_N17    ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|lcdBus[1]~en           ; LCFF_X1_Y27_N19    ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|lcdBus[2]~en           ; LCFF_X1_Y27_N21    ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|lcdBus[3]~en           ; LCFF_X1_Y27_N15    ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|lcdBus[4]~en           ; LCFF_X1_Y27_N1     ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|lcdBus[5]~en           ; LCFF_X1_Y27_N3     ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|lcdBus[6]~en           ; LCFF_X25_Y25_N3    ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|lcdBus[7]~en           ; LCFF_X1_Y27_N13    ; 1       ; Output enable              ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|readEnable             ; LCFF_X25_Y25_N27   ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|state.cursorLogicState ; LCFF_X27_Y24_N1    ; 13      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|state.functionSet      ; LCFF_X27_Y25_N1    ; 10      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; lcdStateMachine:myStateMachine|state.writeData        ; LCFF_X25_Y25_N5    ; 15      ; Sync. load                 ; no     ; --                   ; --               ; --                        ;
++-------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
 +-------------------------------------------------------------------------------------------------+
@@ -1229,261 +1277,304 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+----------------------+------------------+---------------------------+
-; clk  ; PIN_N2   ; 74      ; Global Clock         ; GCLK2            ; --                        ;
+; clk  ; PIN_N2   ; 81      ; Global Clock         ; GCLK2            ; --                        ;
 +------+----------+---------+----------------------+------------------+---------------------------+
 
 
-+------------------------------------------+
-; Non-Global High Fan-Out Signals          ;
-+--------------------------------+---------+
-; Name                           ; Fan-Out ;
-+--------------------------------+---------+
-; lcdOnIn                        ; 67      ;
-; counter[4]~46                  ; 33      ;
-; counter[4]~45                  ; 33      ;
-; subStates.subState3            ; 15      ;
-; state.cursorLogicState         ; 14      ;
-; state.writeAddr                ; 13      ;
-; state.writeData                ; 11      ;
-; state.entryModeSet             ; 10      ;
-; state.functionSet              ; 10      ;
-; Selector1~0                    ; 8       ;
-; functionSetCase.00             ; 8       ;
-; state.displayClear             ; 8       ;
-; state~18                       ; 7       ;
-; Equal1~5                       ; 7       ;
-; state.powerOn                  ; 7       ;
-; Equal0~6                       ; 7       ;
-; state.displaySet               ; 7       ;
-; counter[12]                    ; 6       ;
-; counter[7]                     ; 6       ;
-; Selector228~0                  ; 5       ;
-; Equal2~1                       ; 5       ;
-; Selector227~0                  ; 5       ;
-; Selector150~0                  ; 5       ;
-; counter[6]                     ; 5       ;
-; counter[4]                     ; 5       ;
-; counter[3]                     ; 5       ;
-; Equal3~5                       ; 4       ;
-; displayOnOff                   ; 4       ;
-; Equal4~3                       ; 4       ;
-; Equal1~1                       ; 4       ;
-; Selector73~2                   ; 4       ;
-; subStates.subState2            ; 4       ;
-; counter[1]                     ; 4       ;
-; counter[10]                    ; 4       ;
-; counter[17]                    ; 4       ;
-; counter[15]                    ; 4       ;
-; counter[19]                    ; 4       ;
-; counter[18]                    ; 4       ;
-; counter[9]                     ; 4       ;
-; addrCounter[6]                 ; 3       ;
-; addrCounter[5]                 ; 3       ;
-; addrCounter[4]                 ; 3       ;
-; addrCounter[3]                 ; 3       ;
-; addrCounter[2]                 ; 3       ;
-; addrCounter[1]                 ; 3       ;
-; addrCounter[0]                 ; 3       ;
-; counter[4]~35                  ; 3       ;
-; functionSetCase.functionSet4   ; 3       ;
-; subStates.00                   ; 3       ;
-; Equal4~0                       ; 3       ;
-; counter[11]                    ; 3       ;
-; counter[8]                     ; 3       ;
-; counter[2]                     ; 3       ;
-; counter[16]                    ; 3       ;
-; counter[14]                    ; 3       ;
-; counter[4]~111                 ; 2       ;
-; Equal0~11                      ; 2       ;
-; Equal5~1                       ; 2       ;
-; functionSetCase.functionSet2   ; 2       ;
-; functionSetCase.functionSet3   ; 2       ;
-; Equal3~3                       ; 2       ;
-; Equal3~2                       ; 2       ;
-; Selector79~0                   ; 2       ;
-; Equal1~3                       ; 2       ;
-; Selector221~0                  ; 2       ;
-; Equal0~10                      ; 2       ;
-; Equal0~9                       ; 2       ;
-; Equal0~8                       ; 2       ;
-; Equal0~7                       ; 2       ;
-; WideOr10                       ; 2       ;
-; Equal4~2                       ; 2       ;
-; Selector185~0                  ; 2       ;
-; lcdEnableOut~reg0              ; 2       ;
-; lcdRsSelect~reg0               ; 2       ;
-; counter[32]                    ; 2       ;
-; counter[31]                    ; 2       ;
-; counter[30]                    ; 2       ;
-; counter[29]                    ; 2       ;
-; counter[28]                    ; 2       ;
-; counter[27]                    ; 2       ;
-; counter[26]                    ; 2       ;
-; counter[25]                    ; 2       ;
-; counter[24]                    ; 2       ;
-; counter[23]                    ; 2       ;
-; counter[22]                    ; 2       ;
-; counter[21]                    ; 2       ;
-; counter[20]                    ; 2       ;
-; counter[13]                    ; 2       ;
-; counter[5]                     ; 2       ;
-; counter[0]                     ; 2       ;
-; Selector73~4                   ; 1       ;
-; Selector74~2                   ; 1       ;
-; Selector230~7                  ; 1       ;
-; Selector222~4                  ; 1       ;
-; Selector78~0                   ; 1       ;
-; addrCounter~1                  ; 1       ;
-; addrCounter~0                  ; 1       ;
-; Equal5~0                       ; 1       ;
-; Selector79~1                   ; 1       ;
-; functionSetCase~14             ; 1       ;
-; Selector0~0                    ; 1       ;
-; Selector37~0                   ; 1       ;
-; Selector73~3                   ; 1       ;
-; Selector114~1                  ; 1       ;
-; Selector114~0                  ; 1       ;
-; Selector149~0                  ; 1       ;
-; Selector150~2                  ; 1       ;
-; displayOnOff~0                 ; 1       ;
-; functionSetCase.functionSet4~0 ; 1       ;
-; Selector228~5                  ; 1       ;
-; Selector228~4                  ; 1       ;
-; Selector228~3                  ; 1       ;
-; Selector228~2                  ; 1       ;
-; Selector228~1                  ; 1       ;
-; state.powerOn~0                ; 1       ;
-; Selector185~2                  ; 1       ;
-; counter[4]~44                  ; 1       ;
-; counter[4]~43                  ; 1       ;
-; counter[4]~42                  ; 1       ;
-; counter[4]~41                  ; 1       ;
-; counter[4]~40                  ; 1       ;
-; counter[4]~39                  ; 1       ;
-; counter[4]~38                  ; 1       ;
-; Selector230~6                  ; 1       ;
-; Selector230~5                  ; 1       ;
-; Selector150~1                  ; 1       ;
-; Selector230~4                  ; 1       ;
-; Selector230~3                  ; 1       ;
-; Selector230~2                  ; 1       ;
-; lcdBus[7]~en                   ; 1       ;
-; lcdBus[7]~reg0                 ; 1       ;
-; lcdBus[6]~en                   ; 1       ;
-; lcdBus[6]~reg0                 ; 1       ;
-; lcdBus[5]~en                   ; 1       ;
-; lcdBus[5]~reg0                 ; 1       ;
-; lcdBus[4]~en                   ; 1       ;
-; lcdBus[4]~reg0                 ; 1       ;
-; lcdBus[3]~en                   ; 1       ;
-; lcdBus[3]~reg0                 ; 1       ;
-; lcdBus[2]~en                   ; 1       ;
-; lcdBus[2]~reg0                 ; 1       ;
-; lcdBus[1]~en                   ; 1       ;
-; lcdBus[1]~reg0                 ; 1       ;
-; lcdBus[0]~en                   ; 1       ;
-; lcdBus[0]~reg0                 ; 1       ;
-; Selector225~1                  ; 1       ;
-; Selector225~0                  ; 1       ;
-; Selector222~3                  ; 1       ;
-; Selector222~2                  ; 1       ;
-; Selector224~0                  ; 1       ;
-; Selector223~0                  ; 1       ;
-; Equal2~0                       ; 1       ;
-; Equal3~4                       ; 1       ;
-; Selector221~1                  ; 1       ;
-; Equal1~4                       ; 1       ;
-; Equal1~2                       ; 1       ;
-; subStates.subState2~0          ; 1       ;
-; Selector227~1                  ; 1       ;
-; Selector226~0                  ; 1       ;
-; Equal4~1                       ; 1       ;
-; Equal1~0                       ; 1       ;
-; Equal0~5                       ; 1       ;
-; Equal0~4                       ; 1       ;
-; Equal0~3                       ; 1       ;
-; Equal0~2                       ; 1       ;
-; Selector185~1                  ; 1       ;
-; Selector186~0                  ; 1       ;
-; Add1~12                        ; 1       ;
-; Add1~11                        ; 1       ;
-; Add1~10                        ; 1       ;
-; Add1~9                         ; 1       ;
-; Add1~8                         ; 1       ;
-; Add1~7                         ; 1       ;
-; Add1~6                         ; 1       ;
-; Add1~5                         ; 1       ;
-; Add1~4                         ; 1       ;
-; Add1~3                         ; 1       ;
-; Add1~2                         ; 1       ;
-; Add1~1                         ; 1       ;
-; Add1~0                         ; 1       ;
-; counter[32]~109                ; 1       ;
-; counter[31]~108                ; 1       ;
-; counter[31]~107                ; 1       ;
-; counter[30]~106                ; 1       ;
-; counter[30]~105                ; 1       ;
-; counter[29]~104                ; 1       ;
-; counter[29]~103                ; 1       ;
-; counter[28]~102                ; 1       ;
-; counter[28]~101                ; 1       ;
-; counter[27]~100                ; 1       ;
-; counter[27]~99                 ; 1       ;
-; counter[26]~98                 ; 1       ;
-; counter[26]~97                 ; 1       ;
-; counter[25]~96                 ; 1       ;
-; counter[25]~95                 ; 1       ;
-; counter[24]~94                 ; 1       ;
-; counter[24]~93                 ; 1       ;
-; counter[23]~92                 ; 1       ;
-; counter[23]~91                 ; 1       ;
-; counter[22]~90                 ; 1       ;
-; counter[22]~89                 ; 1       ;
-; counter[21]~88                 ; 1       ;
-; counter[21]~87                 ; 1       ;
-; counter[20]~86                 ; 1       ;
-; counter[20]~85                 ; 1       ;
-; counter[19]~84                 ; 1       ;
-; counter[19]~83                 ; 1       ;
-; counter[18]~82                 ; 1       ;
-; counter[18]~81                 ; 1       ;
-; counter[17]~80                 ; 1       ;
-; counter[17]~79                 ; 1       ;
-; counter[16]~78                 ; 1       ;
-; counter[16]~77                 ; 1       ;
-; counter[15]~76                 ; 1       ;
-; counter[15]~75                 ; 1       ;
-; counter[14]~74                 ; 1       ;
-; counter[14]~73                 ; 1       ;
-; counter[13]~72                 ; 1       ;
-; counter[13]~71                 ; 1       ;
-; counter[12]~70                 ; 1       ;
-; counter[12]~69                 ; 1       ;
-; counter[11]~68                 ; 1       ;
-; counter[11]~67                 ; 1       ;
-; counter[10]~66                 ; 1       ;
-; counter[10]~65                 ; 1       ;
-; counter[9]~64                  ; 1       ;
-; counter[9]~63                  ; 1       ;
-; counter[8]~62                  ; 1       ;
-; counter[8]~61                  ; 1       ;
-; counter[7]~60                  ; 1       ;
-; counter[7]~59                  ; 1       ;
-; counter[6]~58                  ; 1       ;
-; counter[6]~57                  ; 1       ;
-; counter[5]~56                  ; 1       ;
-; counter[5]~55                  ; 1       ;
-; counter[4]~54                  ; 1       ;
-; counter[4]~53                  ; 1       ;
-; counter[3]~52                  ; 1       ;
-; counter[3]~51                  ; 1       ;
-; counter[2]~50                  ; 1       ;
-; counter[2]~49                  ; 1       ;
-; counter[1]~48                  ; 1       ;
-; counter[1]~47                  ; 1       ;
-; counter[0]~37                  ; 1       ;
-; counter[0]~36                  ; 1       ;
-+--------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------+
+; Non-Global High Fan-Out Signals                                                                             ;
++---------------------------------------------------------------------------------------------------+---------+
+; Name                                                                                              ; Fan-Out ;
++---------------------------------------------------------------------------------------------------+---------+
+; lcdOnIn                                                                                           ; 77      ;
+; lcdStateMachine:myStateMachine|counter[4]~50                                                      ; 33      ;
+; lcdStateMachine:myStateMachine|counter[4]~49                                                      ; 33      ;
+; lcdStateMachine:myStateMachine|subStates.subState3                                                ; 16      ;
+; lcdStateMachine:myStateMachine|Selector37~1                                                       ; 16      ;
+; lcdStateMachine:myStateMachine|state.writeAddr                                                    ; 15      ;
+; lcdStateMachine:myStateMachine|state.writeData                                                    ; 15      ;
+; lcdStateMachine:myStateMachine|state.cursorLogicState                                             ; 13      ;
+; lcdStateMachine:myStateMachine|Equal0~4                                                           ; 11      ;
+; lcdStateMachine:myStateMachine|state.entryModeSet                                                 ; 10      ;
+; lcdStateMachine:myStateMachine|state.functionSet                                                  ; 10      ;
+; lcdStateMachine:myStateMachine|Selector0~1                                                        ; 8       ;
+; lcdStateMachine:myStateMachine|state.displayClear                                                 ; 8       ;
+; lcdStateMachine:myStateMachine|subStates.subState2                                                ; 8       ;
+; lcdStateMachine:myStateMachine|functionSetCase.00                                                 ; 7       ;
+; lcdStateMachine:myStateMachine|LessThan0~1                                                        ; 7       ;
+; lcdStateMachine:myStateMachine|Equal1~1                                                           ; 7       ;
+; lcdStateMachine:myStateMachine|state.powerOn                                                      ; 7       ;
+; lcdStateMachine:myStateMachine|state.displaySet                                                   ; 7       ;
+; lcdStateMachine:myStateMachine|counter[12]                                                        ; 6       ;
+; lcdStateMachine:myStateMachine|counter[7]                                                         ; 6       ;
+; lcdStateMachine:myStateMachine|addrToRead[0]~0                                                    ; 5       ;
+; lcdStateMachine:myStateMachine|Selector263~1                                                      ; 5       ;
+; lcdStateMachine:myStateMachine|Selector267~0                                                      ; 5       ;
+; lcdStateMachine:myStateMachine|Equal1~5                                                           ; 5       ;
+; lcdStateMachine:myStateMachine|Selector37~0                                                       ; 5       ;
+; lcdStateMachine:myStateMachine|counter[6]                                                         ; 5       ;
+; lcdStateMachine:myStateMachine|counter[4]                                                         ; 5       ;
+; lcdStateMachine:myStateMachine|counter[3]                                                         ; 5       ;
+; lcdStateMachine:myStateMachine|addrCounter[4]                                                     ; 5       ;
+; lcdStateMachine:myStateMachine|readEnable                                                         ; 4       ;
+; lcdStateMachine:myStateMachine|Equal3~2                                                           ; 4       ;
+; lcdStateMachine:myStateMachine|Equal0~6                                                           ; 4       ;
+; lcdStateMachine:myStateMachine|counter[4]~36                                                      ; 4       ;
+; lcdStateMachine:myStateMachine|counter[4]~35                                                      ; 4       ;
+; lcdStateMachine:myStateMachine|Equal1~3                                                           ; 4       ;
+; lcdStateMachine:myStateMachine|subStates.00                                                       ; 4       ;
+; lcdStateMachine:myStateMachine|Equal4~3                                                           ; 4       ;
+; lcdStateMachine:myStateMachine|displayOnOff                                                       ; 4       ;
+; lcdStateMachine:myStateMachine|Selector0~0                                                        ; 4       ;
+; lcdStateMachine:myStateMachine|counter[1]                                                         ; 4       ;
+; lcdStateMachine:myStateMachine|counter[10]                                                        ; 4       ;
+; lcdStateMachine:myStateMachine|counter[15]                                                        ; 4       ;
+; lcdStateMachine:myStateMachine|counter[19]                                                        ; 4       ;
+; lcdStateMachine:myStateMachine|counter[18]                                                        ; 4       ;
+; lcdStateMachine:myStateMachine|counter[9]                                                         ; 4       ;
+; lcdStateMachine:myStateMachine|addrCounter[3]                                                     ; 4       ;
+; lcdStateMachine:myStateMachine|addrCounter[2]                                                     ; 4       ;
+; lcdStateMachine:myStateMachine|addrCounter[1]                                                     ; 4       ;
+; lcdStateMachine:myStateMachine|addrCounter[0]                                                     ; 4       ;
+; lcdStateMachine:myStateMachine|Selector114~1                                                      ; 3       ;
+; lcdStateMachine:myStateMachine|Equal3~1                                                           ; 3       ;
+; lcdStateMachine:myStateMachine|Equal3~0                                                           ; 3       ;
+; lcdStateMachine:myStateMachine|functionSetCase.functionSet4                                       ; 3       ;
+; lcdStateMachine:myStateMachine|Equal0~9                                                           ; 3       ;
+; lcdStateMachine:myStateMachine|subStates~7                                                        ; 3       ;
+; lcdStateMachine:myStateMachine|Selector266~0                                                      ; 3       ;
+; lcdStateMachine:myStateMachine|Equal4~2                                                           ; 3       ;
+; lcdStateMachine:myStateMachine|counter[11]                                                        ; 3       ;
+; lcdStateMachine:myStateMachine|counter[8]                                                         ; 3       ;
+; lcdStateMachine:myStateMachine|counter[2]                                                         ; 3       ;
+; lcdStateMachine:myStateMachine|counter[17]                                                        ; 3       ;
+; lcdStateMachine:myStateMachine|counter[16]                                                        ; 3       ;
+; lcdStateMachine:myStateMachine|counter[14]                                                        ; 3       ;
+; lcdStateMachine:myStateMachine|addrCounter[6]                                                     ; 3       ;
+; lcdStateMachine:myStateMachine|addrCounter[5]                                                     ; 3       ;
+; lcdStateMachine:myStateMachine|functionSetCase.functionSet2                                       ; 2       ;
+; lcdStateMachine:myStateMachine|functionSetCase.functionSet3                                       ; 2       ;
+; lcdStateMachine:myStateMachine|Selector74~0                                                       ; 2       ;
+; lcdRegisterFile:myRegisters|always0~0                                                             ; 2       ;
+; lcdStateMachine:myStateMachine|Equal2~1                                                           ; 2       ;
+; lcdStateMachine:myStateMachine|Selector78~0                                                       ; 2       ;
+; lcdStateMachine:myStateMachine|Equal1~4                                                           ; 2       ;
+; lcdStateMachine:myStateMachine|Equal2~0                                                           ; 2       ;
+; lcdStateMachine:myStateMachine|Selector266~2                                                      ; 2       ;
+; lcdStateMachine:myStateMachine|Equal4~0                                                           ; 2       ;
+; lcdStateMachine:myStateMachine|Selector113~0                                                      ; 2       ;
+; lcdStateMachine:myStateMachine|lcdEnableOut                                                       ; 2       ;
+; lcdStateMachine:myStateMachine|lcdRsSelect                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[32]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[31]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[30]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[29]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[28]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[27]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[26]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[25]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[24]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[23]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[22]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[21]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[20]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[13]                                                        ; 2       ;
+; lcdStateMachine:myStateMachine|counter[5]                                                         ; 2       ;
+; lcdStateMachine:myStateMachine|counter[0]                                                         ; 2       ;
+; charCode[7]                                                                                       ; 1       ;
+; charCode[6]                                                                                       ; 1       ;
+; charCode[5]                                                                                       ; 1       ;
+; charCode[4]                                                                                       ; 1       ;
+; charCode[3]                                                                                       ; 1       ;
+; charCode[2]                                                                                       ; 1       ;
+; charCode[1]                                                                                       ; 1       ;
+; writeAddr[4]                                                                                      ; 1       ;
+; writeAddr[3]                                                                                      ; 1       ;
+; writeAddr[2]                                                                                      ; 1       ;
+; writeAddr[1]                                                                                      ; 1       ;
+; writeAddr[0]                                                                                      ; 1       ;
+; charCode[0]                                                                                       ; 1       ;
+; writeEnable                                                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|Selector270~3                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector269~6                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector261~4                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[4]~115                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|Selector77~0                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|Selector78~1                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|functionSetCase~14                                                 ; 1       ;
+; lcdStateMachine:myStateMachine|Selector270~2                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|functionSetCase.functionSet4~0                                     ; 1       ;
+; lcdStateMachine:myStateMachine|Selector267~3                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector267~2                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector267~1                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[4]~48                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[4]~47                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[4]~46                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[4]~45                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[4]~44                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[4]~43                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[4]~42                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[4]~41                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[4]~40                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[4]~39                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector269~5                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector269~4                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector269~3                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector269~2                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|displayOnOff~0                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|state.powerOn~0                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|addrToRead[4]                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|addrToRead[3]                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|addrToRead[2]                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|addrToRead[1]                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|addrToRead[0]                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|LessThan0~0                                                        ; 1       ;
+; lcdStateMachine:myStateMachine|state.entryModeSet~0                                               ; 1       ;
+; lcdStateMachine:myStateMachine|Selector262~0                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector261~3                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector263~0                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector261~2                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector260~1                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector260~0                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Equal0~8                                                           ; 1       ;
+; lcdStateMachine:myStateMachine|Equal0~7                                                           ; 1       ;
+; lcdStateMachine:myStateMachine|Equal0~5                                                           ; 1       ;
+; lcdStateMachine:myStateMachine|Selector264~1                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Equal1~2                                                           ; 1       ;
+; lcdStateMachine:myStateMachine|Selector264~0                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|subStates.subState2~0                                              ; 1       ;
+; lcdStateMachine:myStateMachine|Selector266~1                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|state.writeData~0                                                  ; 1       ;
+; lcdStateMachine:myStateMachine|Equal4~1                                                           ; 1       ;
+; lcdStateMachine:myStateMachine|Equal1~0                                                           ; 1       ;
+; lcdStateMachine:myStateMachine|Equal0~3                                                           ; 1       ;
+; lcdStateMachine:myStateMachine|Equal0~2                                                           ; 1       ;
+; lcdStateMachine:myStateMachine|Equal0~1                                                           ; 1       ;
+; lcdStateMachine:myStateMachine|Equal0~0                                                           ; 1       ;
+; lcdStateMachine:myStateMachine|Selector36~0                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|Selector72~0                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|Selector73~0                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|Selector114~0                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector149~1                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector149~0                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector150~0                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector151~0                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector224~1                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector224~0                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|Selector225~0                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[7]~en                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[7]~reg0                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[6]~en                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[5]~en                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[4]~en                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[3]~en                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[2]~en                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[2]~reg0                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[1]~en                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[0]~en                                                       ; 1       ;
+; lcdStateMachine:myStateMachine|counter[32]~113                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[31]~112                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[31]~111                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[30]~110                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[30]~109                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[29]~108                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[29]~107                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[28]~106                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[28]~105                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[27]~104                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[27]~103                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[26]~102                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[26]~101                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[25]~100                                                    ; 1       ;
+; lcdStateMachine:myStateMachine|counter[25]~99                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[24]~98                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[24]~97                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[23]~96                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[23]~95                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[22]~94                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[22]~93                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[21]~92                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[21]~91                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[20]~90                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[20]~89                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[19]~88                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[19]~87                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[18]~86                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[18]~85                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[17]~84                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[17]~83                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[16]~82                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[16]~81                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[15]~80                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[15]~79                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[14]~78                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[14]~77                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[13]~76                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[13]~75                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[12]~74                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[12]~73                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[11]~72                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[11]~71                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[10]~70                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[10]~69                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|counter[9]~68                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[9]~67                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[8]~66                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[8]~65                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[7]~64                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[7]~63                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[6]~62                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[6]~61                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[5]~60                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[5]~59                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[4]~58                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[4]~57                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[3]~56                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[3]~55                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[2]~54                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[2]~53                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[1]~52                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[1]~51                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[0]~38                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|counter[0]~37                                                      ; 1       ;
+; lcdStateMachine:myStateMachine|addrCounter[6]~19                                                  ; 1       ;
+; lcdStateMachine:myStateMachine|addrCounter[5]~18                                                  ; 1       ;
+; lcdStateMachine:myStateMachine|addrCounter[5]~17                                                  ; 1       ;
+; lcdStateMachine:myStateMachine|addrCounter[4]~16                                                  ; 1       ;
+; lcdStateMachine:myStateMachine|addrCounter[4]~15                                                  ; 1       ;
+; lcdStateMachine:myStateMachine|addrCounter[3]~14                                                  ; 1       ;
+; lcdStateMachine:myStateMachine|addrCounter[3]~13                                                  ; 1       ;
+; lcdStateMachine:myStateMachine|addrCounter[2]~12                                                  ; 1       ;
+; lcdStateMachine:myStateMachine|addrCounter[2]~11                                                  ; 1       ;
+; lcdStateMachine:myStateMachine|addrCounter[1]~10                                                  ; 1       ;
+; lcdStateMachine:myStateMachine|addrCounter[1]~9                                                   ; 1       ;
+; lcdStateMachine:myStateMachine|addrCounter[0]~8                                                   ; 1       ;
+; lcdStateMachine:myStateMachine|addrCounter[0]~7                                                   ; 1       ;
+; lcdRegisterFile:myRegisters|altsyncram:charCode_rtl_0|altsyncram_ohd1:auto_generated|ram_block1a1 ; 1       ;
+; lcdRegisterFile:myRegisters|altsyncram:charCode_rtl_0|altsyncram_ohd1:auto_generated|ram_block1a2 ; 1       ;
+; lcdRegisterFile:myRegisters|altsyncram:charCode_rtl_0|altsyncram_ohd1:auto_generated|ram_block1a3 ; 1       ;
+; lcdRegisterFile:myRegisters|altsyncram:charCode_rtl_0|altsyncram_ohd1:auto_generated|ram_block1a4 ; 1       ;
+; lcdRegisterFile:myRegisters|altsyncram:charCode_rtl_0|altsyncram_ohd1:auto_generated|ram_block1a5 ; 1       ;
+; lcdRegisterFile:myRegisters|altsyncram:charCode_rtl_0|altsyncram_ohd1:auto_generated|ram_block1a6 ; 1       ;
+; lcdRegisterFile:myRegisters|altsyncram:charCode_rtl_0|altsyncram_ohd1:auto_generated|ram_block1a7 ; 1       ;
+; lcdRegisterFile:myRegisters|altsyncram:charCode_rtl_0|altsyncram_ohd1:auto_generated|ram_block1a0 ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[6]~reg0                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[5]~reg0                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[4]~reg0                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[3]~reg0                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[1]~reg0                                                     ; 1       ;
+; lcdStateMachine:myStateMachine|lcdBus[0]~reg0                                                     ; 1       ;
++---------------------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ;
++-------------------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+-------------+----------------------+-----------------+-----------------+
+; Name                                                                                            ; Type ; Mode             ; Clock Mode  ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M4Ks ; MIF  ; Location    ; Mixed Width RDW Mode ; Port A RDW Mode ; Port B RDW Mode ;
++-------------------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+-------------+----------------------+-----------------+-----------------+
+; lcdRegisterFile:myRegisters|altsyncram:charCode_rtl_0|altsyncram_ohd1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; Dual Clocks ; 32           ; 8            ; 32           ; 8            ; yes                    ; no                      ; yes                    ; no                      ; 256  ; 32                          ; 8                           ; 32                          ; 8                           ; 256                 ; 1    ; None ; M4K_X26_Y24 ; Don't care           ; Don't care      ; Don't care      ;
++-------------------------------------------------------------------------------------------------+------+------------------+-------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+-------------+----------------------+-----------------+-----------------+
+Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
 
 +------------------------------------------------------+
@@ -1491,28 +1582,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 141 / 94,460 ( < 1 % ) ;
-; C16 interconnects           ; 1 / 3,315 ( < 1 % )    ;
-; C4 interconnects            ; 73 / 60,840 ( < 1 % )  ;
-; Direct links                ; 38 / 94,460 ( < 1 % )  ;
+; Block interconnects         ; 190 / 94,460 ( < 1 % ) ;
+; C16 interconnects           ; 18 / 3,315 ( < 1 % )   ;
+; C4 interconnects            ; 94 / 60,840 ( < 1 % )  ;
+; Direct links                ; 34 / 94,460 ( < 1 % )  ;
 ; Global clocks               ; 1 / 16 ( 6 % )         ;
 ; Local interconnects         ; 93 / 33,216 ( < 1 % )  ;
-; R24 interconnects           ; 0 / 3,091 ( 0 % )      ;
-; R4 interconnects            ; 54 / 81,294 ( < 1 % )  ;
+; R24 interconnects           ; 26 / 3,091 ( < 1 % )   ;
+; R4 interconnects            ; 129 / 81,294 ( < 1 % ) ;
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 14.00) ; Number of LABs  (Total = 10) ;
+; Number of Logic Elements  (Average = 13.82) ; Number of LABs  (Total = 11) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 0                            ;
+; 1                                           ; 1                            ;
 ; 2                                           ; 0                            ;
 ; 3                                           ; 0                            ;
 ; 4                                           ; 0                            ;
 ; 5                                           ; 0                            ;
-; 6                                           ; 1                            ;
+; 6                                           ; 0                            ;
 ; 7                                           ; 1                            ;
 ; 8                                           ; 0                            ;
 ; 9                                           ; 0                            ;
@@ -1521,57 +1612,58 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 12                                          ; 0                            ;
 ; 13                                          ; 0                            ;
 ; 14                                          ; 0                            ;
-; 15                                          ; 1                            ;
-; 16                                          ; 7                            ;
+; 15                                          ; 0                            ;
+; 16                                          ; 9                            ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 2.40) ; Number of LABs  (Total = 10) ;
+; LAB-wide Signals  (Average = 2.18) ; Number of LABs  (Total = 11) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 9                            ;
+; 1 Async. clear                     ; 7                            ;
 ; 1 Clock                            ; 9                            ;
 ; 1 Clock enable                     ; 4                            ;
 ; 1 Sync. clear                      ; 2                            ;
+; 2 Clock enables                    ; 2                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 21.20) ; Number of LABs  (Total = 10) ;
+; Number of Signals Sourced  (Average = 20.36) ; Number of LABs  (Total = 11) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
+; 1                                            ; 1                            ;
 ; 2                                            ; 0                            ;
 ; 3                                            ; 0                            ;
 ; 4                                            ; 0                            ;
 ; 5                                            ; 0                            ;
 ; 6                                            ; 0                            ;
-; 7                                            ; 0                            ;
+; 7                                            ; 1                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 1                            ;
+; 10                                           ; 0                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 1                            ;
+; 12                                           ; 0                            ;
 ; 13                                           ; 0                            ;
 ; 14                                           ; 0                            ;
 ; 15                                           ; 0                            ;
 ; 16                                           ; 1                            ;
-; 17                                           ; 0                            ;
+; 17                                           ; 1                            ;
 ; 18                                           ; 0                            ;
-; 19                                           ; 1                            ;
+; 19                                           ; 0                            ;
 ; 20                                           ; 0                            ;
 ; 21                                           ; 0                            ;
 ; 22                                           ; 1                            ;
 ; 23                                           ; 1                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 2                            ;
-; 26                                           ; 0                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 1                            ;
 ; 27                                           ; 0                            ;
-; 28                                           ; 1                            ;
+; 28                                           ; 2                            ;
 ; 29                                           ; 0                            ;
 ; 30                                           ; 0                            ;
 ; 31                                           ; 0                            ;
@@ -1579,59 +1671,62 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+------------------------------+
 
 
-+--------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                        ;
-+-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 8.50) ; Number of LABs  (Total = 10) ;
-+-------------------------------------------------+------------------------------+
-; 0                                               ; 0                            ;
-; 1                                               ; 0                            ;
-; 2                                               ; 0                            ;
-; 3                                               ; 0                            ;
-; 4                                               ; 1                            ;
-; 5                                               ; 1                            ;
-; 6                                               ; 1                            ;
-; 7                                               ; 2                            ;
-; 8                                               ; 0                            ;
-; 9                                               ; 2                            ;
-; 10                                              ; 0                            ;
-; 11                                              ; 2                            ;
-; 12                                              ; 0                            ;
-; 13                                              ; 0                            ;
-; 14                                              ; 0                            ;
-; 15                                              ; 0                            ;
-; 16                                              ; 1                            ;
-+-------------------------------------------------+------------------------------+
++---------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                         ;
++--------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 10.00) ; Number of LABs  (Total = 11) ;
++--------------------------------------------------+------------------------------+
+; 0                                                ; 0                            ;
+; 1                                                ; 1                            ;
+; 2                                                ; 0                            ;
+; 3                                                ; 1                            ;
+; 4                                                ; 0                            ;
+; 5                                                ; 0                            ;
+; 6                                                ; 0                            ;
+; 7                                                ; 1                            ;
+; 8                                                ; 0                            ;
+; 9                                                ; 1                            ;
+; 10                                               ; 1                            ;
+; 11                                               ; 0                            ;
+; 12                                               ; 3                            ;
+; 13                                               ; 1                            ;
+; 14                                               ; 0                            ;
+; 15                                               ; 1                            ;
+; 16                                               ; 1                            ;
++--------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 11.80) ; Number of LABs  (Total = 10) ;
+; Number of Distinct Inputs  (Average = 13.64) ; Number of LABs  (Total = 11) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 1                            ;
-; 4                                            ; 0                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 0                            ;
+; 4                                            ; 1                            ;
 ; 5                                            ; 1                            ;
 ; 6                                            ; 0                            ;
 ; 7                                            ; 0                            ;
 ; 8                                            ; 0                            ;
-; 9                                            ; 1                            ;
-; 10                                           ; 2                            ;
-; 11                                           ; 0                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 0                            ;
+; 11                                           ; 1                            ;
 ; 12                                           ; 1                            ;
-; 13                                           ; 1                            ;
+; 13                                           ; 2                            ;
 ; 14                                           ; 0                            ;
-; 15                                           ; 0                            ;
-; 16                                           ; 1                            ;
+; 15                                           ; 1                            ;
+; 16                                           ; 0                            ;
 ; 17                                           ; 0                            ;
-; 18                                           ; 1                            ;
+; 18                                           ; 0                            ;
 ; 19                                           ; 0                            ;
 ; 20                                           ; 0                            ;
 ; 21                                           ; 0                            ;
-; 22                                           ; 1                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 0                            ;
+; 24                                           ; 0                            ;
+; 25                                           ; 3                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -1680,6 +1775,7 @@ Info (169124): Fitter converted 3 user pins into dedicated programming pins
     Info (169125): Pin ~ASDO~ is reserved at location E3
     Info (169125): Pin ~nCSO~ is reserved at location D3
     Info (169125): Pin ~LVDS150p/nCEO~ is reserved at location AE24
+Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
 Info (332104): Reading SDC File: '../source/LCDcontroller.sdc'
 Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
 Info (332111): Found 1 clocks
@@ -1699,7 +1795,7 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X0_Y12 to location X10_Y23
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X22_Y24 to location X32_Y36
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
@@ -1724,13 +1820,14 @@ Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file H:/Google Drive/Logic Design Practice/justLcdControler/lcdController/QPF/output_files/LCDcontroller.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 1562 megabytes
-    Info: Processing ended: Thu Jun 28 19:51:40 2018
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:09
+    Info: Peak virtual memory: 1558 megabytes
+    Info: Processing ended: Sun Jul 01 21:40:41 2018
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:10
 
 
 +----------------------------+

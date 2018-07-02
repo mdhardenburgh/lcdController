@@ -51,11 +51,6 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulati
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
-set_global_assignment -name SDC_FILE ../source/LCDcontroller.sdc
-set_global_assignment -name VERILOG_FILE ../source/lcdController.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_location_assignment PIN_N2 -to clk
 set_location_assignment PIN_AE23 -to errorLed
 set_location_assignment PIN_H3 -to lcdBus[7]
@@ -71,4 +66,23 @@ set_location_assignment PIN_V2 -to lcdOnIn
 set_location_assignment PIN_L4 -to lcdOnOut
 set_location_assignment PIN_K4 -to lcdReadWriteSel
 set_location_assignment PIN_K1 -to lcdRsSelect
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_N25 -to charCode[0]
+set_location_assignment PIN_N26 -to charCode[1]
+set_location_assignment PIN_P25 -to charCode[2]
+set_location_assignment PIN_AE14 -to charCode[3]
+set_location_assignment PIN_AF14 -to charCode[4]
+set_location_assignment PIN_AD13 -to charCode[5]
+set_location_assignment PIN_AC13 -to charCode[6]
+set_location_assignment PIN_C13 -to charCode[7]
+set_location_assignment PIN_P2 -to writeAddr[4]
+set_location_assignment PIN_B13 -to writeAddr[0]
+set_location_assignment PIN_A13 -to writeAddr[1]
+set_location_assignment PIN_N1 -to writeAddr[2]
+set_location_assignment PIN_P1 -to writeAddr[3]
+set_location_assignment PIN_G26 -to writeEnable
+set_global_assignment -name SDC_FILE ../source/LCDcontroller.sdc
+set_global_assignment -name VERILOG_FILE ../source/lcdController.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

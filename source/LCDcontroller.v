@@ -1,19 +1,136 @@
-/**
- * @file: LCDController.v
- * @brief: controller for an LCD to interface into any project
- * @Engineer: Matthew Hardenburgh
- * @date: 6/15/18
+/*
+ * @file LCDController.v
+ * @brief Controller for an LCD to interface into any project.
+ * @details Used the following project from github to help with timings and
+ *          figure out how to use the lcd https://github.com/wgwozdz/Spartan_LCD.
+ * @Engineer Matthew Hardenburgh
+ * @date 6/15/18
  */
+
+ /*
+  * @brief Top level module to connect the registers to the state machine.
+  * @input Clock input.
+  * @input Enable writing to register.
+  * @input Input to physically turn on lcd.
+  * @input 5 bit address to write to a selected register.
+  * @input Character code input.
+  *
+  * @output Lines that go to the LCD. Commands and character codes go to LCD.
+  * @output Output to physically turn on lcd.
+  * @output Read write line to operate LCD according to datasheet.
+  * @output Register select line to operate LCD according to datasheet.
+  * @output Chip enable for the LCD.
+  * @output Indicate an error has occured.
+  */
 module lcdController
 (
     input clk,
+    input writeEnable,
+    input lcdOnIn,
+    input[4:0] writeAddr,
+    input[7:0] charCode,
+
+    output [7:0] lcdBus, //Change to output reg
+    output lcdOnOut,
+    output lcdReadWriteSel, // LCD read/write select 0 = write, 1 = read
+    output lcdRsSelect, //  LCD Command/Data Select, 0 = Command, 1 = Data
+    output lcdEnableOut,
+    output errorLed
+);
+//Destination device has the wire name
+    wire[4:0] addrToRead;
+    wire[7:0] dataIn;
+    wire readEnable;
+    
+
+    lcdRegisterFile myRegisters(clk, writeEnable, readEnable, writeAddr, charCode, addrToRead, dataIn);
+    lcdStateMachine myStateMachine(clk, lcdOnIn, dataIn, lcdBus, addrToRead, lcdOnOut, lcdReadWriteSel, lcdRsSelect, lcdEnableOut, errorLed, readEnable);
+endmodule
+
+/*
+ * @brief Register to hold the character codes writen from an outside interface
+ *        to be read by the lcd state machine.
+ * @input Clock input.
+ * @input Enable writing to selected register.
+ * @input 5 bit address to write to a selected register.
+ * @input Character code input.
+ * @input Address for the data that goes to the lcd state machine.
+ *
+ * @output Character code output that goes to lcd state machine
+ */
+module lcdRegisterFile
+(
+    input clk,
+    input writeEnable,
+    input readEnable,
+    input[4:0] writeAddr,
+    input[7:0] dataIn,
+    input[4:0] addrToRead,
+
+    output reg[7:0] dataOut
+);
+    reg[7:0] charCode[31:0]; //32 registers, each holding an 8 bit character code
+
+    always@(posedge clk)
+    begin
+        if(writeEnable == 1'b1 && readEnable == 1'b0)
+        begin
+            charCode[writeAddr] <= dataIn;
+        end
+        
+    end
+    
+    
+    always@(posedge clk)
+    begin
+        if(readEnable == 1'b1)
+        begin
+            dataOut <= charCode[addrToRead];
+        end
+        
+//        else
+//        begin
+//            dataOut <= dataOut;
+//        end
+    end
+    
+endmodule
+
+/*
+ * @brief State machine that controlls interaction with the LCD.
+ * @details First it performs init and then goes into an infinte loop where it
+ *          reads from an address from the registers and writes the character
+ *          code at that address to the lcd. The state machine loops through
+ *          all the register addresses (0x00 to 0x1F back to 0x00) infinitely
+ *          and writes to all of the LCD's registers (0x00 for the address of
+ *          the first line and then 0x40 for the address of the second line)
+ *          infinitely. Timings are all based off of a 50MHz clock.
+ * @input Clock input.
+ * @input reset
+ * @input Input from the lcd registers.
+ *
+ * @output Output lines to the physical lcd.
+ * @output 5 bit Address of register to read.
+ * @output Output to physically turn on lcd.
+ * @output Read write line to operate LCD according to datasheet.
+ * @output Register select line to operate LCD according to datasheet.
+ * @output Chip enable for the LCD.
+ * @output Indicate an error has occured.
+ */
+module lcdStateMachine
+(
+    input clk,
     input lcdOnIn, //connected to switch on board to turn the LCD on or off, acts as reset.
-    inout reg[7:0] lcdBus,
+    input[7:0] dataIn,
+
+    output reg[7:0] lcdBus, //Change to output reg
+    output reg[4:0] addrToRead,
     output lcdOnOut,
     output reg lcdReadWriteSel, // LCD read/write select 0 = write, 1 = read
     output reg lcdRsSelect, //  LCD Command/Data Select, 0 = Command, 1 = Data
     output reg lcdEnableOut,
-    output reg errorLed
+    output reg errorLed,
+    output reg readEnable
 );
     //write and init main states.
     localparam  powerOn = 4'd0;
@@ -24,10 +141,7 @@ module lcdController
     localparam  readBusyFlag = 4'd5;
     localparam  writeAddr = 4'd6;
     localparam  writeData = 4'd7;
-    localparam  waitHerePlox = 4'd8;
-    localparam  cursorLogicState = 4'd9;
-    localparam  cursorShift = 4'd10;
-    localparam  cursorCarriageReturn = 4'd11;
+    localparam  cursorLogicState = 4'd8;
 
     //substates
     localparam  functionSet1 = 2'd0;
@@ -80,9 +194,10 @@ module lcdController
             lcdEnableOut <= 1'b0;
             functionSetCase <= 2'b00;
             errorLed <= 1'b0;
-            lcdBus <= 8'hZZ;
+            lcdBus <= 8'h80;
             subStates <= 2'b00;
             addrCounter <= 7'h00;
+            readEnable <= 1'b0;
         end
 
         else
@@ -108,8 +223,6 @@ module lcdController
                         state <= powerOn;
                     end
                 end
-
-
 
                 /*
                  * function set state. divided into 4 function set states
@@ -620,12 +733,13 @@ module lcdController
                     errorLed <= 1'b0;
                     lcdRsSelect <= 1'b0;
                     lcdReadWriteSel <= 1'b0;
+                    readEnable <= 1'b0;
 
                     case(subStates)
                         subState1:
                         begin
                             lcdEnableOut <= 1'b0;
-                            lcdBus <= 8'hZZ;
+                            //lcdBus <= dataIn;
 
                             subStates <= subState2;
                             state <= writeAddr;
@@ -635,28 +749,52 @@ module lcdController
                         subState2:
                         begin
                             lcdEnableOut <= 1'b1;
-                            lcdBus <= {1'b1, addrCounter};
+                            addrToRead <= addrCounter[4:0];
 
-                            if(counter == wait260ns)
+                            if(addrCounter[4] == 1'b1)
                             begin
-                                counter <= 32'b0;
-                                subStates <= subState3;
-                                state <= writeAddr;
+                                lcdBus <= {4'b1100, addrCounter[3:0]};
+                                if(counter == wait260ns)
+                                begin
+                                    counter <= 32'b0;
+                                    subStates <= subState3;
+                                    state <= writeAddr;
+                                end
+
+                                else
+                                begin
+                                    counter <= counter + 1'b1;
+
+                                    subStates <= subState2;
+                                    state <= writeAddr;
+                                end
                             end
 
-                            else
+                            else if(addrCounter[4] == 1'b0)
                             begin
-                                counter <= counter + 1'b1;
+                                lcdBus <= {1'b1, addrCounter};
 
-                                subStates <= subState2;
-                                state <= writeAddr;
+                                if(counter == wait260ns)
+                                begin
+                                    counter <= 32'b0;
+                                    subStates <= subState3;
+                                    state <= writeAddr;
+                                end
+
+                                else
+                                begin
+                                    counter <= counter + 1'b1;
+
+                                    subStates <= subState2;
+                                    state <= writeAddr;
+                                end
                             end
                         end
 
                         subState3:
                         begin
                             lcdEnableOut <= 1'b0;
-                            lcdBus <= 8'hZZ;
+                            //lcdBus <= lcdBus;
                             if(counter == wait260ns)
                             begin
                                 counter <= 32'b0;
@@ -685,7 +823,7 @@ module lcdController
                         subState1:
                         begin
                             lcdEnableOut <= 1'b0;
-                            lcdBus <= 8'hZZ;
+                            //lcdBus <= lcdBus;
 
                             subStates <= subState2;
                             state <= writeData;
@@ -694,7 +832,10 @@ module lcdController
                         subState2:
                         begin
                             lcdEnableOut <= 1'b1;
-                            lcdBus <= 8'b01010000;
+                            readEnable <= 1'b1;
+                            lcdBus <= dataIn;
+                            //addrToRead <= addrCounter[4:0];
+                            //lcdBus <= 8'b00110000;
                             if(counter == wait260ns)
                             begin
                                 counter <= 32'b0;
@@ -715,7 +856,8 @@ module lcdController
                         subState3:
                         begin
                             lcdEnableOut <= 1'b0;
-                            lcdBus <= 8'hZZ;
+                            readEnable <= 1'b0;
+                            //lcdBus <= dataIn;
                             if(counter == wait260ns)
                             begin
                                 counter <= 32'b0;
@@ -734,166 +876,23 @@ module lcdController
                     endcase
                 end
 
-                // waitHerePlox:
-                // begin
-                //     lcdBus <= 8'hZZ;
-                //     if(counter == wait100ms)
-                //     begin
-                //         counter <= 32'b0;
-                //         state <= cursorLogicState;
-                //     end
-                //
-                //     else
-                //     begin
-                //         counter <= counter + 1'b1;
-                //         state <= waitHerePlox;
-                //     end
-                // end
-
                 cursorLogicState:
                 begin
-                    lcdBus <= 8'hZZ;
-                    if(addrCounter == 7'h4F)
+                    state <= writeAddr;
+                    if(addrCounter == 7'h1F)
                     begin
                         addrCounter <= 7'h00;
-                        state <= writeAddr;
-                        //state <= cursorCarriageReturn;
                     end
 
                     else
                     begin
                         addrCounter <= addrCounter + 1'b1;
-                        //state <= cursorShift;
-                        state <= writeAddr;
                     end
-
-                end
-
-                cursorShift:
-                begin
-                    // errorLed <= 1'b1;
-                    // lcdRsSelect <= 1'b0;
-                    // lcdReadWriteSel <= 1'b0;
-                    //
-                    // case(subStates)
-                    //     subState1:
-                    //     begin
-                    //         lcdEnableOut <= 1'b0;
-                    //         lcdBus <= 8'hZZ;
-                    //
-                    //         subStates <= subState2;
-                    //         state <= cursorShift;
-                    //     end
-                    //
-                    //     subState2:
-                    //     begin
-                    //         lcdEnableOut <= 1'b1;
-                    //         lcdBus <= CURSOR_SHIFT;
-                    //         if(counter == wait260ns)
-                    //         begin
-                    //             counter <= 32'b0;
-                    //
-                    //             subStates <= subState3;
-                    //             state <= cursorShift;
-                    //         end
-                    //
-                    //         else
-                    //         begin
-                    //             counter <= counter + 1'b1;
-                    //
-                    //             subStates <= subState2;
-                    //             state <= cursorShift;
-                    //         end
-                    //     end
-                    //
-                    //     subState3:
-                    //     begin
-                    //         lcdEnableOut <= 1'b0;
-                    //         lcdBus <= 8'hZZ;
-                    //         if(counter == wait50us)
-                    //         begin
-                    //             counter <= 32'b0;
-                    //
-                    //             subStates <= subState1;
-                    //             state <= writeAddr;
-                    //         end
-                    //
-                    //         else
-                    //         begin
-                    //             counter <= counter + 1'b1;
-                    //
-                    //             subStates <= subState3;
-                    //             state <= cursorShift;
-                    //         end
-                    //     end
-                    // endcase
-                end
-
-                cursorCarriageReturn:
-                begin
-                /*
-                    errorLed <= 1'b0;
-                    lcdRsSelect <= 1'b0;
-                    lcdReadWriteSel <= 1'b0;
-
-                    case(subStates)
-                        subState1:
-                        begin
-                            lcdEnableOut <= 1'b0;
-                            lcdBus <= 8'hZZ;
-
-                            subStates <= subState2;
-                            state <= cursorCarriageReturn;
-                        end
-
-                        subState2:
-                        begin
-                            lcdEnableOut <= 1'b1;
-                            lcdBus <= CURSOR_AT_HOME;
-                            if(counter == wait260ns)
-                            begin
-                                counter <= 32'b0;
-
-                                subStates <= subState3;
-                                state <= cursorCarriageReturn;
-                            end
-
-                            else
-                            begin
-                                counter <= counter + 1'b1;
-
-                                subStates <= subState2;
-                                state <= cursorCarriageReturn;
-                            end
-                        end
-
-                        subState3:
-                        begin
-                            lcdEnableOut <= 1'b0;
-                            lcdBus <= 8'hZZ;
-                            if(counter == wait50us)
-                            begin
-                                counter <= 32'b0;
-
-                                subStates <= subState1;
-                                state <= writeAddr;
-                            end
-
-                            else
-                            begin
-                                counter <= counter + 1'b1;
-
-                                subStates <= subState3;
-                                state <= cursorCarriageReturn;
-                            end
-                        end
-                    endcase
-                */
                 end
 
                 default:
                 begin
-                  errorLed <= 1'b0;
+                  errorLed <= 1'b1;
                 end
             endcase
         end

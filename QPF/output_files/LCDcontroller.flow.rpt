@@ -1,5 +1,5 @@
 Flow report for LCDcontroller
-Thu Jun 28 19:51:48 2018
+Sun Jul 01 21:40:48 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,20 +40,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Thu Jun 28 19:51:47 2018      ;
+; Flow Status                        ; Successful - Sun Jul 01 21:40:48 2018      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; LCDcontroller                              ;
 ; Top-level Entity Name              ; lcdController                              ;
 ; Family                             ; Cyclone II                                 ;
 ; Device                             ; EP2C35F672C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 140 / 33,216 ( < 1 % )                     ;
-;     Total combinational functions  ; 132 / 33,216 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 74 / 33,216 ( < 1 % )                      ;
-; Total registers                    ; 74                                         ;
-; Total pins                         ; 15 / 475 ( 3 % )                           ;
+; Total logic elements               ; 152 / 33,216 ( < 1 % )                     ;
+;     Total combinational functions  ; 137 / 33,216 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 80 / 33,216 ( < 1 % )                      ;
+; Total registers                    ; 80                                         ;
+; Total pins                         ; 29 / 475 ( 6 % )                           ;
 ; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0 / 483,840 ( 0 % )                        ;
+; Total memory bits                  ; 256 / 483,840 ( < 1 % )                    ;
 ; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                             ;
 ; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
 +------------------------------------+--------------------------------------------+
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/28/2018 19:51:32 ;
+; Start date & time ; 07/01/2018 21:40:31 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; LCDcontroller       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+---------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name   ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+---------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 53447168970291.153024069115516        ; --            ; --            ; --             ;
+; COMPILER_SIGNATURE_ID               ; 53447168970291.153050643125420        ; --            ; --            ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                  ; --            ; --            ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (VHDL)                ; <None>        ; --            ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --            ; --             ;
@@ -94,12 +94,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 486 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:06     ; 2.2                     ; 1562 MB             ; 00:00:09                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 471 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 520 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 418 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:12     ; --                      ; --                  ; 00:00:16                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 497 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:06     ; 2.4                     ; 1558 MB             ; 00:00:09                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 475 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 519 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 418 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:13     ; --                      ; --                  ; 00:00:16                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
