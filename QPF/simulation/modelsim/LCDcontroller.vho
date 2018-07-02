@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.0 Build 156 04/24/2013 SJ Web Edition"
 
--- DATE "06/21/2018 22:26:46"
+-- DATE "06/23/2018 23:54:14"
 
 -- 
 -- Device: Altera EP2C35F672C6 Package FBGA672

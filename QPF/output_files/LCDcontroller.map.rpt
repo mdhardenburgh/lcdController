@@ -1,5 +1,5 @@
 Analysis & Synthesis report for LCDcontroller
-Thu Jun 21 22:26:28 2018
+Sat Jun 23 23:53:58 2018
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -48,7 +48,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun 21 22:26:28 2018      ;
+; Analysis & Synthesis Status        ; Successful - Sat Jun 23 23:53:58 2018      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; LCDcontroller                              ;
 ; Top-level Entity Name              ; lcdControllerTop                           ;
@@ -150,15 +150,21 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 12     ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -350,9 +356,9 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Thu Jun 21 22:26:23 2018
+    Info: Processing started: Sat Jun 23 23:53:53 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off LCDcontroller -c LCDcontroller
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 2 design units, including 2 entities, in source file /google drive/logic design practice/lcdcontroller/source/lcdcontrollertop.v
     Info (12023): Found entity 1: lcdControllerTop
     Info (12023): Found entity 2: lcdInterface
@@ -389,9 +395,9 @@ Info (21057): Implemented 309 device resources after synthesis - the final resou
     Info (21059): Implemented 4 output pins
     Info (21060): Implemented 8 bidirectional pins
     Info (21061): Implemented 279 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 487 megabytes
-    Info: Processing ended: Thu Jun 21 22:26:28 2018
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 505 megabytes
+    Info: Processing ended: Sat Jun 23 23:53:58 2018
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:04
 
