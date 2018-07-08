@@ -1,0 +1,24 @@
+
+State Machine - |lcdController|lcdStateMachine:myStateMachine|subStates
+Name subStates.00 subStates.subState3 subStates.subState2 
+subStates.00 0 0 0 
+subStates.subState2 1 0 1 
+subStates.subState3 1 1 0 
+
+State Machine - |lcdController|lcdStateMachine:myStateMachine|functionSetCase
+Name functionSetCase.functionSet4 functionSetCase.functionSet3 functionSetCase.functionSet2 functionSetCase.00 
+functionSetCase.00 0 0 0 0 
+functionSetCase.functionSet2 0 0 1 1 
+functionSetCase.functionSet3 0 1 0 1 
+functionSetCase.functionSet4 1 0 0 1 
+
+State Machine - |lcdController|lcdStateMachine:myStateMachine|state
+Name state.writeData state.writeAddr state.entryModeSet state.displayClear state.displaySet state.functionSet state.powerOn state.cursorShift 
+state.powerOn 0 0 0 0 0 0 0 0 
+state.functionSet 0 0 0 0 0 1 1 0 
+state.displaySet 0 0 0 0 1 0 1 0 
+state.displayClear 0 0 0 1 0 0 1 0 
+state.entryModeSet 0 0 1 0 0 0 1 0 
+state.writeAddr 0 1 0 0 0 0 1 0 
+state.writeData 1 0 0 0 0 0 1 0 
+state.cursorShift 0 0 0 0 0 0 1 1 
