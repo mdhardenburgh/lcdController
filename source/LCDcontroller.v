@@ -9,8 +9,8 @@
 
  /*
   * @brief Top level module to connect the registers to the state machine.
+  *
   * @input Clock input.
-  * @input Enable writing to register.
   * @input Input to physically turn on lcd.
   * @input 5 bit address to write to a selected register.
   * @input Character code input.
@@ -48,8 +48,8 @@ endmodule
 /*
  * @brief Register to hold the character codes writen from an outside interface
  *        to be read by the lcd state machine.
+ *
  * @input Clock input.
- * @input Enable writing to selected register.
  * @input 5 bit address to write to a selected register.
  * @input Character code input.
  * @input Address for the data that goes to the lcd state machine.
@@ -108,7 +108,6 @@ module lcdStateMachine
     output reg lcdRsSelect, //  LCD Command/Data Select, 0 = Command, 1 = Data
     output reg lcdEnableOut,
     output reg errorLed
-    //output reg readEnable
 );
     //write and init main states.
     localparam  powerOn = 4'd0;
@@ -176,7 +175,6 @@ module lcdStateMachine
             lcdBus <= 8'h80;
             subStates <= 2'b00;
             addrCounter <= 7'h00;
-            //readEnable <= 1'b0;
         end
 
         else
@@ -770,7 +768,6 @@ module lcdStateMachine
                     errorLed <= 1'b0;
                     lcdRsSelect <= 1'b0;
                     lcdReadWriteSel <= 1'b0;
-                    //readEnable <= 1'b0;
 
                     case(subStates)
                         subState1:
@@ -869,10 +866,8 @@ module lcdStateMachine
                         subState2:
                         begin
                             lcdEnableOut <= 1'b1;
-                            //readEnable <= 1'b1;
                             lcdBus <= dataIn;
-                            //addrToRead <= addrCounter[4:0];
-                            //lcdBus <= 8'b00110000;
+
                             if(counter == wait260ns)
                             begin
                                 counter <= 32'b0;
@@ -893,7 +888,7 @@ module lcdStateMachine
                         subState3:
                         begin
                             lcdEnableOut <= 1'b0;
-                            //readEnable <= 1'b0;
+
                             lcdBus <= lcdBus;
                             if(counter == wait50us)
                             begin
@@ -914,7 +909,7 @@ module lcdStateMachine
                 end
                 cursorShift:
                 begin
-                    errorLed <= 1'b1;
+                    errorLed <= 1'b0;
                     if(addrCounter == 7'h1F)
                     begin
                         case(subStates)
@@ -1033,7 +1028,7 @@ module lcdStateMachine
 
                 default:
                 begin
-                  errorLed <= 1'b0;
+                  errorLed <= 1'b1;
                 end
             endcase
         end

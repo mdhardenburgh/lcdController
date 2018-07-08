@@ -26,7 +26,7 @@ module testBench_lcdRegisterFile;
 
     always@(posedge clk)
     begin
-        if(counter == 4'h1F)
+        if(counter == 5'h1F)
         begin
             dataIn <= 8'b11110000;
             counter <= 4'h00;
