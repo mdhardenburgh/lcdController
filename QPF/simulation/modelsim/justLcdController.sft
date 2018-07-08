@@ -1,0 +1,5 @@
+set tool_name "ModelSim-Altera (Verilog)"
+set corner_file_list {
+	{{"Slow Model"} {justLcdController.vo justLcdController_v.sdo}}
+	{{"Fast Model"} {justLcdController_fast.vo justLcdController_v_fast.sdo}}
+}

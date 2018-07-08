@@ -1,0 +1,63 @@
+# Reading H:/Quartus II/Quartus II Install/modelsim_ase/tcl/vsim/pref.tcl 
+# do justLcdController_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying H:\Quartus II\Quartus II Install\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied H:\Quartus II\Quartus II Install\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/terab/Documents/Logic\ Design\ Practice/justLcdController/lcdController/source {C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/LCDcontroller.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module lcdController
+# -- Compiling module lcdRegisterFile
+# -- Compiling module lcdStateMachine
+# 
+# Top level modules:
+# 	lcdController
+# 
+vlog -reportprogress 300 -work work {C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/testBench_lcdController.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module testBench_lcdController
+# ** Warning: C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/testBench_lcdController.v(36): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# ** Warning: C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/testBench_lcdController.v(37): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# ** Warning: C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/testBench_lcdController.v(52): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# 
+# Top level modules:
+# 	testBench_lcdController
+vsim work.testBench_lcdController
+# vsim work.testBench_lcdController 
+# Loading work.testBench_lcdController
+# Loading work.lcdController
+# Loading work.lcdRegisterFile
+# Loading work.lcdStateMachine
+add wave -position end  sim:/testBench_lcdController/writeAddr
+add wave -position end  sim:/testBench_lcdController/lcdRsSelect
+add wave -position end  sim:/testBench_lcdController/lcdReadWriteSel
+add wave -position end  sim:/testBench_lcdController/lcdOnOut
+add wave -position end  sim:/testBench_lcdController/lcdOnIn
+add wave -position end  sim:/testBench_lcdController/lcdEnableOut
+add wave -position end  sim:/testBench_lcdController/lcdBus
+add wave -position end  sim:/testBench_lcdController/errorLed
+add wave -position end  sim:/testBench_lcdController/count
+add wave -position end  sim:/testBench_lcdController/clk
+add wave -position end  sim:/testBench_lcdController/charCode
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: terab  Hostname: ROLAND  ProcessID: 4436
+# 
+#           Attempting to use alternate WLF file "./wlftm4wwyk".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftm4wwyk
+# 
+# Load canceled
+run -all
+# Break key hit 
+# Break in Module testBench_lcdController in file C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/testBench_lcdController.v

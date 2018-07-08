@@ -1,0 +1,88 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\terab\Documents\Logic Design Practice\justLcdController\lcdController\QPF\simulation\modelsim
+vlcdController
+Ig[:?PIb9l3SFeFbRBe5gW0
+Vn_F=6iGT_8YSAYRmXPjDN2
+Z1 dC:\Users\terab\Documents\Logic Design Practice\justLcdController\lcdController\QPF\simulation\modelsim
+Z2 w1530850538
+Z3 8C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/LCDcontroller.v
+Z4 FC:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/LCDcontroller.v
+L0 25
+Z5 OV;L;10.1d;51
+r1
+31
+Z6 !s108 1530850602.432000
+Z7 !s107 C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/LCDcontroller.v|
+Z8 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source|C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/LCDcontroller.v|
+Z9 o-vlog01compat -work work -O0
+Z10 !s92 -vlog01compat -work work {+incdir+C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source} -O0
+nlcd@controller
+!i10b 1
+!s100 l=fOTT1>83UPVE69Hh<nn1
+!s85 0
+!s101 -O0
+vlcdRegisterFile
+IOBMiGXP>U[Pm5A9ej0PS^3
+VdIb8=JY=11WTHNFjeK_1E0
+R1
+R2
+R3
+R4
+L0 59
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+nlcd@register@file
+!i10b 1
+!s100 HaX]]CeZ2zBA?Ej;L;[U00
+!s85 0
+!s101 -O0
+vlcdStateMachine
+INnnccZb<EmQ:5cP=ao9Fz3
+VVo=?i=9g4FkR0oIC18eY41
+R1
+R2
+R3
+R4
+L0 98
+R5
+r1
+31
+R6
+R7
+R8
+R9
+R10
+nlcd@state@machine
+!i10b 1
+!s100 enLh5LIN`5]_@z@0D>d7V0
+!s85 0
+!s101 -O0
+vtestBench_lcdController
+!i10b 1
+!s100 @5P@@I]]30oJdDG;B]a^V0
+I8ijRT3`b=kOSiWZH`Yb2@0
+VYon7Ha7zFX@RBnFN>M1UZ3
+R1
+w1530759948
+8C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/testBench_lcdController.v
+FC:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/testBench_lcdController.v
+L0 10
+R5
+r1
+!s85 0
+31
+!s108 1530850648.348000
+!s107 C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/testBench_lcdController.v|
+!s90 -reportprogress|300|-work|work|C:/Users/terab/Documents/Logic Design Practice/justLcdController/lcdController/source/testBench_lcdController.v|
+!s101 -O0
+o-work work -O0
+ntest@bench_lcd@controller
