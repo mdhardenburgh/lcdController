@@ -1,4 +1,4 @@
-For this project I developed a simple LCD controller, test benches and a demonstration. I used a Terasic DE2 board for this project. The LCD on the board is a Crystalfotnz America CFAH1602B-TMC-JP LCD panel. The top level module provides a simple demonstration of functionality of this LCD controller and how it can be used with other projects. NOTE: THIS PROJECT IS BASED UPON A 50MHz CLOCK.
+For this project I developed a simple LCD controller, test benches and a demonstration in verilog. I used a Terasic DE2 board for this project. The LCD on the board is a Crystalfotnz America CFAH1602B-TMC-JP LCD panel. The top level module provides a simple demonstration of functionality of this LCD controller and how it can be used with other projects. NOTE: THIS PROJECT IS BASED UPON A 50MHz CLOCK.
 
 LCD CONTROLLER OPERATION:
 
