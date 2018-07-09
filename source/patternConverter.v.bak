@@ -26,11 +26,11 @@ module patternConverter
     localparam  outSeven = 8'b00110111;
     localparam  outEight = 8'b00111000;
     localparam  outNine = 8'b00111001;
+	localparam  error = 8'b00000000;
 
     always@(bcdInput)
     begin
         case(bcdInput)
-        begin
             zero:
             begin
                 lcdPattern = outZero;
@@ -44,11 +44,6 @@ module patternConverter
             three:
             begin
                 lcdPattern = outTwo;
-            end
-
-            three:
-            begin
-                lcdPattern = outThree;
             end
 
             four:
@@ -80,7 +75,12 @@ module patternConverter
             begin
                 lcdPattern = outNine;
             end
-        end
+
+				default:
+				begin
+					lcdPattern = error;
+				end
+        endcase
 
     end
 endmodule

@@ -38,17 +38,62 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE EP2C35F672C6
-set_global_assignment -name TOP_LEVEL_ENTITY LCDcontrollerTop
+set_global_assignment -name TOP_LEVEL_ENTITY lcdControllerDemonstration
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "22:52:39  JULY 01, 2018"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.0
-set_global_assignment -name VERILOG_FILE ../source/patternConverter.v
-set_global_assignment -name VERILOG_FILE ../source/LCDcontrollerTop.v
-set_global_assignment -name VERILOG_FILE ../source/LCDcontroller.v
-set_global_assignment -name VERILOG_FILE ../source/bcdConverter.v
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_V2 -to lcdOnIn
+set_location_assignment PIN_V1 -to backLight
+set_location_assignment PIN_N25 -to in[0]
+set_location_assignment PIN_N26 -to in[1]
+set_location_assignment PIN_P25 -to in[2]
+set_location_assignment PIN_AE14 -to in[3]
+set_location_assignment PIN_AF14 -to in[4]
+set_location_assignment PIN_AD13 -to in[5]
+set_location_assignment PIN_AC13 -to in[6]
+set_location_assignment PIN_C13 -to in[7]
+set_location_assignment PIN_B13 -to in[8]
+set_location_assignment PIN_A13 -to in[9]
+set_location_assignment PIN_N1 -to in[10]
+set_location_assignment PIN_P1 -to in[11]
+set_location_assignment PIN_P2 -to in[12]
+set_location_assignment PIN_T7 -to in[13]
+set_location_assignment PIN_U3 -to in[14]
+set_location_assignment PIN_U4 -to in[15]
+set_location_assignment PIN_N2 -to clk
+set_location_assignment PIN_K1 -to lcdRsSelect
+set_location_assignment PIN_K4 -to lcdReadWriteSel
+set_location_assignment PIN_L4 -to lcdOnOut
+set_location_assignment PIN_K3 -to lcdEnableOut
+set_location_assignment PIN_J1 -to lcdBus[0]
+set_location_assignment PIN_J2 -to lcdBus[1]
+set_location_assignment PIN_H1 -to lcdBus[2]
+set_location_assignment PIN_H2 -to lcdBus[3]
+set_location_assignment PIN_J4 -to lcdBus[4]
+set_location_assignment PIN_J3 -to lcdBus[5]
+set_location_assignment PIN_H4 -to lcdBus[6]
+set_location_assignment PIN_H3 -to lcdBus[7]
+set_location_assignment PIN_AF23 -to errorLed2
+set_location_assignment PIN_AE23 -to errorLed1
+set_location_assignment PIN_K2 -to backLightOut
+set_global_assignment -name VERILOG_FILE ../source/lcdControllerDemonstration.v
+set_global_assignment -name VERILOG_FILE ../source/lcdController.v
+set_global_assignment -name SDC_FILE ../source/lcdController.sdc
+set_global_assignment -name VERILOG_FILE ../source/testBenches/testBench_lcdStateMachine.v
+set_global_assignment -name VERILOG_FILE ../source/testBenches/testBench_lcdRegisterFile.v
+set_global_assignment -name VERILOG_FILE ../source/testBenches/testBench_lcdController.v
+set_global_assignment -name VERILOG_FILE ../source/patternConverter.v
+set_global_assignment -name VERILOG_FILE ../source/bcdConverter.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -1,7 +1,23 @@
+/*
+ * @file patternConverter.v
+ * @engineer Matthew Hardenburgh
+ * @brief Converts a BCD input to the character code pattern for the LCD.
+ * @details This module generates the character code for the LCD controller from
+ *          BCD input.
+ * @date 7/8/18
+ */
+
+/*
+ * @brief Converts BCD to the character code for the LCD character generator.
+ *
+ * @input 4 bit BCD input from the bcdConverter.
+ *
+ * @output Character code to be interpreted by the LCD device.
+ */
 module patternConverter
 (
-        input[3:0] bcdInput,
-        output reg[7:0] lcdPattern
+    input[3:0] bcdInput,
+    output reg[7:0] lcdPattern
 );
     //Inputs
     localparam  zero = 4'b0000;
@@ -16,7 +32,7 @@ module patternConverter
     localparam  nine = 4'b1001;
 
     //outputs
-    localparam  outZero =  8'b0011000;
+    localparam  outZero =  8'b00110000;
     localparam  outOne = 8'b00110001;
     localparam  outTwo = 8'b00110010;
     localparam  outThree = 8'b00110011;
@@ -26,7 +42,7 @@ module patternConverter
     localparam  outSeven = 8'b00110111;
     localparam  outEight = 8'b00111000;
     localparam  outNine = 8'b00111001;
-	 localparam  error = 8'b01000101;
+	localparam  error = 8'b00000000;
 
     always@(bcdInput)
     begin
@@ -41,9 +57,14 @@ module patternConverter
                 lcdPattern = outOne;
             end
 
-            three:
+            two:
             begin
                 lcdPattern = outTwo;
+            end
+
+            three:
+            begin
+                lcdPattern = outThree;
             end
 
             four:
@@ -75,11 +96,11 @@ module patternConverter
             begin
                 lcdPattern = outNine;
             end
-				
-				default:
-				begin
-					lcdPattern = error;
-				end
+
+            default:
+            begin
+                lcdPattern = error;
+            end
         endcase
 
     end

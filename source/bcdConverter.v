@@ -1,9 +1,30 @@
-//Original Author: Dustin Criger. Email: dustger89@gmail.com
-//Modifications by Matthew Hardenburgh.
+/*
+ * @file bcdConverter.v
+ * @engineer Dustin Criger, Matthew Hardenburgh
+ * @brief Binary coded decimal converter.
+ * @details Converts from binary to binary coded decimal. The original engineer
+ *          of this is Dustin Criger, I made modifications to allow the
+ *          conversion of up to the ten thousandths place. Dustin's email is
+ *          dustger89@gmail.com.
+ * @date 7/8/18
+ */
 
+/*
+ * @brief Am implementation of a the BCD conversion algorithm. This is designed
+ *        for the Terasic DE2 board. The input comes from the switches on the board.
+ *
+ * @input A 16 bit input.
+ *
+ * @output The ten thousandths place output.
+ * @output The thousandths place output.
+ * @output The hundredths place output.
+ * @output The tenths place output.
+ * @output The ones place output.
+ */
 module bcdConterter
 (
     input [15:0]in,
+
     output reg[3:0] tenThou,
     output reg[3:0] thou,
     output reg[3:0] hund,
